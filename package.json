@@ -46,5 +46,9 @@
 		"prettier": "^2.7.1",
 		"typescript": "^4.8.2"
 	},
+	"files": [
+		"*.js",
+		"src/*.js"
+	],
 	"packageManager": "yarn@3.2.3"
 }
