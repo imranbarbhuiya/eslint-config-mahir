@@ -38,7 +38,7 @@ module.exports = {
 				objectLiteralTypeAssertions: 'allow',
 			},
 		],
-		'@typescript-eslint/consistent-type-definitions': [2, 'interface'],
+		'@typescript-eslint/consistent-type-definitions': 2,
 		'@typescript-eslint/consistent-type-exports': [
 			2,
 			{
@@ -75,7 +75,6 @@ module.exports = {
 				},
 			},
 		],
-		'@typescript-eslint/member-ordering': 0,
 		'@typescript-eslint/method-signature-style': [2, 'method'],
 		'@typescript-eslint/naming-convention': 0,
 		'@typescript-eslint/no-base-to-string': [
@@ -140,12 +139,7 @@ module.exports = {
 				checksVoidReturn: false,
 			},
 		],
-		'@typescript-eslint/no-namespace': [
-			2,
-			{
-				allowDeclarations: true,
-			},
-		],
+		'@typescript-eslint/no-namespace': 0,
 		'@typescript-eslint/no-non-null-asserted-nullish-coalescing': 2,
 		'@typescript-eslint/no-non-null-asserted-optional-chain': 2,
 		'@typescript-eslint/no-non-null-assertion': 0,
@@ -159,7 +153,6 @@ module.exports = {
 			},
 		],
 		'@typescript-eslint/no-type-alias': 0,
-		'@typescript-eslint/no-unnecessary-boolean-literal-compare': 0,
 		'@typescript-eslint/no-unnecessary-condition': 2,
 		'@typescript-eslint/no-unnecessary-qualifier': 2,
 		'@typescript-eslint/no-unnecessary-type-arguments': 0,
@@ -199,7 +192,7 @@ module.exports = {
 		'@typescript-eslint/prefer-return-this-type': 2,
 		'@typescript-eslint/prefer-string-starts-ends-with': 2,
 		'@typescript-eslint/prefer-ts-expect-error': 2,
-		'@typescript-eslint/promise-function-async': 2,
+		'@typescript-eslint/promise-function-async': 0,
 		'@typescript-eslint/require-array-sort-compare': [
 			2,
 			{
@@ -259,7 +252,14 @@ module.exports = {
 			},
 		],
 		'@typescript-eslint/default-param-last': 2,
-		'@typescript-eslint/dot-notation': 2,
+		'@typescript-eslint/dot-notation': [
+			2,
+			{
+				allowKeywords: true,
+				allowPattern: '(^[A-Z])|(^[a-z]+(_[a-z]+)+$)',
+				allowPrivateClassPropertyAccess: true,
+			},
+		],
 		'@typescript-eslint/func-call-spacing': [2, 'never'],
 		'@typescript-eslint/indent': [2, 'tab'],
 		'@typescript-eslint/init-declarations': 0,
@@ -273,11 +273,10 @@ module.exports = {
 		'@typescript-eslint/lines-between-class-members': [2, 'always'],
 		'@typescript-eslint/no-array-constructor': 2,
 		'@typescript-eslint/no-dupe-class-members': 2,
-		'@typescript-eslint/no-duplicate-imports': 0,
 		'@typescript-eslint/no-extra-parens': 2,
 		'@typescript-eslint/no-extra-semi': 2,
 		'@typescript-eslint/no-implied-eval': 2,
-		'@typescript-eslint/no-invalid-this': 0,
+		'@typescript-eslint/no-invalid-this': 2,
 		'@typescript-eslint/no-loop-func': 2,
 		'@typescript-eslint/no-loss-of-precision': 2,
 		'@typescript-eslint/no-magic-numbers': 0,
@@ -311,7 +310,7 @@ module.exports = {
 			},
 		],
 		'@typescript-eslint/quotes': [2, 'double'],
-		'@typescript-eslint/require-await': 0,
+		'@typescript-eslint/require-await': 2,
 		'@typescript-eslint/semi': [2, 'always'],
 		'@typescript-eslint/space-before-blocks': [2, 'always'],
 		'@typescript-eslint/space-before-function-paren': [
@@ -323,6 +322,42 @@ module.exports = {
 			},
 		],
 		'@typescript-eslint/space-infix-ops': [2, { int32Hint: true }],
+
+		'@typescript-eslint/member-ordering': [
+			1,
+			{
+				default: [
+					'signature',
+					'public-instance-field',
+					'protected-instance-field',
+					'private-instance-field',
+					'instance-field',
+					'public-constructor',
+					'protected-constructor',
+					'private-constructor',
+					'constructor',
+					'public-instance-method',
+					'protected-instance-method',
+					'private-instance-method',
+					'instance-method',
+					'public-static-field',
+					'protected-static-field',
+					'private-static-field',
+					'static-field',
+					'public-static-method',
+					'protected-static-method',
+					'private-static-method',
+					'static-method',
+				],
+			},
+		],
+		'@typescript-eslint/no-duplicate-imports': [
+			2,
+			{
+				includeExports: false,
+			},
+		],
+		'@typescript-eslint/no-unnecessary-boolean-literal-compare': 2,
 
 		// Disable eslint rules implemented in @typescript-eslint
 		'brace-style': 0,
