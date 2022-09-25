@@ -38,7 +38,7 @@ module.exports = {
 				objectLiteralTypeAssertions: 'allow',
 			},
 		],
-		'@typescript-eslint/consistent-type-definitions': [2, 'type'],
+		'@typescript-eslint/consistent-type-definitions': [2, 'interface'],
 		'@typescript-eslint/consistent-type-exports': [
 			2,
 			{
@@ -79,7 +79,7 @@ module.exports = {
 		'@typescript-eslint/method-signature-style': [2, 'method'],
 		'@typescript-eslint/naming-convention': 0,
 		'@typescript-eslint/no-base-to-string': [
-			2,
+			1,
 			{
 				ignoredTypeNames: ['RegExp'],
 			},
@@ -93,7 +93,7 @@ module.exports = {
 			},
 		],
 		'@typescript-eslint/no-duplicate-enum-values': 2,
-		'@typescript-eslint/no-dynamic-delete': 2,
+		'@typescript-eslint/no-dynamic-delete': 1,
 		'@typescript-eslint/no-empty-function': 0,
 		'@typescript-eslint/no-empty-interface': [
 			'error',
@@ -160,10 +160,10 @@ module.exports = {
 		],
 		'@typescript-eslint/no-type-alias': 0,
 		'@typescript-eslint/no-unnecessary-boolean-literal-compare': 0,
-		'@typescript-eslint/no-unnecessary-condition': 0,
+		'@typescript-eslint/no-unnecessary-condition': 2,
 		'@typescript-eslint/no-unnecessary-qualifier': 2,
 		'@typescript-eslint/no-unnecessary-type-arguments': 0,
-		'@typescript-eslint/no-unnecessary-type-assertion': 0,
+		'@typescript-eslint/no-unnecessary-type-assertion': 2,
 		'@typescript-eslint/no-unnecessary-type-constraint': 2,
 		'@typescript-eslint/no-unsafe-argument': 0,
 		'@typescript-eslint/no-unsafe-assignment': 0,
@@ -411,14 +411,10 @@ module.exports = {
 				markers: ['/'],
 			},
 		],
-		'tsdoc/syntax': 1,
 		'typescript-sort-keys/interface': 2,
 		'typescript-sort-keys/string-enum': 2,
 	},
 	settings: {
-		jsdoc: {
-			mode: 'typescript',
-		},
 		'import/parsers': {
 			'@typescript-eslint/parser': ['.ts', '.mts', '.cts', 'tsx'],
 		},

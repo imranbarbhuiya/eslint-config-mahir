@@ -466,7 +466,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"ci-info@npm:^3.2.0, ci-info@npm:^3.3.2":
+"ci-info@npm:^3.3.2":
   version: 3.3.2
   resolution: "ci-info@npm:3.3.2"
   checksum: fd81f1edd2d3b0f6cb077b2e84365136d87b9db8c055928c1ad69da8a76c2c2f19cba8ea51b90238302157ca927f91f92b653e933f2398dde4867500f08d6e62
@@ -687,9 +687,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"eslint-config-neon@workspace:.":
+"eslint-config-mahir@workspace:.":
   version: 0.0.0-use.local
-  resolution: "eslint-config-neon@workspace:."
+  resolution: "eslint-config-mahir@workspace:."
   dependencies:
     "@next/eslint-plugin-next": ^12.2.5
     "@rushstack/eslint-patch": ^1.1.4
@@ -706,9 +706,6 @@ __metadata:
     eslint-plugin-sonarjs: ^0.15.0
     eslint-plugin-typescript-sort-keys: ^2.1.0
     eslint-plugin-unicorn: ^43.0.2
-    husky: ^8.0.1
-    is-ci: ^3.0.1
-    pinst: ^3.0.0
     prettier: ^2.7.1
     typescript: ^4.8.2
   languageName: unknown
@@ -1377,15 +1374,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"husky@npm:^8.0.1":
-  version: 8.0.1
-  resolution: "husky@npm:8.0.1"
-  bin:
-    husky: lib/bin.js
-  checksum: 943a73a13d0201318fd30e83d299bb81d866bd245b69e6277804c3b462638dc1921694cb94c2b8c920a4a187060f7d6058d3365152865406352e934c5fff70dc
-  languageName: node
-  linkType: hard
-
 "ignore@npm:^5.1.1, ignore@npm:^5.2.0":
   version: 5.2.0
   resolution: "ignore@npm:5.2.0"
@@ -1484,17 +1472,6 @@ __metadata:
   version: 1.2.4
   resolution: "is-callable@npm:1.2.4"
   checksum: 1a28d57dc435797dae04b173b65d6d1e77d4f16276e9eff973f994eadcfdc30a017e6a597f092752a083c1103cceb56c91e3dadc6692fedb9898dfaba701575f
-  languageName: node
-  linkType: hard
-
-"is-ci@npm:^3.0.1":
-  version: 3.0.1
-  resolution: "is-ci@npm:3.0.1"
-  dependencies:
-    ci-info: ^3.2.0
-  bin:
-    is-ci: bin.js
-  checksum: 192c66dc7826d58f803ecae624860dccf1899fc1f3ac5505284c0a5cf5f889046ffeb958fa651e5725d5705c5bcb14f055b79150ea5fcad7456a9569de60260e
   languageName: node
   linkType: hard
 
@@ -2027,15 +2004,6 @@ __metadata:
   version: 2.3.1
   resolution: "picomatch@npm:2.3.1"
   checksum: 050c865ce81119c4822c45d3c84f1ced46f93a0126febae20737bd05ca20589c564d6e9226977df859ed5e03dc73f02584a2b0faad36e896936238238b0446cf
-  languageName: node
-  linkType: hard
-
-"pinst@npm:^3.0.0":
-  version: 3.0.0
-  resolution: "pinst@npm:3.0.0"
-  bin:
-    pinst: bin.js
-  checksum: 4ae48a6a60f79c37071233af51b4d91bfc85cfa3c12b66ccda60cdb642b4d14a4ab0cb3587afc55b1f6192cea1772a5e4822026a0d0d3528296edef00cc2d61f
   languageName: node
   linkType: hard
 
