@@ -1,4 +1,4 @@
 {
 	"root": true,
-	"extends": ["./common", "./node", "./prettier"]
+	"extends": ["./common", "./_node", "./prettier"]
 }
