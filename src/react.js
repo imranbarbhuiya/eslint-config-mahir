@@ -1,7 +1,9 @@
+const jsx = require('./jsx.js');
+
 module.exports = {
 	plugins: ['react', 'react-hooks'],
-	extends: ['./jsx'],
 	rules: {
+		...jsx.rules,
 		'react/boolean-prop-naming': 2,
 		'react/button-has-type': 2,
 		'react/default-props-match-prop-types': 2,

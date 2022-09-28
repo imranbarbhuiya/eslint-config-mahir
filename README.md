@@ -16,7 +16,7 @@ Add in your ESLint config
 {
 	"extends": [
 		"mahir/common",
-		"mahir/_node",
+		"mahir/node",
 		"mahir/module",
 		"mahir/typescript",
 		"mahir/react",
