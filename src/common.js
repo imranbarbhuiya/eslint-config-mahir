@@ -150,17 +150,14 @@ module.exports = {
 		'import/no-unused-modules': 0,
 		'import/no-useless-path-segments': 2,
 		'import/no-webpack-loader-syntax': 2,
-		'import/order': [
+		"import/order": [
 			2,
 			{
-				alphabetize: {
-					caseInsensitive: false,
-					order: 'asc',
-				},
-				groups: ['builtin', 'external', 'internal', 'parent', 'sibling', 'index'],
-				'newlines-between': 'never',
-			},
-		],
+			  "groups": ["builtin", "index", "external", "internal", "sibling", "parent", "type"],
+			  "newlines-between": "always",
+			  "alphabetize": { "order": "asc", "caseInsensitive": true }
+			}
+		  ],
 		'import/prefer-default-export': 0,
 		'import/unambiguous': 0,
 		indent: [2, 'tab'],
