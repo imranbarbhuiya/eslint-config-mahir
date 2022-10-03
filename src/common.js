@@ -5,9 +5,12 @@ module.exports = {
 	parserOptions: {
 		ecmaFeatures: {
 			globalReturn: false,
+			impliedStrict: true,
+			jsx: true,
 		},
 		ecmaVersion: 2_022,
 		requireConfigFile: false,
+		sourceType: 'module',
 	},
 	plugins: ['import', 'unicorn', 'promise'],
 	rules: {
