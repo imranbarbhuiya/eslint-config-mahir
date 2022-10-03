@@ -37,11 +37,11 @@ Add in your ESLint config
 
 You can remove any of the configs you don't need.
 
-> **Warning:**
+> **Warning**:
 
 Use `mahir/prettier` last, as it disables all rules that might conflict with Prettier.
 
-> **Note:**
+> **Note**:
 
 For typescript users, `mahir/typescript` will try to find a tsconfig with name `tsconfig.eslint.json` in the root of your project. If you want to use a different name, you can change it in your eslint config like this:
 
