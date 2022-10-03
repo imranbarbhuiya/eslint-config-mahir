@@ -5,12 +5,9 @@ module.exports = {
 	parserOptions: {
 		ecmaFeatures: {
 			globalReturn: false,
-			impliedStrict: true,
-			jsx: true,
 		},
 		ecmaVersion: 2_022,
 		requireConfigFile: false,
-		sourceType: 'module',
 	},
 	plugins: ['import', 'unicorn', 'promise'],
 	rules: {
@@ -150,14 +147,14 @@ module.exports = {
 		'import/no-unused-modules': 0,
 		'import/no-useless-path-segments': 2,
 		'import/no-webpack-loader-syntax': 2,
-		"import/order": [
+		'import/order': [
 			2,
 			{
-			  "groups": ["builtin", "index", "external", "internal", "sibling", "parent", "type"],
-			  "newlines-between": "always",
-			  "alphabetize": { "order": "asc", "caseInsensitive": true }
-			}
-		  ],
+				groups: ['builtin', 'index', 'external', 'internal', 'sibling', 'parent', 'type'],
+				'newlines-between': 'always',
+				alphabetize: { order: 'asc', caseInsensitive: true },
+			},
+		],
 		'import/prefer-default-export': 0,
 		'import/unambiguous': 0,
 		indent: [2, 'tab'],
@@ -542,6 +539,7 @@ module.exports = {
 		'unicorn/no-static-only-class': 2,
 		'unicorn/no-thenable': 2,
 		'unicorn/no-this-assignment': 2,
+		'unicorn/no-unnecessary-await': 2,
 		'unicorn/no-unreadable-array-destructuring': 0,
 		'unicorn/no-unreadable-iife': 2,
 		'unicorn/no-unsafe-regex': 2,

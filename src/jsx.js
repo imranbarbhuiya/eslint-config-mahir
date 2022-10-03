@@ -1,4 +1,11 @@
 module.export = {
+	parserOptions: {
+		ecmaFeatures: {
+			jsx: true,
+			impliedStrict: true,
+		},
+		sourceType: 'module',
+	},
 	plugins: ['react'],
 	rules: {
 		'react/jsx-boolean-value': [2, 'never'],

@@ -2,6 +2,10 @@ module.exports = {
 	overrides: [
 		{
 			files: ['*.ts', '*.tsx'],
+			parserOptions: {
+				project: './tsconfig.eslint.json',
+				sourceType: 'module',
+			},
 			rules: {
 				'@typescript-eslint/explicit-member-accessibility': 2,
 			},
