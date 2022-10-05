@@ -1,4 +1,7 @@
-module.export = {
+/**
+ * @type {import('@typescript-eslint/utils').TSESLint.Linter.Config}
+ */
+module.exports = {
 	parserOptions: {
 		ecmaFeatures: {
 			jsx: true,

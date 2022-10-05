@@ -1,3 +1,6 @@
+/**
+ * @type {import('@typescript-eslint/utils').TSESLint.Linter.Config}
+ */
 module.exports = {
 	env: {
 		es6: true,
@@ -385,7 +388,7 @@ module.exports = {
 			1,
 			{
 				location: 'start',
-				terms: ['TODO', 'todo', '@toto'],
+				terms: ['todo', '@todo', 'fixme', '@fixme'],
 			},
 		],
 		'no-whitespace-before-property': 2,
