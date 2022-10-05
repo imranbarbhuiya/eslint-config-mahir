@@ -53,6 +53,22 @@ For typescript users, `mahir/typescript` will try to find a tsconfig with name `
 }
 ```
 
+## Configs
+
+This package contains eslint config for
+
+- `common` rules common for all configs
+- `node` rules for nodejs projects
+- `module` rules for esm projects
+- `typescript` rules for typescript projects
+- `jsx` rules for jsx/tsx projects
+- `react` rules for react projects (this config contains all the `jsx` rules too)
+- `next` rules for nextjs projects
+- `edge` rules for projects running in edge
+- `jsdoc` jsdoc related config
+- `tsdoc` tsdoc related config (this config contains all the `jsdoc` rules too)
+- `prettier` adds all the prettier rules to eslint.
+
 ## Contributors ✨
 
 Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/docs/en/emoji-key)):
