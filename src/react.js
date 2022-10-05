@@ -1,5 +1,7 @@
 const jsx = require('./jsx.js');
-
+/**
+ * @type {import('@typescript-eslint/utils').TSESLint.Linter.Config}
+ */
 module.exports = {
 	plugins: ['react', 'react-hooks'],
 	rules: {

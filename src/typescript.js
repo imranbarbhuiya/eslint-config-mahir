@@ -1,16 +1,19 @@
+/**
+ * @type {import('@typescript-eslint/utils').TSESLint.Linter.Config}
+ */
 module.exports = {
 	overrides: [
 		{
 			files: ['*.ts', '*.tsx'],
-			parserOptions: {
-				project: './tsconfig.eslint.json',
-				sourceType: 'module',
-			},
 			rules: {
 				'@typescript-eslint/explicit-member-accessibility': 2,
 			},
 		},
 	],
+	parserOptions: {
+		project: './tsconfig.eslint.json',
+		sourceType: 'module',
+	},
 	parser: '@typescript-eslint/parser',
 	plugins: ['@typescript-eslint', 'deprecation', 'import', 'n', 'sonarjs', 'typescript-sort-keys'],
 	rules: {
