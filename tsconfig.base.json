@@ -1,0 +1,22 @@
+{
+	"compilerOptions": {
+		"target": "esnext",
+		"module": "commonjs",
+		"strict": true,
+		"allowJs": true,
+		"noImplicitAny": true,
+		"strictNullChecks": true,
+		"noImplicitThis": true,
+		"alwaysStrict": true,
+		"noUnusedLocals": true,
+		"noUnusedParameters": true,
+		"noImplicitReturns": true,
+		"noFallthroughCasesInSwitch": true,
+		"moduleResolution": "node",
+		"lib": ["es2021"],
+		"outDir": "dist",
+		"noEmit": true,
+		"esModuleInterop": true
+	},
+	"includes": ["src/**/*.ts"]
+}

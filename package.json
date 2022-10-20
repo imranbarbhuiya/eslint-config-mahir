@@ -3,10 +3,11 @@
 	"version": "0.0.11",
 	"description": "The ultimate ESLint shareable config",
 	"scripts": {
-		"lint": "prettier --check . && eslint . --ext js --fix",
+		"lint": "prettier --check . && eslint . --ext js",
 		"format": "prettier --write . && eslint . --ext js --fix",
 		"prepack": "move-file _node.js node.js && move-file _prettier.js prettier.js",
-		"postpack": "move-file node.js _node.js && move-file prettier.js _prettier.js"
+		"postpack": "move-file node.js _node.js && move-file prettier.js _prettier.js",
+		"test": "vitest run"
 	},
 	"main": "./common.js",
 	"keywords": [
@@ -53,6 +54,7 @@
 	],
 	"packageManager": "yarn@3.2.4",
 	"devDependencies": {
-		"move-file-cli": "^3.0.0"
+		"move-file-cli": "^3.0.0",
+		"vitest": "^0.24.3"
 	}
 }
