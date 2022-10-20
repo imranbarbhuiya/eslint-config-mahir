@@ -67,6 +67,7 @@ This package contains eslint config for
 - `edge` rules for projects running in edge
 - `jsdoc` jsdoc related config
 - `tsdoc` tsdoc related config (this config contains all the `jsdoc` rules too)
+- `no-deprecated` rules to warn about using deprecated apis
 - `prettier` adds all the prettier rules to eslint.
 
 ## Contributors ✨
