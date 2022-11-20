@@ -18,10 +18,20 @@ module.exports = {
 	plugins: ['import', 'unicorn', 'promise'],
 	rules: {
 		'accessor-pairs': 0,
-		'array-bracket-newline': [2, { multiline: true }],
+		'array-bracket-newline': [
+			2,
+			{
+				multiline: true,
+			},
+		],
 		'array-bracket-spacing': [2, 'never'],
 		'array-callback-return': 2,
-		'array-element-newline': [2, { multiline: true }],
+		'array-element-newline': [
+			2,
+			{
+				multiline: true,
+			},
+		],
 		'arrow-body-style': [2, 'as-needed'],
 		'arrow-parens': [2, 'always'],
 		'arrow-spacing': [
@@ -111,7 +121,13 @@ module.exports = {
 		'import/dynamic-import-chunkname': 0,
 		'import/export': 2,
 		'import/exports-last': 0,
-		'import/extensions': [2, 'always', { ignorePackages: true }],
+		'import/extensions': [
+			2,
+			'always',
+			{
+				ignorePackages: true,
+			},
+		],
 		'import/first': 2,
 		'import/group-exports': 0,
 		'import/max-dependencies': 0,
@@ -122,7 +138,14 @@ module.exports = {
 		'import/no-amd': 2,
 		'import/no-anonymous-default-export': 0,
 		'import/no-commonjs': 0,
-		'import/no-cycle': [2, { maxDepth: 4, ignoreExternal: true, allowUnsafeDynamicCyclicDependency: true }],
+		'import/no-cycle': [
+			2,
+			{
+				allowUnsafeDynamicCyclicDependency: true,
+				ignoreExternal: true,
+				maxDepth: 4,
+			},
+		],
 		'import/no-default-export': 0,
 		'import/no-deprecated': 0,
 		'import/no-duplicates': 2,
@@ -156,9 +179,12 @@ module.exports = {
 		'import/order': [
 			2,
 			{
+				alphabetize: {
+					caseInsensitive: true,
+					order: 'asc',
+				},
 				groups: ['builtin', 'index', 'external', 'internal', 'sibling', 'parent', 'type'],
 				'newlines-between': 'always',
-				alphabetize: { order: 'asc', caseInsensitive: true },
 			},
 		],
 		'import/prefer-default-export': 0,
@@ -393,7 +419,12 @@ module.exports = {
 		'no-whitespace-before-property': 2,
 		'no-with': 2,
 		'nonblock-statement-body-position': [2, 'below'],
-		'object-curly-newline': [2, { multiline: true }],
+		'object-curly-newline': [
+			2,
+			{
+				multiline: true,
+			},
+		],
 		'object-curly-spacing': [2, 'always'],
 		'object-property-newline': [
 			2,
@@ -468,12 +499,17 @@ module.exports = {
 			2,
 			{
 				anonymous: 'always',
-				named: 'never',
 				asyncArrow: 'always',
+				named: 'never',
 			},
 		],
 		'space-in-parens': [2, 'never'],
-		'space-infix-ops': [2, { int32Hint: true }],
+		'space-infix-ops': [
+			2,
+			{
+				int32Hint: true,
+			},
+		],
 		'space-unary-ops': [
 			2,
 			{
@@ -494,9 +530,6 @@ module.exports = {
 		'template-curly-spacing': [2, 'never'],
 		'template-tag-spacing': [2, 'never'],
 		'unicode-bom': [2, 'never'],
-		'unicorn/no-typeof-undefined': 2,
-		'unicorn/no-negated-condition': 2,
-		'unicorn/prefer-set-size': 2,
 		'unicorn/better-regex': 2,
 		'unicorn/catch-error-name': [
 			'error',
@@ -538,6 +571,7 @@ module.exports = {
 		'unicorn/no-invalid-remove-event-listener': 2,
 		'unicorn/no-keyword-prefix': 0,
 		'unicorn/no-lonely-if': 2,
+		'unicorn/no-negated-condition': 2,
 		'unicorn/no-nested-ternary': 0,
 		'unicorn/no-new-array': 2,
 		'unicorn/no-new-buffer': 2,
@@ -547,6 +581,7 @@ module.exports = {
 		'unicorn/no-static-only-class': 2,
 		'unicorn/no-thenable': 2,
 		'unicorn/no-this-assignment': 2,
+		'unicorn/no-typeof-undefined': 2,
 		'unicorn/no-unnecessary-await': 2,
 		'unicorn/no-unreadable-array-destructuring': 0,
 		'unicorn/no-unreadable-iife': 2,
@@ -563,18 +598,18 @@ module.exports = {
 		'unicorn/numeric-separators-style': [
 			2,
 			{
-				hexadecimal: {
-					onlyIfContainsSeparator: true,
-				},
 				binary: {
 					onlyIfContainsSeparator: true,
 				},
-				octal: {
+				hexadecimal: {
 					onlyIfContainsSeparator: true,
 				},
 				number: {
 					groupLength: 3,
 					minimumDigits: 0,
+				},
+				octal: {
+					onlyIfContainsSeparator: true,
 				},
 			},
 		],
@@ -603,6 +638,7 @@ module.exports = {
 		'unicorn/prefer-reflect-apply': 2,
 		'unicorn/prefer-regexp-test': 2,
 		'unicorn/prefer-set-has': 0,
+		'unicorn/prefer-set-size': 2,
 		'unicorn/prefer-spread': 0,
 		'unicorn/prefer-string-replace-all': 2,
 		'unicorn/prefer-string-slice': 2,
