@@ -494,7 +494,9 @@ module.exports = {
 		'template-curly-spacing': [2, 'never'],
 		'template-tag-spacing': [2, 'never'],
 		'unicode-bom': [2, 'never'],
+		'unicorn/no-typeof-undefined': 2,
 		'unicorn/no-negated-condition': 2,
+		'unicorn/prefer-set-size': 2,
 		'unicorn/better-regex': 2,
 		'unicorn/catch-error-name': [
 			'error',
