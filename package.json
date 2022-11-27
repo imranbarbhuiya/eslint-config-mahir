@@ -29,14 +29,14 @@
 	"author": "Parbez <imranbarbhuiya.fsd@gmail.com>",
 	"license": "MIT",
 	"dependencies": {
-		"@next/eslint-plugin-next": "^13.0.4",
+		"@next/eslint-plugin-next": "^13.0.5",
 		"@rushstack/eslint-patch": "^1.2.0",
-		"@typescript-eslint/eslint-plugin": "^5.43.0",
-		"@typescript-eslint/parser": "^5.43.0",
+		"@typescript-eslint/eslint-plugin": "^5.44.0",
+		"@typescript-eslint/parser": "^5.44.0",
 		"eslint": "^8.28.0",
 		"eslint-config-prettier": "^8.5.0",
 		"eslint-plugin-import": "npm:eslint-plugin-i@latest",
-		"eslint-plugin-jsdoc": "^39.6.2",
+		"eslint-plugin-jsdoc": "^39.6.4",
 		"eslint-plugin-n": "^15.5.1",
 		"eslint-plugin-promise": "^6.1.1",
 		"eslint-plugin-react": "^7.31.11",
@@ -45,7 +45,7 @@
 		"eslint-plugin-tsdoc": "^0.2.17",
 		"eslint-plugin-typescript-sort-keys": "^2.1.0",
 		"eslint-plugin-unicorn": "^45.0.0",
-		"prettier": "^2.7.1",
+		"prettier": "^2.8.0",
 		"typescript": "^4.9.3"
 	},
 	"files": [
@@ -55,6 +55,6 @@
 	"packageManager": "yarn@3.3.0",
 	"devDependencies": {
 		"move-file-cli": "^3.0.0",
-		"vitest": "^0.25.2"
+		"vitest": "^0.25.3"
 	}
 }
