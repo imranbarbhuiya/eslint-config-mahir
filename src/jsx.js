@@ -114,7 +114,7 @@ module.exports = {
 		],
 		'react/jsx-props-no-multi-spaces': 2,
 		'react/jsx-props-no-spreading': 0,
-		'react/jsx-sort-default-props': 2,
+		'react/sort-default-props': 2,
 		'react/jsx-sort-props': 2,
 		'react/jsx-tag-spacing': [
 			2,
