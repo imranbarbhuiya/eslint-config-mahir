@@ -355,14 +355,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/chai@npm:*":
-  version: 4.3.3
-  resolution: "@types/chai@npm:4.3.3"
-  checksum: 20cd094753e137cfc35939cae7f0ed78ecda7861e5c94704efab6979b9121a63807e9b631bdcf3a2792d6c6dba44050b13387262f9e63ebb040741c01c345f0a
-  languageName: node
-  linkType: hard
-
-"@types/chai@npm:^4.3.4":
+"@types/chai@npm:*, @types/chai@npm:^4.3.4":
   version: 4.3.4
   resolution: "@types/chai@npm:4.3.4"
   checksum: 571184967beb03bf64c4392a13a7d44e72da9af5a1e83077ff81c39cf59c0fda2a5c78d2005084601cf8f3d11726608574d8b5b4a0e3e9736792807afd926cd0
@@ -619,16 +612,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"acorn@npm:^8.8.0":
-  version: 8.8.0
-  resolution: "acorn@npm:8.8.0"
-  bin:
-    acorn: bin/acorn
-  checksum: 7270ca82b242eafe5687a11fea6e088c960af712683756abf0791b68855ea9cace3057bd5e998ffcef50c944810c1e0ca1da526d02b32110e13c722aa959afdc
-  languageName: node
-  linkType: hard
-
-"acorn@npm:^8.8.1":
+"acorn@npm:^8.8.0, acorn@npm:^8.8.1":
   version: 8.8.1
   resolution: "acorn@npm:8.8.1"
   bin:
@@ -2885,19 +2869,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"mlly@npm:^1.0.0":
-  version: 1.0.0
-  resolution: "mlly@npm:1.0.0"
-  dependencies:
-    acorn: ^8.8.1
-    pathe: ^1.0.0
-    pkg-types: ^1.0.0
-    ufo: ^1.0.0
-  checksum: e9d8809a836f407fb0604f46ca12fd1671cb95a71fef35ba6af57022c75eb7555dcad3ed5524f6c53fdf1280ed35739837c7306c0e0201371943737091dde429
-  languageName: node
-  linkType: hard
-
-"mlly@npm:^1.1.0":
+"mlly@npm:^1.0.0, mlly@npm:^1.1.0":
   version: 1.1.0
   resolution: "mlly@npm:1.1.0"
   dependencies:
@@ -3309,7 +3281,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"pkg-types@npm:^1.0.0, pkg-types@npm:^1.0.1":
+"pkg-types@npm:^1.0.1":
   version: 1.0.1
   resolution: "pkg-types@npm:1.0.1"
   dependencies:
@@ -4128,7 +4100,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"ufo@npm:^1.0.0, ufo@npm:^1.0.1":
+"ufo@npm:^1.0.1":
   version: 1.0.1
   resolution: "ufo@npm:1.0.1"
   checksum: 63024876f21b7cc44267255a8043062046d3215e09212bd682787a13ccf1e0c5d23f7686a7f1bc7ac9f34c7e8a88100af234f42b509db50f17ce638af6ac87cc
