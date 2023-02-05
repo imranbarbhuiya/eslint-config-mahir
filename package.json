@@ -31,12 +31,12 @@
 	"dependencies": {
 		"@next/eslint-plugin-next": "^13.1.6",
 		"@rushstack/eslint-patch": "^1.2.0",
-		"@typescript-eslint/eslint-plugin": "^5.49.0",
-		"@typescript-eslint/parser": "^5.49.0",
+		"@typescript-eslint/eslint-plugin": "^5.50.0",
+		"@typescript-eslint/parser": "^5.50.0",
 		"eslint": "^8.33.0",
 		"eslint-config-prettier": "^8.6.0",
 		"eslint-plugin-import": "npm:eslint-plugin-i@latest",
-		"eslint-plugin-jsdoc": "^39.7.4",
+		"eslint-plugin-jsdoc": "^39.8.0",
 		"eslint-plugin-n": "^15.6.1",
 		"eslint-plugin-promise": "^6.1.1",
 		"eslint-plugin-react": "^7.32.2",
@@ -46,15 +46,15 @@
 		"eslint-plugin-typescript-sort-keys": "^2.1.0",
 		"eslint-plugin-unicorn": "^45.0.2",
 		"prettier": "^2.8.3",
-		"typescript": "^4.9.4"
+		"typescript": "^4.9.5"
 	},
 	"files": [
 		"*.js",
 		"src/*.js"
 	],
-	"packageManager": "yarn@3.3.1",
+	"packageManager": "yarn@3.4.1",
 	"devDependencies": {
 		"move-file-cli": "^3.0.0",
-		"vitest": "^0.28.3"
+		"vitest": "^0.28.4"
 	}
 }
