@@ -1,0 +1,14 @@
+// Vitest Snapshot v1
+
+exports[`ESLint Config > should export rules 1`] = `
+{
+  "extends": [
+    "prettier",
+  ],
+  "rules": {
+    "arrow-body-style": 0,
+    "line-comment-position": 0,
+    "no-inline-comments": 0,
+  },
+}
+`;

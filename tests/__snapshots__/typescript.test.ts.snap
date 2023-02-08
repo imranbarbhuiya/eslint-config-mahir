@@ -94,6 +94,7 @@ exports[`ESLint Config > should export rules 1`] = `
     "@typescript-eslint/consistent-type-imports": [
       2,
       {
+        "fixStyle": "inline-type-imports",
         "prefer": "type-imports",
       },
     ],

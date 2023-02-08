@@ -83,6 +83,7 @@ module.exports = {
 			2,
 			{
 				prefer: 'type-imports',
+				fixStyle: 'inline-type-imports',
 			},
 		],
 		'@typescript-eslint/default-param-last': 2,
