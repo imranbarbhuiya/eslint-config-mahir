@@ -1,6 +1,6 @@
 {
 	"name": "eslint-config-mahir",
-	"version": "0.0.20",
+	"version": "0.0.21",
 	"description": "The ultimate ESLint shareable config",
 	"scripts": {
 		"lint": "prettier --check . && eslint . --ext js",
