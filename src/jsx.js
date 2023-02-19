@@ -79,7 +79,7 @@ module.exports = {
 		'react/jsx-no-duplicate-props': 2,
 		'react/jsx-no-literals': 0,
 		'react/jsx-no-script-url': 2,
-		'react/jsx-no-target-blank': 2,
+		'react/jsx-no-target-blank': 0,
 		'react/jsx-no-undef': 2,
 		'react/jsx-no-useless-fragment': [
 			2,
