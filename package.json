@@ -3,8 +3,8 @@
 	"version": "0.0.22",
 	"description": "The ultimate ESLint shareable config",
 	"scripts": {
-		"lint": "prettier --check . && eslint . --ext js",
-		"format": "prettier --write . && eslint . --ext js --fix",
+		"lint": "eslint --fix --cache .",
+		"format": "prettier --write --cache .",
 		"prepack": "move-file _node.js node.js && move-file _prettier.js prettier.js",
 		"postpack": "move-file node.js _node.js && move-file prettier.js _prettier.js",
 		"test": "vitest run"

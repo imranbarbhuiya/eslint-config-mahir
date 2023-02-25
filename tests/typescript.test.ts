@@ -1,4 +1,4 @@
-import eslintConfig from '../src/typescript';
+import eslintConfig from '../typescript';
 
 describe('ESLint Config', () => {
 	test('should export rules', () => {

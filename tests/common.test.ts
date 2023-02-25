@@ -1,4 +1,4 @@
-import eslintConfig from '../src/common';
+import eslintConfig from '../common';
 
 describe('ESLint Config', () => {
 	test('should export rules', () => {

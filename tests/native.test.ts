@@ -1,4 +1,4 @@
-import eslintConfig from '../_node';
+import eslintConfig from '../native';
 
 describe('ESLint Config', () => {
 	test('should export rules', () => {

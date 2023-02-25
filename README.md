@@ -3,11 +3,11 @@
 The ultimate ESLint shareable config. This config includes all of the ESLint rules that I use in my projects.
 
 <div align="center">
-	<br />
-	<p>
-		<a href="https://www.npmjs.com/package/eslint-config-mahir"><img src="https://img.shields.io/npm/v/eslint-config-mahir.svg?maxAge=3600" alt="npm version" /></a>
-		<a href="https://www.npmjs.com/package/eslint-config-mahir"><img src="https://img.shields.io/npm/dt/eslint-config-mahir.svg?maxAge=3600" alt="npm downloads" /></a>
-	</p>
+ <br />
+ <p>
+  <a href="https://www.npmjs.com/package/eslint-config-mahir"><img src="https://img.shields.io/npm/v/eslint-config-mahir.svg?maxAge=3600" alt="npm version" /></a>
+  <a href="https://www.npmjs.com/package/eslint-config-mahir"><img src="https://img.shields.io/npm/dt/eslint-config-mahir.svg?maxAge=3600" alt="npm downloads" /></a>
+ </p>
 </div>
 
 ## Installation
@@ -63,6 +63,7 @@ This package contains eslint config for
 - `typescript` rules for typescript projects
 - `jsx` rules for jsx/tsx projects
 - `react` rules for react projects (this config contains all the `jsx` rules too)
+- `native` rules for react native projects (this config contains all the `react` rules too)
 - `next` rules for nextjs projects
 - `edge` rules for projects running in edge
 - `jsdoc` jsdoc related config
