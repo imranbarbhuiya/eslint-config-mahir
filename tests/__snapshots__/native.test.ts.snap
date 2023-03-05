@@ -2,6 +2,7 @@
 
 exports[`ESLint Config > should export rules 1`] = `
 {
+  "extends": "./react.js",
   "globals": {
     "Atomics": false,
     "ErrorUtils": false,
