@@ -29,14 +29,14 @@
 	"author": "Parbez <imranbarbhuiya.fsd@gmail.com>",
 	"license": "MIT",
 	"dependencies": {
-		"@next/eslint-plugin-next": "^13.2.1",
+		"@next/eslint-plugin-next": "^13.2.3",
 		"@rushstack/eslint-patch": "^1.2.0",
-		"@typescript-eslint/eslint-plugin": "^5.53.0",
-		"@typescript-eslint/parser": "^5.53.0",
+		"@typescript-eslint/eslint-plugin": "^5.54.0",
+		"@typescript-eslint/parser": "^5.54.0",
 		"eslint": "^8.35.0",
 		"eslint-config-prettier": "^8.6.0",
 		"eslint-plugin-import": "npm:eslint-plugin-i@latest",
-		"eslint-plugin-jsdoc": "^40.0.0",
+		"eslint-plugin-jsdoc": "^40.0.1",
 		"eslint-plugin-n": "^15.6.1",
 		"eslint-plugin-promise": "^6.1.1",
 		"eslint-plugin-react": "^7.32.2",
@@ -55,6 +55,6 @@
 	"packageManager": "yarn@3.4.1",
 	"devDependencies": {
 		"move-file-cli": "^3.0.0",
-		"vitest": "^0.29.1"
+		"vitest": "^0.29.2"
 	}
 }
