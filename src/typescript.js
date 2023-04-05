@@ -183,6 +183,7 @@ module.exports = {
 				includeExports: false,
 			},
 		],
+		'@typescript-eslint/no-duplicate-type-constituents': 'error',
 		'@typescript-eslint/no-dynamic-delete': 1,
 		'@typescript-eslint/no-empty-function': 0,
 		'@typescript-eslint/no-empty-interface': [
