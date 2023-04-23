@@ -26,7 +26,6 @@ module.exports = {
 				noSingleLineBlocks: true,
 			},
 		],
-		'jsdoc/newline-after-description': [2, 'always'],
 		'jsdoc/no-bad-blocks': 2,
 		'jsdoc/no-defaults': 2,
 		'jsdoc/no-missing-syntax': 0,
@@ -56,7 +55,7 @@ module.exports = {
 		'jsdoc/require-throws': 0,
 		'jsdoc/require-yields': 0,
 		'jsdoc/require-yields-check': 0,
-		'jsdoc/tag-lines': [2, 'never'],
+		'jsdoc/tag-lines': [2, 'never', { startLines: 1 }],
 		'jsdoc/valid-types': 2,
 	},
 };
