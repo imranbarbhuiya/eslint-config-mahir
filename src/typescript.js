@@ -177,12 +177,6 @@ module.exports = {
 		],
 		'@typescript-eslint/no-dupe-class-members': 2,
 		'@typescript-eslint/no-duplicate-enum-values': 2,
-		'@typescript-eslint/no-duplicate-imports': [
-			2,
-			{
-				includeExports: false,
-			},
-		],
 		'@typescript-eslint/no-duplicate-type-constituents': 'error',
 		'@typescript-eslint/no-dynamic-delete': 1,
 		'@typescript-eslint/no-empty-function': 0,
@@ -242,7 +236,6 @@ module.exports = {
 		'@typescript-eslint/no-non-null-asserted-nullish-coalescing': 2,
 		'@typescript-eslint/no-non-null-asserted-optional-chain': 2,
 		'@typescript-eslint/no-non-null-assertion': 0,
-		'@typescript-eslint/no-parameter-properties': 0,
 		'@typescript-eslint/no-redeclare': [
 			2,
 			{
@@ -334,7 +327,6 @@ module.exports = {
 		'@typescript-eslint/restrict-template-expressions': 0,
 		'@typescript-eslint/return-await': [2, 'in-try-catch'],
 		'@typescript-eslint/semi': [2, 'always'],
-		'@typescript-eslint/sort-type-union-intersection-members': 2,
 		'@typescript-eslint/space-before-blocks': [2, 'always'],
 		'@typescript-eslint/space-before-function-paren': [
 			2,
