@@ -409,13 +409,6 @@ module.exports = {
 		'no-useless-return': 2,
 		'no-var': 2,
 		'no-void': 0,
-		'no-warning-comments': [
-			1,
-			{
-				location: 'start',
-				terms: ['todo', '@todo', 'fixme', '@fixme'],
-			},
-		],
 		'no-whitespace-before-property': 2,
 		'no-with': 2,
 		'nonblock-statement-body-position': [2, 'below'],
@@ -585,7 +578,6 @@ module.exports = {
 		'unicorn/no-unnecessary-await': 2,
 		'unicorn/no-unreadable-array-destructuring': 0,
 		'unicorn/no-unreadable-iife': 2,
-		'unicorn/no-unsafe-regex': 2,
 		'unicorn/no-unused-properties': 2,
 		'unicorn/no-useless-fallback-in-spread': 2,
 		'unicorn/no-useless-length-check': 2,
