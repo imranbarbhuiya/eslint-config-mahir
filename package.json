@@ -1,6 +1,6 @@
 {
 	"name": "eslint-config-mahir",
-	"version": "0.0.27",
+	"version": "0.0.28",
 	"description": "The ultimate ESLint shareable config",
 	"scripts": {
 		"lint": "eslint --fix --cache .",
