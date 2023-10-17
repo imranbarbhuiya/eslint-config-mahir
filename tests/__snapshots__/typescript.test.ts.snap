@@ -367,6 +367,7 @@ exports[`ESLint Config > should export rules 1`] = `
       2,
       "always",
     ],
+    "@typescript-eslint/sort-type-constituents": 2,
     "@typescript-eslint/space-before-blocks": [
       2,
       "always",
