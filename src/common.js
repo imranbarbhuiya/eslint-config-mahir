@@ -11,7 +11,7 @@ module.exports = {
 			impliedStrict: true,
 			jsx: true,
 		},
-		ecmaVersion: 2_022,
+		ecmaVersion: 'latest',
 		requireConfigFile: false,
 		sourceType: 'module',
 	},
@@ -121,13 +121,7 @@ module.exports = {
 		'import/dynamic-import-chunkname': 0,
 		'import/export': 2,
 		'import/exports-last': 0,
-		'import/extensions': [
-			2,
-			'always',
-			{
-				ignorePackages: true,
-			},
-		],
+		'import/extensions': 0,
 		'import/first': 2,
 		'import/group-exports': 0,
 		'import/max-dependencies': 0,
@@ -138,14 +132,7 @@ module.exports = {
 		'import/no-amd': 2,
 		'import/no-anonymous-default-export': 0,
 		'import/no-commonjs': 0,
-		'import/no-cycle': [
-			2,
-			{
-				allowUnsafeDynamicCyclicDependency: true,
-				ignoreExternal: true,
-				maxDepth: 4,
-			},
-		],
+		'import/no-cycle': 0,
 		'import/no-default-export': 0,
 		'import/no-deprecated': 0,
 		'import/no-duplicates': 2,
@@ -510,7 +497,13 @@ module.exports = {
 				words: true,
 			},
 		],
-		'spaced-comment': [2, 'always'],
+		'spaced-comment': [
+			2,
+			'always',
+			{
+				markers: ['/'],
+			},
+		],
 		strict: [2, 'never'],
 		'switch-colon-spacing': [
 			2,

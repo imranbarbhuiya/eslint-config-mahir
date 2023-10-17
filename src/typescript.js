@@ -327,6 +327,7 @@ module.exports = {
 		'@typescript-eslint/restrict-template-expressions': 0,
 		'@typescript-eslint/return-await': [2, 'in-try-catch'],
 		'@typescript-eslint/semi': [2, 'always'],
+		'@typescript-eslint/sort-type-constituents': 2,
 		'@typescript-eslint/space-before-blocks': [2, 'always'],
 		'@typescript-eslint/space-before-function-paren': [
 			2,
