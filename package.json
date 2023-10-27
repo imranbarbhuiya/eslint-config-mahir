@@ -52,7 +52,7 @@
 		"*.js",
 		"src/*.js"
 	],
-	"packageManager": "yarn@3.6.4",
+	"packageManager": "yarn@4.0.0",
 	"devDependencies": {
 		"move-file-cli": "^3.0.0",
 		"vitest": "^0.34.6"
