@@ -29,7 +29,7 @@
 	"author": "Parbez <imranbarbhuiya.fsd@gmail.com>",
 	"license": "MIT",
 	"dependencies": {
-		"@next/eslint-plugin-next": "^13.5.6",
+		"@next/eslint-plugin-next": "^14.0.0",
 		"@rushstack/eslint-patch": "^1.5.1",
 		"@typescript-eslint/eslint-plugin": "^6.8.0",
 		"@typescript-eslint/parser": "^6.8.0",
