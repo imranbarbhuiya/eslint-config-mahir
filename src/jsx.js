@@ -22,14 +22,6 @@ module.exports = {
 				props: 'never',
 			},
 		],
-		'react/jsx-curly-newline': 2,
-		'react/jsx-curly-spacing': [
-			2,
-			'never',
-			{
-				allowMultiline: true,
-			},
-		],
 		'react/jsx-equals-spacing': [2, 'never'],
 		'react/jsx-filename-extension': 0,
 		'react/jsx-first-prop-new-line': [2, 'multiline-multiprop'],

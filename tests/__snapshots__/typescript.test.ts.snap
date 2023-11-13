@@ -45,36 +45,9 @@ exports[`ESLint Config > should export rules 1`] = `
     ],
     "@typescript-eslint/ban-tslint-comment": 2,
     "@typescript-eslint/ban-types": 0,
-    "@typescript-eslint/brace-style": [
-      2,
-      "1tbs",
-      {
-        "allowSingleLine": false,
-      },
-    ],
     "@typescript-eslint/class-literal-property-style": [
       2,
       "fields",
-    ],
-    "@typescript-eslint/comma-dangle": [
-      2,
-      {
-        "arrays": "always-multiline",
-        "enums": "always-multiline",
-        "exports": "always-multiline",
-        "functions": "always-multiline",
-        "generics": "never",
-        "imports": "always-multiline",
-        "objects": "always-multiline",
-        "tuples": "never",
-      },
-    ],
-    "@typescript-eslint/comma-spacing": [
-      2,
-      {
-        "after": true,
-        "before": false,
-      },
     ],
     "@typescript-eslint/consistent-indexed-object-style": 0,
     "@typescript-eslint/consistent-type-assertions": [
@@ -110,47 +83,11 @@ exports[`ESLint Config > should export rules 1`] = `
     "@typescript-eslint/explicit-function-return-type": 0,
     "@typescript-eslint/explicit-member-accessibility": 0,
     "@typescript-eslint/explicit-module-boundary-types": 0,
-    "@typescript-eslint/func-call-spacing": [
-      2,
-      "never",
-    ],
     "@typescript-eslint/indent": [
       2,
       "tab",
     ],
     "@typescript-eslint/init-declarations": 0,
-    "@typescript-eslint/keyword-spacing": [
-      2,
-      {
-        "after": true,
-        "before": true,
-      },
-    ],
-    "@typescript-eslint/lines-between-class-members": [
-      2,
-      "always",
-    ],
-    "@typescript-eslint/member-delimiter-style": [
-      2,
-      {
-        "multiline": {
-          "delimiter": "semi",
-          "requireLast": true,
-        },
-        "overrides": {
-          "interface": {
-            "multiline": {
-              "delimiter": "semi",
-              "requireLast": true,
-            },
-          },
-        },
-        "singleline": {
-          "delimiter": "semi",
-          "requireLast": true,
-        },
-      },
-    ],
     "@typescript-eslint/member-ordering": [
       1,
       {
@@ -214,8 +151,6 @@ exports[`ESLint Config > should export rules 1`] = `
     ],
     "@typescript-eslint/no-explicit-any": 0,
     "@typescript-eslint/no-extra-non-null-assertion": 2,
-    "@typescript-eslint/no-extra-parens": 2,
-    "@typescript-eslint/no-extra-semi": 2,
     "@typescript-eslint/no-extraneous-class": 0,
     "@typescript-eslint/no-floating-promises": [
       2,
@@ -306,18 +241,6 @@ exports[`ESLint Config > should export rules 1`] = `
     "@typescript-eslint/no-useless-constructor": 2,
     "@typescript-eslint/no-var-requires": 2,
     "@typescript-eslint/non-nullable-type-assertion-style": 0,
-    "@typescript-eslint/object-curly-spacing": [
-      2,
-      "always",
-    ],
-    "@typescript-eslint/padding-line-between-statements": [
-      2,
-      {
-        "blankLine": "always",
-        "next": "*",
-        "prev": "multiline-block-like",
-      },
-    ],
     "@typescript-eslint/prefer-as-const": 2,
     "@typescript-eslint/prefer-enum-initializers": 0,
     "@typescript-eslint/prefer-for-of": 2,
@@ -346,10 +269,6 @@ exports[`ESLint Config > should export rules 1`] = `
     "@typescript-eslint/prefer-string-starts-ends-with": 2,
     "@typescript-eslint/prefer-ts-expect-error": 2,
     "@typescript-eslint/promise-function-async": 0,
-    "@typescript-eslint/quotes": [
-      2,
-      "double",
-    ],
     "@typescript-eslint/require-array-sort-compare": [
       2,
       {
@@ -363,29 +282,7 @@ exports[`ESLint Config > should export rules 1`] = `
       2,
       "in-try-catch",
     ],
-    "@typescript-eslint/semi": [
-      2,
-      "always",
-    ],
     "@typescript-eslint/sort-type-constituents": 2,
-    "@typescript-eslint/space-before-blocks": [
-      2,
-      "always",
-    ],
-    "@typescript-eslint/space-before-function-paren": [
-      2,
-      {
-        "anonymous": "always",
-        "asyncArrow": "always",
-        "named": "never",
-      },
-    ],
-    "@typescript-eslint/space-infix-ops": [
-      2,
-      {
-        "int32Hint": true,
-      },
-    ],
     "@typescript-eslint/strict-boolean-expressions": 0,
     "@typescript-eslint/switch-exhaustiveness-check": 2,
     "@typescript-eslint/triple-slash-reference": [
@@ -405,28 +302,19 @@ exports[`ESLint Config > should export rules 1`] = `
       },
     ],
     "@typescript-eslint/unified-signatures": 2,
-    "brace-style": 0,
-    "comma-dangle": 0,
-    "comma-spacing": 0,
     "consistent-return": 0,
     "default-case": 0,
     "default-case-last": 0,
     "default-param-last": 0,
     "dot-notation": 0,
-    "func-call-spacing": 0,
     "import/no-dynamic-require": 0,
-    "indent": 0,
     "init-declarations": 0,
     "jsdoc/check-tag-names": 0,
     "jsdoc/require-property-type": 0,
-    "keyword-spacing": 0,
-    "lines-between-class-members": 0,
     "n/global-require": 0,
     "no-array-constructor": 0,
     "no-dupe-class-members": 0,
     "no-empty-function": 0,
-    "no-extra-parens": 0,
-    "no-extra-semi": 0,
     "no-implied-eval": 0,
     "no-invalid-this": 0,
     "no-loop-func": 0,
@@ -442,11 +330,7 @@ exports[`ESLint Config > should export rules 1`] = `
     "no-unused-vars": 0,
     "no-use-before-define": 0,
     "no-useless-constructor": 0,
-    "object-curly-spacing": 0,
-    "padding-line-between-statements": 0,
-    "quotes": 0,
     "require-await": 0,
-    "semi": 0,
     "sonarjs/elseif-without-else": 0,
     "sonarjs/max-switch-cases": 0,
     "sonarjs/no-all-duplicated-branches": 2,
@@ -478,18 +362,6 @@ exports[`ESLint Config > should export rules 1`] = `
     "sonarjs/prefer-object-literal": 2,
     "sonarjs/prefer-single-boolean-return": 2,
     "sonarjs/prefer-while": 2,
-    "space-before-blocks": 0,
-    "space-before-function-paren": 0,
-    "space-infix-ops": 0,
-    "spaced-comment": [
-      2,
-      "always",
-      {
-        "markers": [
-          "/",
-        ],
-      },
-    ],
     "typescript-sort-keys/interface": 2,
     "typescript-sort-keys/string-enum": 2,
   },
