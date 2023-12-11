@@ -55,7 +55,7 @@
 	"packageManager": "yarn@4.0.2",
 	"devDependencies": {
 		"move-file-cli": "^3.0.0",
-		"vitest": "^0.34.6"
+		"vitest": "^1.0.4"
 	},
 	"resolutions": {
 		"array-buffer-byte-length": "npm:@nolyfill/array-buffer-byte-length@latest",
