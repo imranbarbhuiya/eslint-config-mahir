@@ -43,7 +43,7 @@ exports[`ESLint Config > should export rules 1`] = `
   ],
   "settings": {
     "import/ignore": [
-      "node_modules[\\\\\\\\/]+@?react-native",
+      "node_modules[\\\\/]+@?react-native",
     ],
   },
 }

@@ -77,7 +77,7 @@ exports[`ESLint Config > should export rules 1`] = `
       {
         "convertPath": {
           "src/**/*.js": [
-            "^src/(.+?)\\\\.js$",
+            "^src/(.+?)\\.js$",
             "dist/$1.js",
           ],
         },
