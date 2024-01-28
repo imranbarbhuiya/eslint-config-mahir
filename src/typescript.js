@@ -101,7 +101,7 @@ module.exports = {
 				],
 			},
 		],
-		'@typescript-eslint/method-signature-style': [2, 'method'],
+		'@typescript-eslint/method-signature-style': [2, 'property'],
 		'@typescript-eslint/naming-convention': 0,
 		'@typescript-eslint/no-array-constructor': 2,
 		'@typescript-eslint/no-base-to-string': [
