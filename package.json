@@ -30,13 +30,13 @@
 	"license": "MIT",
 	"dependencies": {
 		"@next/eslint-plugin-next": "^14.1.0",
-		"@rushstack/eslint-patch": "^1.7.0",
-		"@typescript-eslint/eslint-plugin": "^6.19.0",
-		"@typescript-eslint/parser": "^6.19.0",
+		"@rushstack/eslint-patch": "^1.7.2",
+		"@typescript-eslint/eslint-plugin": "^6.19.1",
+		"@typescript-eslint/parser": "^6.19.1",
 		"eslint": "^8.56.0",
 		"eslint-config-prettier": "^9.1.0",
 		"eslint-plugin-import": "npm:eslint-plugin-i@latest",
-		"eslint-plugin-jsdoc": "^48.0.2",
+		"eslint-plugin-jsdoc": "^48.0.4",
 		"eslint-plugin-n": "^16.6.2",
 		"eslint-plugin-promise": "^6.1.1",
 		"eslint-plugin-react": "^7.33.2",
@@ -55,7 +55,7 @@
 	"packageManager": "yarn@4.0.2",
 	"devDependencies": {
 		"move-file-cli": "^3.0.0",
-		"vitest": "^1.2.1"
+		"vitest": "^1.2.2"
 	},
 	"resolutions": {
 		"array-buffer-byte-length": "npm:@nolyfill/array-buffer-byte-length@latest",
