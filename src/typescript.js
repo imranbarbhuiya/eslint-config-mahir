@@ -71,7 +71,6 @@ module.exports = {
 		'@typescript-eslint/explicit-function-return-type': 0,
 		'@typescript-eslint/explicit-member-accessibility': 0,
 		'@typescript-eslint/explicit-module-boundary-types': 0,
-		'@typescript-eslint/indent': [2, 'tab'],
 		'@typescript-eslint/init-declarations': 0,
 		'@typescript-eslint/member-ordering': [
 			1,

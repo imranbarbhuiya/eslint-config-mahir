@@ -7,7 +7,6 @@ exports[`ESLint Config > should export rules 1`] = `
   ],
   "rules": {
     "arrow-body-style": 0,
-    "line-comment-position": 0,
   },
 }
 `;

@@ -28,7 +28,7 @@ module.exports = {
 		'consistent-return': 2,
 		'consistent-this': [2, 'self'],
 		'constructor-super': 2,
-		curly: 2,
+		curly: [2, 'multi-line'],
 		'default-case': 2,
 		'default-case-last': 2,
 		'default-param-last': 2,
@@ -116,12 +116,6 @@ module.exports = {
 		'import/prefer-default-export': 0,
 		'import/unambiguous': 0,
 		'init-declarations': 0,
-		'line-comment-position': [
-			2,
-			{
-				position: 'above',
-			},
-		],
 		'max-classes-per-file': 0,
 		'max-depth': 0,
 		'max-lines': 0,
@@ -462,8 +456,5 @@ module.exports = {
 		],
 		'vars-on-top': 2,
 		yoda: [2, 'never'],
-	},
-	settings: {
-		'import/extensions': ['.js', '.mjs', '.cjs', '.jsx', '.ts', '.mts', '.cts', '.tsx'],
 	},
 };
