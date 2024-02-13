@@ -1,0 +1,46 @@
+{
+	"$schema": "https://biomejs.dev/schemas/1.5.3/schema.json",
+	"organizeImports": {
+		"enabled": true
+	},
+	"linter": {
+		"enabled": false
+	},
+	"formatter": {
+		"lineWidth": 120,
+		"lineEnding": "lf",
+		"indentWidth": 4,
+		"indentStyle": "tab"
+	},
+	"javascript": {
+		"formatter": {
+			"quoteStyle": "single",
+			"trailingComma": "all",
+			"quoteProperties": "asNeeded"
+		}
+	},
+	"overrides": [
+		{
+			"include": [".devcontainer/**", ".vscode/**", "**/tsconfig*.json", "**/.eslintrc.json", "**/.swcrc"],
+			"json": {
+				"parser": {
+					"allowComments": true,
+					"allowTrailingCommas": true
+				}
+			}
+		},
+		{
+			"include": ["packages/web-api/**"],
+			"javascript": {
+				"parser": {
+					"unsafeParameterDecoratorsEnabled": true
+				}
+			}
+		}
+	],
+	"vcs": {
+		"enabled": true,
+		"useIgnoreFile": true,
+		"clientKind": "git"
+	}
+}

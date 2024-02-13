@@ -39,6 +39,97 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@biomejs/biome@npm:1.5.3":
+  version: 1.5.3
+  resolution: "@biomejs/biome@npm:1.5.3"
+  dependencies:
+    "@biomejs/cli-darwin-arm64": "npm:1.5.3"
+    "@biomejs/cli-darwin-x64": "npm:1.5.3"
+    "@biomejs/cli-linux-arm64": "npm:1.5.3"
+    "@biomejs/cli-linux-arm64-musl": "npm:1.5.3"
+    "@biomejs/cli-linux-x64": "npm:1.5.3"
+    "@biomejs/cli-linux-x64-musl": "npm:1.5.3"
+    "@biomejs/cli-win32-arm64": "npm:1.5.3"
+    "@biomejs/cli-win32-x64": "npm:1.5.3"
+  dependenciesMeta:
+    "@biomejs/cli-darwin-arm64":
+      optional: true
+    "@biomejs/cli-darwin-x64":
+      optional: true
+    "@biomejs/cli-linux-arm64":
+      optional: true
+    "@biomejs/cli-linux-arm64-musl":
+      optional: true
+    "@biomejs/cli-linux-x64":
+      optional: true
+    "@biomejs/cli-linux-x64-musl":
+      optional: true
+    "@biomejs/cli-win32-arm64":
+      optional: true
+    "@biomejs/cli-win32-x64":
+      optional: true
+  bin:
+    biome: bin/biome
+  checksum: 10/1bcdcc3a34de0871d91ecf37eae67f71847f3578723001f81616b1fd1d694d584accce37cf582f07aef3b920b47c32716e7244b7f67f52926c7c8526bc7cd5d9
+  languageName: node
+  linkType: hard
+
+"@biomejs/cli-darwin-arm64@npm:1.5.3":
+  version: 1.5.3
+  resolution: "@biomejs/cli-darwin-arm64@npm:1.5.3"
+  conditions: os=darwin & cpu=arm64
+  languageName: node
+  linkType: hard
+
+"@biomejs/cli-darwin-x64@npm:1.5.3":
+  version: 1.5.3
+  resolution: "@biomejs/cli-darwin-x64@npm:1.5.3"
+  conditions: os=darwin & cpu=x64
+  languageName: node
+  linkType: hard
+
+"@biomejs/cli-linux-arm64-musl@npm:1.5.3":
+  version: 1.5.3
+  resolution: "@biomejs/cli-linux-arm64-musl@npm:1.5.3"
+  conditions: os=linux & cpu=arm64 & libc=musl
+  languageName: node
+  linkType: hard
+
+"@biomejs/cli-linux-arm64@npm:1.5.3":
+  version: 1.5.3
+  resolution: "@biomejs/cli-linux-arm64@npm:1.5.3"
+  conditions: os=linux & cpu=arm64 & libc=glibc
+  languageName: node
+  linkType: hard
+
+"@biomejs/cli-linux-x64-musl@npm:1.5.3":
+  version: 1.5.3
+  resolution: "@biomejs/cli-linux-x64-musl@npm:1.5.3"
+  conditions: os=linux & cpu=x64 & libc=musl
+  languageName: node
+  linkType: hard
+
+"@biomejs/cli-linux-x64@npm:1.5.3":
+  version: 1.5.3
+  resolution: "@biomejs/cli-linux-x64@npm:1.5.3"
+  conditions: os=linux & cpu=x64 & libc=glibc
+  languageName: node
+  linkType: hard
+
+"@biomejs/cli-win32-arm64@npm:1.5.3":
+  version: 1.5.3
+  resolution: "@biomejs/cli-win32-arm64@npm:1.5.3"
+  conditions: os=win32 & cpu=arm64
+  languageName: node
+  linkType: hard
+
+"@biomejs/cli-win32-x64@npm:1.5.3":
+  version: 1.5.3
+  resolution: "@biomejs/cli-win32-x64@npm:1.5.3"
+  conditions: os=win32 & cpu=x64
+  languageName: node
+  linkType: hard
+
 "@es-joy/jsdoccomment@npm:~0.42.0":
   version: 0.42.0
   resolution: "@es-joy/jsdoccomment@npm:0.42.0"
@@ -367,6 +458,20 @@ __metadata:
   version: 1.0.21
   resolution: "@nolyfill/shared@npm:1.0.21"
   checksum: 10/6b0a3044bdc2c5b50cfb5a83ba29e78a0012d0321256b728c6f78b5ed3dff247112ea942ca49c38d0c9a8680adbe662eac3d8007cf27f143f0b600f4910100be
+  languageName: node
+  linkType: hard
+
+"@nolyfill/shared@npm:1.0.24":
+  version: 1.0.24
+  resolution: "@nolyfill/shared@npm:1.0.24"
+  checksum: 10/d945b67a65ab31299a5ff54fe21d68d4b55973b23421d035185c70fd27278e56debf1531657b6106146034023a5af29fef72e9f8ae744b8673fa695f7e5db0c4
+  languageName: node
+  linkType: hard
+
+"@nolyfill/shared@npm:1.0.28":
+  version: 1.0.28
+  resolution: "@nolyfill/shared@npm:1.0.28"
+  checksum: 10/395261f73688e2a58f78c34238a13176feb2b79b0a331d9bcf6bfdb9d8473115934468e73eefe89614a0e5cb0b896d900c0e738de452fbb4d3648c944db02428
   languageName: node
   linkType: hard
 
@@ -952,11 +1057,11 @@ __metadata:
   linkType: hard
 
 "array-includes@npm:@nolyfill/array-includes@latest":
-  version: 1.0.21
-  resolution: "@nolyfill/array-includes@npm:1.0.21"
+  version: 1.0.28
+  resolution: "@nolyfill/array-includes@npm:1.0.28"
   dependencies:
-    "@nolyfill/shared": "npm:1.0.21"
-  checksum: 10/4664b7000a9042418fcda19ce32c105b511a0cb2e64096e36ee3346d05b3aa40fead35d50fb6b317d6a8ec33987e44c724dda907723a92739a2c4160eeee92d6
+    "@nolyfill/shared": "npm:1.0.28"
+  checksum: 10/a71e32bca5f44888b2295ad5ea591486190638433ed193d281b298afddbc81b162d69e21edebee3fc599a9ff82fc644bf2ee15dd2fe6d4a674de008ac1d87ce0
   languageName: node
   linkType: hard
 
@@ -968,29 +1073,29 @@ __metadata:
   linkType: hard
 
 "array.prototype.flat@npm:@nolyfill/array.prototype.flat@latest":
-  version: 1.0.21
-  resolution: "@nolyfill/array.prototype.flat@npm:1.0.21"
+  version: 1.0.28
+  resolution: "@nolyfill/array.prototype.flat@npm:1.0.28"
   dependencies:
-    "@nolyfill/shared": "npm:1.0.21"
-  checksum: 10/b8cce8682e261171a0c1f39dc8b923c4787485fcab7bbeb7c892e11651568139aaf0b66b36ecbe18abee7ebdfed143f4d14e001bd564125c2865c5c3372c7d93
+    "@nolyfill/shared": "npm:1.0.28"
+  checksum: 10/cd81118cd31e56adc5fabf1508a783914fdcb805a1ab294cb6ed09d6667c4ccc279dd84f0e9dc98107a8360fc03db0bdb5d66c29aae4b90ab8af4b76741e32a4
   languageName: node
   linkType: hard
 
 "array.prototype.flatmap@npm:@nolyfill/array.prototype.flatmap@latest":
-  version: 1.0.21
-  resolution: "@nolyfill/array.prototype.flatmap@npm:1.0.21"
+  version: 1.0.28
+  resolution: "@nolyfill/array.prototype.flatmap@npm:1.0.28"
   dependencies:
-    "@nolyfill/shared": "npm:1.0.21"
-  checksum: 10/5ec463143f58f17b4cda8e3d05ef72e31696960c37cc754a868a34423ab895d2e51e15674149bf59e32becabc28e756b69d24ce3a477b5cb4be82b7ae36594dc
+    "@nolyfill/shared": "npm:1.0.28"
+  checksum: 10/cc0e203217f358401b6fa48cec08cead49302d52d7fb87f1c1ae65e5bf66dc053565d3e7300418782e0deebaa13792e2013775bd289e08dd5f7d55d0a6f038b7
   languageName: node
   linkType: hard
 
 "array.prototype.tosorted@npm:@nolyfill/array.prototype.tosorted@latest":
-  version: 1.0.21
-  resolution: "@nolyfill/array.prototype.tosorted@npm:1.0.21"
+  version: 1.0.24
+  resolution: "@nolyfill/array.prototype.tosorted@npm:1.0.24"
   dependencies:
-    "@nolyfill/shared": "npm:1.0.21"
-  checksum: 10/2f4a10fa5b326ff3af9490d28bb43c81b4144ba1c66668fab80b6615b4e36b8b3bbe4349b0524a1c0ef32f0c1e8d26519f985c98006ab3371e65cc09f3005f81
+    "@nolyfill/shared": "npm:1.0.24"
+  checksum: 10/bcf444867bb06e980d303a432a9426b6a53cb52a82462a103ba7acee1cd751684e1082929b060a9d4b9413d6896760c479c0db55f09a785cfca2347118d48004
   languageName: node
   linkType: hard
 
@@ -1594,12 +1699,12 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "eslint-config-mahir@workspace:."
   dependencies:
+    "@biomejs/biome": "npm:1.5.3"
     "@next/eslint-plugin-next": "npm:^14.1.0"
     "@rushstack/eslint-patch": "npm:^1.7.2"
     "@typescript-eslint/eslint-plugin": "npm:^6.21.0"
     "@typescript-eslint/parser": "npm:^6.21.0"
     eslint: "npm:^8.56.0"
-    eslint-config-prettier: "npm:^9.1.0"
     eslint-plugin-import: "npm:eslint-plugin-i@latest"
     eslint-plugin-jsdoc: "npm:^48.0.6"
     eslint-plugin-n: "npm:^16.6.2"
@@ -1616,17 +1721,6 @@ __metadata:
     vitest: "npm:^1.2.2"
   languageName: unknown
   linkType: soft
-
-"eslint-config-prettier@npm:^9.1.0":
-  version: 9.1.0
-  resolution: "eslint-config-prettier@npm:9.1.0"
-  peerDependencies:
-    eslint: ">=7.0.0"
-  bin:
-    eslint-config-prettier: bin/cli.js
-  checksum: 10/411e3b3b1c7aa04e3e0f20d561271b3b909014956c4dba51c878bf1a23dbb8c800a3be235c46c4732c70827276e540b6eed4636d9b09b444fd0a8e07f0fcd830
-  languageName: node
-  linkType: hard
 
 "eslint-import-resolver-node@npm:^0.3.6":
   version: 0.3.6
@@ -2316,11 +2410,9 @@ __metadata:
   linkType: hard
 
 "has@npm:@nolyfill/has@latest":
-  version: 1.0.21
-  resolution: "@nolyfill/has@npm:1.0.21"
-  dependencies:
-    "@nolyfill/shared": "npm:1.0.21"
-  checksum: 10/cca7163ddc11390e3f65ad679dd88aecd121936f0cf881917932b41117d355abdf160b83580462d690305d9824159f433eb3516d4642dfca5f4ba808380251b2
+  version: 1.0.29
+  resolution: "@nolyfill/has@npm:1.0.29"
+  checksum: 10/e118a4f2761f0e7cc36b3e503d9aae58bb75af6cece841ca069189b6d905de8340e105b26876916fcfa8bdfc81fd6e2587e41c65cdb1316cb72430e845855d63
   languageName: node
   linkType: hard
 
@@ -3166,56 +3258,56 @@ __metadata:
   linkType: hard
 
 "object.assign@npm:@nolyfill/object.assign@latest":
-  version: 1.0.21
-  resolution: "@nolyfill/object.assign@npm:1.0.21"
+  version: 1.0.28
+  resolution: "@nolyfill/object.assign@npm:1.0.28"
   dependencies:
-    "@nolyfill/shared": "npm:1.0.21"
-  checksum: 10/3e0111844270fcfb8fab10f8570c8acd6aaea27089066c2f39dd2fef0c8312c537489b305593c9dc03c4cfeb47a0b2a8b51bdc880f7781112977c04972bb72b0
+    "@nolyfill/shared": "npm:1.0.28"
+  checksum: 10/a6e9fbea78184eecff25193e1bf78341a01f894b2231206a80e10c8105d3560226909f7fe043f4ed944cd903ade36315261ceb9d2cef69d6dcef310b70805bd2
   languageName: node
   linkType: hard
 
 "object.entries@npm:@nolyfill/object.entries@latest":
-  version: 1.0.21
-  resolution: "@nolyfill/object.entries@npm:1.0.21"
+  version: 1.0.28
+  resolution: "@nolyfill/object.entries@npm:1.0.28"
   dependencies:
-    "@nolyfill/shared": "npm:1.0.21"
-  checksum: 10/c3cc0dac0c7b778ea1ce57d42ad316c8cd1e54a0850b82e248410cc15cc5da6a0d0f9612895e0325a8f1ff317f02933a1892833f4f5d0be9a5e80baaea475e20
+    "@nolyfill/shared": "npm:1.0.28"
+  checksum: 10/a2fd9d3de44fddb59d7f0c390591e29a7764b2cbbb89911aa12b2850e5dd638a4d7cba987cadacfae2ff7bb34c9084ac3642bd70fb7559e88e8940885329dca3
   languageName: node
   linkType: hard
 
 "object.fromentries@npm:@nolyfill/object.fromentries@latest":
-  version: 1.0.21
-  resolution: "@nolyfill/object.fromentries@npm:1.0.21"
+  version: 1.0.28
+  resolution: "@nolyfill/object.fromentries@npm:1.0.28"
   dependencies:
-    "@nolyfill/shared": "npm:1.0.21"
-  checksum: 10/5039a93c966f21d01645792652d1be2dd005e70aef2d1a8a4ca1956c3703cf795b619c6b93b7849447e11db738f1974a6628cb8e32e5f140d1b2072742c7f5eb
+    "@nolyfill/shared": "npm:1.0.28"
+  checksum: 10/76d214e4f51c42aa81d8a01b9d046b5cec0aecbf13ef8de850ceb6cc19457e4c413b1e6430f2f1947065135252d00b0a0a8b1df71bd08d0d85cfd3defcdc3f4d
   languageName: node
   linkType: hard
 
 "object.getownpropertydescriptors@npm:@nolyfill/object.getownpropertydescriptors@latest":
-  version: 1.0.21
-  resolution: "@nolyfill/object.getownpropertydescriptors@npm:1.0.21"
+  version: 1.0.28
+  resolution: "@nolyfill/object.getownpropertydescriptors@npm:1.0.28"
   dependencies:
-    "@nolyfill/shared": "npm:1.0.21"
-  checksum: 10/9eb97a190639a26eeab514970a9549d4b12e406d712a5411f2235377d01c55c7f6238900a3da234325a166759caa954e74eb20a36a87926f3bdf7a9543684537
+    "@nolyfill/shared": "npm:1.0.28"
+  checksum: 10/0b1e0c30473299458f1b612c5c0a262adc48088f03317cdd1fd2f5c953543c9d3c8e750eda1b3e61e13f6d93c7c82e918b04596a41555c554e8700d1a000effe
   languageName: node
   linkType: hard
 
 "object.hasown@npm:@nolyfill/object.hasown@latest":
-  version: 1.0.21
-  resolution: "@nolyfill/object.hasown@npm:1.0.21"
+  version: 1.0.24
+  resolution: "@nolyfill/object.hasown@npm:1.0.24"
   dependencies:
-    "@nolyfill/shared": "npm:1.0.21"
-  checksum: 10/2fcfdf0052fd982425813f07054026be6865eb5a4ef84a1cc1c5b5db4ee7b1177af1970d467d95f34175fc14f3c3f0b8209b78d6a604eab2921456bb9e1af1de
+    "@nolyfill/shared": "npm:1.0.24"
+  checksum: 10/5abf9b19ab90c020928ea84557db02a3c353fa33d6683fd795ad920aeedbb888a84fa01747a6dc0afd09bdf7bfba0de5dd6104ae7465ea0e3780bc062ce3fe0c
   languageName: node
   linkType: hard
 
 "object.values@npm:@nolyfill/object.values@latest":
-  version: 1.0.21
-  resolution: "@nolyfill/object.values@npm:1.0.21"
+  version: 1.0.28
+  resolution: "@nolyfill/object.values@npm:1.0.28"
   dependencies:
-    "@nolyfill/shared": "npm:1.0.21"
-  checksum: 10/6e364d955ec08126455973bf0a089d429ca4fd1c27a58289e974fdc08270ad1f45d9944492cf7ccdff62ac98c585a9e737f6588a16c134830143d966e513f579
+    "@nolyfill/shared": "npm:1.0.28"
+  checksum: 10/72c145013e9a8c34689dc82707cf9f7a6bb5dcf1a235f140a29647017f57148c80cd3fa62a156b64c1cfd702c9323054f8e20e7d073c8e0c62a87755b5c3a63f
   languageName: node
   linkType: hard
 
@@ -4029,11 +4121,11 @@ __metadata:
   linkType: hard
 
 "string.prototype.matchall@npm:@nolyfill/string.prototype.matchall@latest":
-  version: 1.0.21
-  resolution: "@nolyfill/string.prototype.matchall@npm:1.0.21"
+  version: 1.0.28
+  resolution: "@nolyfill/string.prototype.matchall@npm:1.0.28"
   dependencies:
-    "@nolyfill/shared": "npm:1.0.21"
-  checksum: 10/2b71257a84dbf6198c6650d442b4e74aaf933521f6447efee973a504e5975a42fac98576c74c43ad140ebd12fb9d03be3d0ceb630ba2aa7775415a2f3224f122
+    "@nolyfill/shared": "npm:1.0.28"
+  checksum: 10/d475205d71c753cf643762ec2a5c6c35eabb1029ccbb943b4c39e1fc39dcfd0e6f617c4aedb950cf64f9f3ee9573d74ab984ad1146b766a25a23c8af767bec19
   languageName: node
   linkType: hard
 

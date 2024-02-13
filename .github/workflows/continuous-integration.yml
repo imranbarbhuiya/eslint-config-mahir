@@ -23,6 +23,8 @@ jobs:
         run: yarn --immutable
       - name: Run ESLint
         run: yarn lint --fix=false
+      - name: Run Biome
+        run: yarn biome ci .
 
   Tests:
     runs-on: ubuntu-latest

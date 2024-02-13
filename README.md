@@ -2,6 +2,10 @@
 
 The ultimate ESLint shareable config. This config includes all of the ESLint rules that I use in my projects.
 
+> [!Important]
+> This is a highly opinionated config. It's based on my personal preferences and the way I write code.
+> I don't recommend using this config as is as I'll update it based on my preferences without any notice.
+
 <div align="center">
  <br />
  <p>
@@ -29,17 +33,12 @@ Add in your ESLint config
 		"mahir/typescript",
 		"mahir/react",
 		"mahir/next",
-		"mahir/edge",
-		"mahir/prettier"
+		"mahir/edge"
 	]
 }
 ```
 
 You can remove any of the configs you don't need.
-
-> **Warning**:
-
-Use `mahir/prettier` last, as it disables all rules that might conflict with Prettier.
 
 > **Note**:
 
@@ -69,7 +68,6 @@ This package contains eslint config for
 - `jsdoc` jsdoc related config
 - `tsdoc` tsdoc related config (this config contains all the `jsdoc` rules too)
 - `no-deprecated` rules to warn about using deprecated apis
-- `prettier` adds all the prettier rules to eslint.
 
 ## Contributors ✨
 

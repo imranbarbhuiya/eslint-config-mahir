@@ -4,9 +4,9 @@
 	"description": "The ultimate ESLint shareable config",
 	"scripts": {
 		"lint": "eslint --fix --cache .",
-		"format": "prettier --write --cache .",
-		"prepack": "move-file _node.js node.js && move-file _prettier.js prettier.js",
-		"postpack": "move-file node.js _node.js && move-file prettier.js _prettier.js",
+		"format": "biome check --apply .",
+		"prepack": "move-file _node.js node.js",
+		"postpack": "move-file node.js _node.js",
 		"test": "vitest run"
 	},
 	"main": "./common.js",
@@ -29,12 +29,12 @@
 	"author": "Parbez <imranbarbhuiya.fsd@gmail.com>",
 	"license": "MIT",
 	"dependencies": {
+		"@biomejs/biome": "1.5.3",
 		"@next/eslint-plugin-next": "^14.1.0",
 		"@rushstack/eslint-patch": "^1.7.2",
 		"@typescript-eslint/eslint-plugin": "^6.21.0",
 		"@typescript-eslint/parser": "^6.21.0",
 		"eslint": "^8.56.0",
-		"eslint-config-prettier": "^9.1.0",
 		"eslint-plugin-import": "npm:eslint-plugin-i@latest",
 		"eslint-plugin-jsdoc": "^48.0.6",
 		"eslint-plugin-n": "^16.6.2",
@@ -44,9 +44,7 @@
 		"eslint-plugin-sonarjs": "^0.23.0",
 		"eslint-plugin-tsdoc": "^0.2.17",
 		"eslint-plugin-typescript-sort-keys": "^3.1.0",
-		"eslint-plugin-unicorn": "^51.0.1",
-		"prettier": "^3.2.5",
-		"typescript": "^5.3.3"
+		"eslint-plugin-unicorn": "^51.0.1"
 	},
 	"files": [
 		"*.js",
@@ -55,6 +53,8 @@
 	"packageManager": "yarn@4.1.0",
 	"devDependencies": {
 		"move-file-cli": "^3.0.0",
+		"prettier": "^3.2.5",
+		"typescript": "^5.3.3",
 		"vitest": "^1.2.2"
 	},
 	"resolutions": {
@@ -80,6 +80,7 @@
 		"has-proto": "npm:@nolyfill/has-proto@latest",
 		"has-symbols": "npm:@nolyfill/has-symbols@latest",
 		"has-tostringtag": "npm:@nolyfill/has-tostringtag@latest",
+		"hasown": "npm:@nolyfill/hasown@latest",
 		"internal-slot": "npm:@nolyfill/internal-slot@latest",
 		"is-array-buffer": "npm:@nolyfill/is-array-buffer@latest",
 		"is-date-object": "npm:@nolyfill/is-date-object@latest",
@@ -88,7 +89,9 @@
 		"is-shared-array-buffer": "npm:@nolyfill/is-shared-array-buffer@latest",
 		"is-string": "npm:@nolyfill/is-string@latest",
 		"is-symbol": "npm:@nolyfill/is-symbol@latest",
+		"is-typed-array": "npm:@nolyfill/is-typed-array@latest",
 		"is-weakref": "npm:@nolyfill/is-weakref@latest",
+		"isarray": "npm:@nolyfill/isarray@latest",
 		"iterator.prototype": "npm:@nolyfill/iterator.prototype@latest",
 		"object-keys": "npm:@nolyfill/object-keys@latest",
 		"object.assign": "npm:@nolyfill/object.assign@latest",
@@ -101,6 +104,7 @@
 		"regexp.prototype.flags": "npm:@nolyfill/regexp.prototype.flags@latest",
 		"safe-array-concat": "npm:@nolyfill/safe-array-concat@latest",
 		"safe-regex-test": "npm:@nolyfill/safe-regex-test@latest",
+		"set-function-length": "npm:@nolyfill/set-function-length@latest",
 		"side-channel": "npm:@nolyfill/side-channel@latest",
 		"string.prototype.matchall": "npm:@nolyfill/string.prototype.matchall@latest",
 		"string.prototype.trim": "npm:@nolyfill/string.prototype.trim@latest",

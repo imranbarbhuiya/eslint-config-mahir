@@ -1,4 +1,4 @@
 {
 	"root": true,
-	"extends": ["./common", "./_node", "./_prettier", "./no-deprecated"]
+	"extends": ["./common", "./_node"]
 }
