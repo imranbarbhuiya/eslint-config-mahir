@@ -28,7 +28,7 @@ module.exports = {
 		'consistent-return': 2,
 		'consistent-this': [2, 'self'],
 		'constructor-super': 2,
-		curly: [2, 'multi-line'],
+		curly: [2, 'multi-or-nest'],
 		'default-case': 2,
 		'default-case-last': 2,
 		'default-param-last': 2,

@@ -40,7 +40,7 @@ exports[`ESLint Config > should export rules 1`] = `
     "constructor-super": 2,
     "curly": [
       2,
-      "multi-line",
+      "multi-or-nest",
     ],
     "default-case": 2,
     "default-case-last": 2,
