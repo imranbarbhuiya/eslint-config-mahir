@@ -252,7 +252,7 @@ module.exports = {
 				ignoreStringArrays: false,
 			},
 		],
-		'@typescript-eslint/require-await': 2,
+		'@typescript-eslint/require-await': 0,
 		'@typescript-eslint/restrict-plus-operands': 2,
 		'@typescript-eslint/restrict-template-expressions': 0,
 		'@typescript-eslint/return-await': [2, 'in-try-catch'],
