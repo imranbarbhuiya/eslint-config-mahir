@@ -29,7 +29,6 @@
 	"author": "Parbez <imranbarbhuiya.fsd@gmail.com>",
 	"license": "MIT",
 	"dependencies": {
-		"@biomejs/biome": "1.5.3",
 		"@next/eslint-plugin-next": "^14.1.0",
 		"@rushstack/eslint-patch": "^1.7.2",
 		"@typescript-eslint/eslint-plugin": "^7.0.1",
@@ -52,6 +51,7 @@
 	],
 	"packageManager": "yarn@4.1.0",
 	"devDependencies": {
+		"@biomejs/biome": "1.5.3",
 		"move-file-cli": "^3.0.0",
 		"prettier": "^3.2.5",
 		"typescript": "^5.3.3",
