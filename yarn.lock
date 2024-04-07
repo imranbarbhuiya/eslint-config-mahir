@@ -39,18 +39,18 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@biomejs/biome@npm:1.6.3":
-  version: 1.6.3
-  resolution: "@biomejs/biome@npm:1.6.3"
+"@biomejs/biome@npm:1.6.4":
+  version: 1.6.4
+  resolution: "@biomejs/biome@npm:1.6.4"
   dependencies:
-    "@biomejs/cli-darwin-arm64": "npm:1.6.3"
-    "@biomejs/cli-darwin-x64": "npm:1.6.3"
-    "@biomejs/cli-linux-arm64": "npm:1.6.3"
-    "@biomejs/cli-linux-arm64-musl": "npm:1.6.3"
-    "@biomejs/cli-linux-x64": "npm:1.6.3"
-    "@biomejs/cli-linux-x64-musl": "npm:1.6.3"
-    "@biomejs/cli-win32-arm64": "npm:1.6.3"
-    "@biomejs/cli-win32-x64": "npm:1.6.3"
+    "@biomejs/cli-darwin-arm64": "npm:1.6.4"
+    "@biomejs/cli-darwin-x64": "npm:1.6.4"
+    "@biomejs/cli-linux-arm64": "npm:1.6.4"
+    "@biomejs/cli-linux-arm64-musl": "npm:1.6.4"
+    "@biomejs/cli-linux-x64": "npm:1.6.4"
+    "@biomejs/cli-linux-x64-musl": "npm:1.6.4"
+    "@biomejs/cli-win32-arm64": "npm:1.6.4"
+    "@biomejs/cli-win32-x64": "npm:1.6.4"
   dependenciesMeta:
     "@biomejs/cli-darwin-arm64":
       optional: true
@@ -70,62 +70,62 @@ __metadata:
       optional: true
   bin:
     biome: bin/biome
-  checksum: 10/7e8350282ad5ae34b99afd401163eed4e7f1184fed30abb71af08f3855a0d1a792e3c384c4ae29ed6fa9d377631670c1430828e0ca5ba413ee968529ed95f148
+  checksum: 10/22cf3c31c85257695f2820768c0d896909e31b33cb2aa6f434b741b9585458a6164580d18f9dfa40d42278d1ee6594278ae9571cd46c6d8bf26828a71e741d30
   languageName: node
   linkType: hard
 
-"@biomejs/cli-darwin-arm64@npm:1.6.3":
-  version: 1.6.3
-  resolution: "@biomejs/cli-darwin-arm64@npm:1.6.3"
+"@biomejs/cli-darwin-arm64@npm:1.6.4":
+  version: 1.6.4
+  resolution: "@biomejs/cli-darwin-arm64@npm:1.6.4"
   conditions: os=darwin & cpu=arm64
   languageName: node
   linkType: hard
 
-"@biomejs/cli-darwin-x64@npm:1.6.3":
-  version: 1.6.3
-  resolution: "@biomejs/cli-darwin-x64@npm:1.6.3"
+"@biomejs/cli-darwin-x64@npm:1.6.4":
+  version: 1.6.4
+  resolution: "@biomejs/cli-darwin-x64@npm:1.6.4"
   conditions: os=darwin & cpu=x64
   languageName: node
   linkType: hard
 
-"@biomejs/cli-linux-arm64-musl@npm:1.6.3":
-  version: 1.6.3
-  resolution: "@biomejs/cli-linux-arm64-musl@npm:1.6.3"
+"@biomejs/cli-linux-arm64-musl@npm:1.6.4":
+  version: 1.6.4
+  resolution: "@biomejs/cli-linux-arm64-musl@npm:1.6.4"
   conditions: os=linux & cpu=arm64 & libc=musl
   languageName: node
   linkType: hard
 
-"@biomejs/cli-linux-arm64@npm:1.6.3":
-  version: 1.6.3
-  resolution: "@biomejs/cli-linux-arm64@npm:1.6.3"
+"@biomejs/cli-linux-arm64@npm:1.6.4":
+  version: 1.6.4
+  resolution: "@biomejs/cli-linux-arm64@npm:1.6.4"
   conditions: os=linux & cpu=arm64 & libc=glibc
   languageName: node
   linkType: hard
 
-"@biomejs/cli-linux-x64-musl@npm:1.6.3":
-  version: 1.6.3
-  resolution: "@biomejs/cli-linux-x64-musl@npm:1.6.3"
+"@biomejs/cli-linux-x64-musl@npm:1.6.4":
+  version: 1.6.4
+  resolution: "@biomejs/cli-linux-x64-musl@npm:1.6.4"
   conditions: os=linux & cpu=x64 & libc=musl
   languageName: node
   linkType: hard
 
-"@biomejs/cli-linux-x64@npm:1.6.3":
-  version: 1.6.3
-  resolution: "@biomejs/cli-linux-x64@npm:1.6.3"
+"@biomejs/cli-linux-x64@npm:1.6.4":
+  version: 1.6.4
+  resolution: "@biomejs/cli-linux-x64@npm:1.6.4"
   conditions: os=linux & cpu=x64 & libc=glibc
   languageName: node
   linkType: hard
 
-"@biomejs/cli-win32-arm64@npm:1.6.3":
-  version: 1.6.3
-  resolution: "@biomejs/cli-win32-arm64@npm:1.6.3"
+"@biomejs/cli-win32-arm64@npm:1.6.4":
+  version: 1.6.4
+  resolution: "@biomejs/cli-win32-arm64@npm:1.6.4"
   conditions: os=win32 & cpu=arm64
   languageName: node
   linkType: hard
 
-"@biomejs/cli-win32-x64@npm:1.6.3":
-  version: 1.6.3
-  resolution: "@biomejs/cli-win32-x64@npm:1.6.3"
+"@biomejs/cli-win32-x64@npm:1.6.4":
+  version: 1.6.4
+  resolution: "@biomejs/cli-win32-x64@npm:1.6.4"
   conditions: os=win32 & cpu=x64
   languageName: node
   linkType: hard
@@ -1926,25 +1926,25 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "eslint-config-mahir@workspace:."
   dependencies:
-    "@biomejs/biome": "npm:1.6.3"
+    "@biomejs/biome": "npm:1.6.4"
     "@next/eslint-plugin-next": "npm:^14.1.4"
     "@rushstack/eslint-patch": "npm:^1.10.1"
     "@typescript-eslint/eslint-plugin": "npm:^7.5.0"
     "@typescript-eslint/parser": "npm:^7.5.0"
     eslint: "npm:^8.57.0"
     eslint-plugin-import: "npm:eslint-plugin-i@latest"
-    eslint-plugin-jsdoc: "npm:^48.2.2"
+    eslint-plugin-jsdoc: "npm:^48.2.3"
     eslint-plugin-n: "npm:^16.6.2"
     eslint-plugin-promise: "npm:^6.1.1"
     eslint-plugin-react: "npm:^7.34.1"
     eslint-plugin-react-hooks: "npm:^4.6.0"
-    eslint-plugin-sonarjs: "npm:^0.25.0"
+    eslint-plugin-sonarjs: "npm:^0.25.1"
     eslint-plugin-tsdoc: "npm:^0.2.17"
     eslint-plugin-typescript-sort-keys: "npm:^3.2.0"
     eslint-plugin-unicorn: "npm:^51.0.1"
     move-file-cli: "npm:^3.0.0"
     prettier: "npm:^3.2.5"
-    typescript: "npm:^5.4.3"
+    typescript: "npm:^5.4.4"
     vitest: "npm:^1.4.0"
   languageName: unknown
   linkType: soft
@@ -2009,9 +2009,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"eslint-plugin-jsdoc@npm:^48.2.2":
-  version: 48.2.2
-  resolution: "eslint-plugin-jsdoc@npm:48.2.2"
+"eslint-plugin-jsdoc@npm:^48.2.3":
+  version: 48.2.3
+  resolution: "eslint-plugin-jsdoc@npm:48.2.3"
   dependencies:
     "@es-joy/jsdoccomment": "npm:~0.42.0"
     are-docs-informative: "npm:^0.0.2"
@@ -2024,7 +2024,7 @@ __metadata:
     spdx-expression-parse: "npm:^4.0.0"
   peerDependencies:
     eslint: ^7.0.0 || ^8.0.0 || ^9.0.0
-  checksum: 10/337f998b592b2722b6ccf00f5fce9b278419270fe73df9f39df6f06301d1d24cc2aca995e7617880f2d1429f10d816fd1d35a78735f26a99b7a2f1f88091549e
+  checksum: 10/f7ab4dc3fcac320fa11777c84bc5c30aa6e68b1121c5a11e7c00a37d1e24c6599a8addb2ae5f0c2f90cb92713e9010640ace7f21962e1e946a14fd70fe4a0b59
   languageName: node
   linkType: hard
 
@@ -2095,12 +2095,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"eslint-plugin-sonarjs@npm:^0.25.0":
-  version: 0.25.0
-  resolution: "eslint-plugin-sonarjs@npm:0.25.0"
+"eslint-plugin-sonarjs@npm:^0.25.1":
+  version: 0.25.1
+  resolution: "eslint-plugin-sonarjs@npm:0.25.1"
   peerDependencies:
     eslint: ^5.0.0 || ^6.0.0 || ^7.0.0 || ^8.0.0
-  checksum: 10/921ef6ccbb6881f6b5c5541324131e9736410f2c2a0ef055cd5027fa08e0e92dc8194a7e94a9dd00f1f7b1a598c3cdf85740b7b1ed8e4f99a1dcbb66a9626007
+  checksum: 10/ea94da85493dd005b39c8d55fb4e198d433874e75653136ae7d6042f31f4396ab25665fb264972ac17b891efa84ec0c6cf9fdde315a312b2a87d7e06bcb2148e
   languageName: node
   linkType: hard
 
@@ -4859,23 +4859,23 @@ __metadata:
   languageName: node
   linkType: hard
 
-"typescript@npm:^5.4.3":
-  version: 5.4.3
-  resolution: "typescript@npm:5.4.3"
+"typescript@npm:^5.4.4":
+  version: 5.4.4
+  resolution: "typescript@npm:5.4.4"
   bin:
     tsc: bin/tsc
     tsserver: bin/tsserver
-  checksum: 10/de4c69f49a7ad4b1ea66a6dcc8b055ac34eb56af059a069d8988dd811c5e649be07e042e5bf573e8d0ac3ec2f30e6c999aa651cd09f6e9cbc6113749e8b6be20
+  checksum: 10/bade322d88fd93c8179e262aca9ba7f7b4417c09117879819c87946578c782ab123e3acb4733046a6e38714c47ef927360045a1f9292a1bff3a05a6577d27ca2
   languageName: node
   linkType: hard
 
-"typescript@patch:typescript@npm%3A^5.4.3#optional!builtin<compat/typescript>":
-  version: 5.4.3
-  resolution: "typescript@patch:typescript@npm%3A5.4.3#optional!builtin<compat/typescript>::version=5.4.3&hash=5adc0c"
+"typescript@patch:typescript@npm%3A^5.4.4#optional!builtin<compat/typescript>":
+  version: 5.4.4
+  resolution: "typescript@patch:typescript@npm%3A5.4.4#optional!builtin<compat/typescript>::version=5.4.4&hash=5adc0c"
   bin:
     tsc: bin/tsc
     tsserver: bin/tsserver
-  checksum: 10/5aedd97595582b08aadb8a70e8e3ddebaf5a9c1e5ad4d6503c2fcfc15329b5cf8d01145b09913e9555683ac16c5123a96be32b6d72614098ebd42df520eed9b1
+  checksum: 10/88aff3244c31d4c6ede05b4fd28732fc8935a7fc638f2a3dcbbb767d1ac98e4b077f21ec74bc97f43c9307bc3f27e2359def1d793f9918c3429a744408fd75b4
   languageName: node
   linkType: hard
 
