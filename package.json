@@ -29,17 +29,17 @@
 	"author": "Parbez <imranbarbhuiya.fsd@gmail.com>",
 	"license": "MIT",
 	"dependencies": {
-		"@next/eslint-plugin-next": "^14.1.4",
-		"@rushstack/eslint-patch": "^1.10.1",
-		"@typescript-eslint/eslint-plugin": "^7.5.0",
-		"@typescript-eslint/parser": "^7.5.0",
+		"@next/eslint-plugin-next": "^14.2.3",
+		"@rushstack/eslint-patch": "^1.10.3",
+		"@typescript-eslint/eslint-plugin": "^7.10.0",
+		"@typescript-eslint/parser": "^7.10.0",
 		"eslint": "^8.57.0",
 		"eslint-plugin-import": "npm:eslint-plugin-i@latest",
-		"eslint-plugin-jsdoc": "^48.2.3",
+		"eslint-plugin-jsdoc": "^48.2.6",
 		"eslint-plugin-n": "^16.6.2",
-		"eslint-plugin-promise": "^6.1.1",
+		"eslint-plugin-promise": "^6.2.0",
 		"eslint-plugin-react": "^7.34.1",
-		"eslint-plugin-react-hooks": "^4.6.0",
+		"eslint-plugin-react-hooks": "^4.6.2",
 		"eslint-plugin-sonarjs": "^0.25.1",
 		"eslint-plugin-tsdoc": "^0.2.17",
 		"eslint-plugin-typescript-sort-keys": "^3.2.0",
@@ -49,13 +49,13 @@
 		"*.js",
 		"src/*.js"
 	],
-	"packageManager": "yarn@4.1.1",
+	"packageManager": "yarn@4.2.2",
 	"devDependencies": {
-		"@biomejs/biome": "1.6.4",
+		"@biomejs/biome": "1.7.3",
 		"move-file-cli": "^3.0.0",
 		"prettier": "^3.2.5",
-		"typescript": "^5.4.4",
-		"vitest": "^1.4.0"
+		"typescript": "^5.4.5",
+		"vitest": "^1.6.0"
 	},
 	"resolutions": {
 		"array-buffer-byte-length": "npm:@nolyfill/array-buffer-byte-length@latest",
