@@ -1946,7 +1946,7 @@ __metadata:
     eslint-plugin-promise: "npm:^6.2.0"
     eslint-plugin-react: "npm:^7.34.1"
     eslint-plugin-react-hooks: "npm:^4.6.2"
-    eslint-plugin-sonarjs: "npm:^0.25.1"
+    eslint-plugin-sonarjs: "npm:^1.0.3"
     eslint-plugin-tsdoc: "npm:^0.2.17"
     eslint-plugin-typescript-sort-keys: "npm:^3.2.0"
     eslint-plugin-unicorn: "npm:^51.0.1"
@@ -2102,12 +2102,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"eslint-plugin-sonarjs@npm:^0.25.1":
-  version: 0.25.1
-  resolution: "eslint-plugin-sonarjs@npm:0.25.1"
+"eslint-plugin-sonarjs@npm:^1.0.3":
+  version: 1.0.3
+  resolution: "eslint-plugin-sonarjs@npm:1.0.3"
   peerDependencies:
-    eslint: ^5.0.0 || ^6.0.0 || ^7.0.0 || ^8.0.0
-  checksum: 10/ea94da85493dd005b39c8d55fb4e198d433874e75653136ae7d6042f31f4396ab25665fb264972ac17b891efa84ec0c6cf9fdde315a312b2a87d7e06bcb2148e
+    eslint: ^8.0.0 || ^9.0.0
+  checksum: 10/39667bb0eea863c4f49971dad85bdc1e38afb14682f68e94a66a7ed64e8479c8e85ae6d83c30bebd77e3588d88ba8f901613cf262aa0c7049df14d7e46caa4c4
   languageName: node
   linkType: hard
 
