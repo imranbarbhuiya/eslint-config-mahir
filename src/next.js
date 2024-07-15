@@ -24,6 +24,6 @@ module.exports = {
 		'@next/next/no-duplicate-head': 2,
 		'@next/next/no-head-import-in-document': 2,
 		'@next/next/no-script-component-in-head': 2,
-		'import/extensions': 0,
+		'import-x/extensions': 0,
 	},
 };

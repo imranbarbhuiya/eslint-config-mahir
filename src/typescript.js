@@ -281,7 +281,7 @@ module.exports = {
 		'default-case-last': 0,
 		'default-param-last': 0,
 		'dot-notation': 0,
-		'import/no-dynamic-require': 0,
+		'import-x/no-dynamic-require': 0,
 		'init-declarations': 0,
 		'jsdoc/check-tag-names': 0,
 		'jsdoc/require-property-type': 0,
@@ -340,10 +340,10 @@ module.exports = {
 		'typescript-sort-keys/string-enum': 2,
 	},
 	settings: {
-		'import/parsers': {
+		'import-x/parsers': {
 			'@typescript-eslint/parser': ['.ts', '.mts', '.cts', 'tsx'],
 		},
-		'import/resolvers': {
+		'import-x/resolvers': {
 			node: true,
 			typescript: true,
 		},
