@@ -1,5 +1,5 @@
 /**
- * @type {import('@typescript-eslint/utils').TSESLint.Linter.Config}
+ * @type {import('@typescript-eslint/utils').TSESLint.Linter.ConfigType}
  */
 module.exports = {
 	overrides: [
@@ -13,6 +13,7 @@ module.exports = {
 	parser: '@typescript-eslint/parser',
 	parserOptions: {
 		project: './tsconfig.eslint.json',
+		// projectService: true,
 		sourceType: 'module',
 	},
 	plugins: ['@typescript-eslint', 'import', 'n', 'sonarjs', 'typescript-sort-keys'],
@@ -35,7 +36,6 @@ module.exports = {
 			},
 		],
 		'@typescript-eslint/ban-tslint-comment': 2,
-		'@typescript-eslint/ban-types': 0,
 		'@typescript-eslint/class-literal-property-style': [2, 'fields'],
 		'@typescript-eslint/consistent-indexed-object-style': 0,
 		'@typescript-eslint/consistent-type-assertions': [
@@ -119,11 +119,11 @@ module.exports = {
 		],
 		'@typescript-eslint/no-dupe-class-members': 2,
 		'@typescript-eslint/no-duplicate-enum-values': 2,
-		'@typescript-eslint/no-duplicate-type-constituents': 'error',
+		'@typescript-eslint/no-duplicate-type-constituents': 2,
 		'@typescript-eslint/no-dynamic-delete': 1,
 		'@typescript-eslint/no-empty-function': 0,
 		'@typescript-eslint/no-empty-interface': [
-			'error',
+			2,
 			{
 				allowSingleExtends: true,
 			},
@@ -156,7 +156,6 @@ module.exports = {
 			},
 		],
 		'@typescript-eslint/no-loop-func': 2,
-		'@typescript-eslint/no-loss-of-precision': 2,
 		'@typescript-eslint/no-magic-numbers': 0,
 		'@typescript-eslint/no-meaningless-void-operator': [
 			2,
@@ -216,8 +215,8 @@ module.exports = {
 			},
 		],
 		'@typescript-eslint/no-useless-constructor': 2,
-		'@typescript-eslint/no-var-requires': 2,
 		'@typescript-eslint/non-nullable-type-assertion-style': 0,
+		'@typescript-eslint/only-throw-error': 2,
 		'@typescript-eslint/prefer-as-const': 2,
 		'@typescript-eslint/prefer-enum-initializers': 0,
 		'@typescript-eslint/prefer-for-of': 2,
@@ -228,7 +227,6 @@ module.exports = {
 		'@typescript-eslint/prefer-nullish-coalescing': [
 			2,
 			{
-				ignoreConditionalTests: true,
 				ignoreMixedLogicalExpressions: true,
 			},
 		],
@@ -244,7 +242,6 @@ module.exports = {
 		'@typescript-eslint/prefer-regexp-exec': 2,
 		'@typescript-eslint/prefer-return-this-type': 2,
 		'@typescript-eslint/prefer-string-starts-ends-with': 2,
-		'@typescript-eslint/prefer-ts-expect-error': 2,
 		'@typescript-eslint/promise-function-async': 0,
 		'@typescript-eslint/require-array-sort-compare': [
 			2,
@@ -292,7 +289,6 @@ module.exports = {
 		'no-implied-eval': 0,
 		'no-invalid-this': 0,
 		'no-loop-func': 0,
-		'no-loss-of-precision': 0,
 		'no-magic-numbers': 0,
 		'no-redeclare': 0,
 		'no-restricted-imports': 0,

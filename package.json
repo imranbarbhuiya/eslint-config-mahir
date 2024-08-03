@@ -4,21 +4,12 @@
 	"description": "The ultimate ESLint shareable config",
 	"scripts": {
 		"lint": "eslint --fix --cache .",
-		"format": "biome check --apply .",
-		"prepack": "move-file _node.js node.js",
-		"postpack": "move-file node.js _node.js",
-		"test": "vitest run"
+		"format": "biome check --write .",
+		"prepack": "move-file _node.js node.js && move-file _biome.js biome.js",
+		"postpack": "move-file node.js _node.js && move-file biome.js _biome.js"
 	},
 	"main": "./common.js",
-	"keywords": [
-		"eslint",
-		"config",
-		"typescript",
-		"eslintconfig",
-		"lint",
-		"linter",
-		"validate"
-	],
+	"keywords": ["eslint", "config", "typescript", "eslintconfig", "lint", "linter", "validate"],
 	"repository": {
 		"type": "git",
 		"url": "https://github.com/imranbarbhuiya/eslint-config-mahir.git"
@@ -30,32 +21,28 @@
 	"license": "MIT",
 	"dependencies": {
 		"@next/eslint-plugin-next": "^14.2.5",
-		"@rushstack/eslint-patch": "^1.10.3",
-		"@typescript-eslint/eslint-plugin": "^7.16.0",
-		"@typescript-eslint/parser": "^7.16.0",
+		"@rushstack/eslint-patch": "^1.10.4",
+		"@typescript-eslint/eslint-plugin": "^8.0.0",
+		"@typescript-eslint/parser": "^8.0.0",
 		"eslint": "^8.57.0",
 		"eslint-plugin-import": "npm:eslint-plugin-i@latest",
-		"eslint-plugin-jsdoc": "^48.7.0",
-		"eslint-plugin-n": "^16.6.2",
-		"eslint-plugin-promise": "^6.4.0",
-		"eslint-plugin-react": "^7.34.4",
+		"eslint-plugin-jsdoc": "^48.11.0",
+		"eslint-plugin-n": "^17.10.1",
+		"eslint-plugin-promise": "^7.0.0",
+		"eslint-plugin-react": "^7.35.0",
 		"eslint-plugin-react-hooks": "^4.6.2",
-		"eslint-plugin-sonarjs": "^0.25.1",
+		"eslint-plugin-sonarjs": "^1.0.4",
 		"eslint-plugin-tsdoc": "^0.3.0",
 		"eslint-plugin-typescript-sort-keys": "^3.2.0",
-		"eslint-plugin-unicorn": "^51.0.1"
+		"eslint-plugin-unicorn": "^55.0.0"
 	},
-	"files": [
-		"*.js",
-		"src/*.js"
-	],
+	"files": ["*.js", "src/*.js"],
 	"packageManager": "yarn@4.3.1",
 	"devDependencies": {
 		"@biomejs/biome": "1.8.3",
 		"move-file-cli": "^3.0.0",
 		"prettier": "^3.3.3",
-		"typescript": "^5.5.3",
-		"vitest": "^2.0.2"
+		"typescript": "^5.5.4"
 	},
 	"resolutions": {
 		"array-buffer-byte-length": "npm:@nolyfill/array-buffer-byte-length@latest",

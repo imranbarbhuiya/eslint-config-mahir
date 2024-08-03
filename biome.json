@@ -1,5 +1,5 @@
 {
-	"$schema": "https://biomejs.dev/schemas/1.5.3/schema.json",
+	"$schema": "./node_modules/@biomejs/biome/configuration_schema.json",
 	"organizeImports": {
 		"enabled": true
 	},
@@ -15,7 +15,7 @@
 	"javascript": {
 		"formatter": {
 			"quoteStyle": "single",
-			"trailingComma": "all",
+			"trailingCommas": "all",
 			"quoteProperties": "asNeeded"
 		}
 	},
@@ -26,14 +26,6 @@
 				"parser": {
 					"allowComments": true,
 					"allowTrailingCommas": true
-				}
-			}
-		},
-		{
-			"include": ["packages/web-api/**"],
-			"javascript": {
-				"parser": {
-					"unsafeParameterDecoratorsEnabled": true
 				}
 			}
 		}
