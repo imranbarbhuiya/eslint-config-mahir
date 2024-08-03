@@ -5,9 +5,19 @@
 	"type": "module",
 	"scripts": {
 		"lint": "eslint --fix --cache .",
-		"format": "biome check --apply ."
+		"format": "biome check --write ."
 	},
 	"exports": {
+		"./biome": {
+			"import": {
+				"types": "./dist/esm/biome.d.mts",
+				"default": "./dist/esm/biome.mjs"
+			},
+			"require": {
+				"types": "./dist/cjs/biome.d.cts",
+				"default": "./dist/cjs/biome.cjs"
+			}
+		},
 		"./common": {
 			"import": {
 				"types": "./dist/esm/common.d.mts",
@@ -119,15 +129,7 @@
 			}
 		}
 	},
-	"keywords": [
-		"eslint",
-		"config",
-		"typescript",
-		"eslintconfig",
-		"lint",
-		"linter",
-		"validate"
-	],
+	"keywords": ["eslint", "config", "typescript", "eslintconfig", "lint", "linter", "validate"],
 	"repository": {
 		"type": "git",
 		"url": "https://github.com/imranbarbhuiya/eslint-config-mahir.git"
@@ -137,31 +139,27 @@
 	},
 	"author": "Parbez <imranbarbhuiya.fsd@gmail.com>",
 	"license": "MIT",
-	"files": [
-		"src/*.js"
-	],
+	"files": ["src/*.js"],
 	"dependencies": {
 		"@next/eslint-plugin-next": "^14.2.5",
-		"@typescript-eslint/eslint-plugin": "^8.0.0-alpha.44",
-		"@typescript-eslint/parser": "^8.0.0-alpha.44",
+		"@typescript-eslint/eslint-plugin": "^8.0.0",
+		"@typescript-eslint/parser": "^8.0.0",
 		"eslint": "^9.7.0",
 		"eslint-plugin-import-x": "^3.0.1",
-		"eslint-plugin-jsdoc": "^48.7.0",
-		"eslint-plugin-n": "^17.9.0",
-		"eslint-plugin-promise": "^6.4.0",
-		"eslint-plugin-react": "^7.34.4",
+		"eslint-plugin-jsdoc": "^48.11.0",
+		"eslint-plugin-n": "^17.10.1",
+		"eslint-plugin-promise": "^7.0.0",
+		"eslint-plugin-react": "^7.35.0",
 		"eslint-plugin-react-hooks": "^4.6.2",
-		"eslint-plugin-sonarjs": "^1.0.3",
+		"eslint-plugin-sonarjs": "^1.0.4",
 		"eslint-plugin-tsdoc": "^0.3.0",
 		"eslint-plugin-typescript-sort-keys": "^3.2.0",
-		"eslint-plugin-unicorn": "^54.0.0"
+		"eslint-plugin-unicorn": "^55.0.0"
 	},
 	"devDependencies": {
 		"@biomejs/biome": "1.8.3",
-		"move-file-cli": "^3.0.0",
 		"prettier": "^3.3.3",
-		"typescript": "^5.5.3",
-		"vitest": "^2.0.2"
+		"typescript": "^5.5.4"
 	},
-	"packageManager": "yarn@4.3.1"
+	"packageManager": "yarn@4.4.0"
 }

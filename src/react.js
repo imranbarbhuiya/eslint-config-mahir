@@ -1,21 +1,20 @@
 const jsx = require('./jsx.js');
 /**
- * @type {import('@typescript-eslint/utils').TSESLint.Linter.Config}
+ * @type {import('@typescript-eslint/utils').TSESLint.Linter.ConfigType}
  */
 module.exports = {
 	plugins: ['react', 'react-hooks'],
 	rules: {
 		...jsx.rules,
+		'react-hooks/exhaustive-deps': 2,
+		'react-hooks/rules-of-hooks': 2,
 		'react/boolean-prop-naming': 2,
 		'react/button-has-type': 2,
-		'react/default-props-match-prop-types': 2,
 		'react/destructuring-assignment': 0,
 		'react/display-name': 0,
 		'react/forbid-component-props': 0,
 		'react/forbid-dom-props': 0,
 		'react/forbid-elements': 0,
-		'react/forbid-foreign-prop-types': 0,
-		'react/forbid-prop-types': 0,
 		'react/function-component-definition': 0,
 		'react/hook-use-state': 2,
 		'react/iframe-missing-sandbox': 2,
@@ -46,7 +45,6 @@ module.exports = {
 		'react/no-unsafe': 2,
 		'react/no-unstable-nested-components': 2,
 		'react/no-unused-class-component-methods': 2,
-		'react/no-unused-prop-types': 2,
 		'react/no-unused-state': 2,
 		'react/no-will-update-set-state': 2,
 		'react/prefer-es6-class': 2,
@@ -58,21 +56,16 @@ module.exports = {
 				ignorePureComponents: true,
 			},
 		],
-		'react/prop-types': 2,
 		'react/react-in-jsx-scope': 0,
 		'react/require-default-props': 0,
 		'react/require-optimization': 0,
 		'react/require-render-return': 2,
 		'react/self-closing-comp': 2,
 		'react/sort-comp': 2,
-		'react/sort-prop-types': 2,
 		'react/state-in-constructor': [2, 'always'],
 		'react/static-property-placement': 2,
 		'react/style-prop-object': 2,
 		'react/void-dom-elements-no-children': 2,
-
-		'react-hooks/exhaustive-deps': 2,
-		'react-hooks/rules-of-hooks': 2,
 	},
 	settings: {
 		react: {

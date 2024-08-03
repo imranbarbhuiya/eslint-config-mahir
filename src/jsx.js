@@ -1,5 +1,5 @@
 /**
- * @type {import('@typescript-eslint/utils').TSESLint.Linter.Config}
+ * @type {import('@typescript-eslint/utils').TSESLint.Linter.ConfigType}
  */
 module.exports = {
 	parserOptions: {
@@ -106,7 +106,6 @@ module.exports = {
 		],
 		'react/jsx-props-no-multi-spaces': 2,
 		'react/jsx-props-no-spreading': 0,
-		'react/sort-default-props': 2,
 		'react/jsx-sort-props': 2,
 		'react/jsx-tag-spacing': [
 			2,
@@ -119,5 +118,6 @@ module.exports = {
 		'react/jsx-uses-react': 2,
 		'react/jsx-uses-vars': 2,
 		'react/jsx-wrap-multilines': 0,
+		'react/sort-default-props': 2,
 	},
 };

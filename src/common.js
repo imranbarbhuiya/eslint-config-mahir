@@ -1,5 +1,5 @@
 /**
- * @type {import('@typescript-eslint/utils').TSESLint.Linter.Config}
+ * @type {import('@typescript-eslint/utils').TSESLint.Linter.ConfigType}
  */
 module.exports = {
 	env: {
@@ -193,12 +193,6 @@ module.exports = {
 		'no-obj-calls': 2,
 		'no-octal': 2,
 		'no-octal-escape': 2,
-		'no-param-reassign': [
-			2,
-			{
-				props: false,
-			},
-		],
 		'no-plusplus': 0,
 		'no-promise-executor-return': 2,
 		'no-proto': 2,
@@ -323,7 +317,7 @@ module.exports = {
 		'unicode-bom': [2, 'never'],
 		'unicorn/better-regex': 2,
 		'unicorn/catch-error-name': [
-			'error',
+			2,
 			{
 				name: 'error',
 			},
@@ -354,6 +348,7 @@ module.exports = {
 		'unicorn/no-array-reduce': 0,
 		'unicorn/no-await-in-promise-methods': 2,
 		'unicorn/no-await-expression-member': 0,
+		'unicorn/no-await-in-promise-methods': 2,
 		'unicorn/no-console-spaces': 0,
 		'unicorn/no-document-cookie': 2,
 		'unicorn/no-empty-file': 2,
@@ -386,7 +381,6 @@ module.exports = {
 		'unicorn/no-useless-switch-case': 2,
 		'unicorn/no-useless-undefined': 0,
 		'unicorn/no-zero-fractions': 2,
-		'unicorn/number-literal-case': 0,
 		'unicorn/numeric-separators-style': [
 			2,
 			{

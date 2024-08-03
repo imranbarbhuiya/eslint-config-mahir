@@ -1,5 +1,5 @@
 /**
- * @type {import('@typescript-eslint/utils').TSESLint.Linter.Config}
+ * @type {import('@typescript-eslint/utils').TSESLint.Linter.ConfigType}
  */
 module.exports = {
 	env: {
@@ -7,41 +7,6 @@ module.exports = {
 	},
 	plugins: ['n', 'unicorn'],
 	rules: {
-		'no-restricted-globals': [
-			'error',
-			{
-				name: 'Buffer',
-				message: 'Import Buffer from `node:buffer` instead',
-			},
-			{
-				name: 'process',
-				message: 'Import process from `node:process` instead',
-			},
-			{
-				name: 'setTimeout',
-				message: 'Import setTimeout from `node:timers` instead',
-			},
-			{
-				name: 'setInterval',
-				message: 'Import setInterval from `node:timers` instead',
-			},
-			{
-				name: 'setImmediate',
-				message: 'Import setImmediate from `node:timers` instead',
-			},
-			{
-				name: 'clearTimeout',
-				message: 'Import clearTimeout from `node:timers` instead',
-			},
-			{
-				name: 'clearInterval',
-				message: 'Import clearInterval from `node:timers` instead',
-			},
-			{
-				name: 'clearImmediate',
-				message: 'Import clearImmediate from `node:timers` instead',
-			},
-		],
 		'n/callback-return': 2,
 		'n/exports-style': 0,
 		'n/file-extension-in-import': 0,
@@ -90,6 +55,17 @@ module.exports = {
 					'src/**/*.js': ['^src/(.+?)\\.js$', 'dist/$1.js'],
 				},
 			},
+		],
+		'no-restricted-globals': [
+			2,
+			{ name: 'Buffer', message: 'Import Buffer from `node:buffer` instead' },
+			{ name: 'process', message: 'Import process from `node:process` instead' },
+			{ name: 'setTimeout', message: 'Import setTimeout from `node:timers` instead' },
+			{ name: 'setInterval', message: 'Import setInterval from `node:timers` instead' },
+			{ name: 'setImmediate', message: 'Import setImmediate from `node:timers` instead' },
+			{ name: 'clearTimeout', message: 'Import clearTimeout from `node:timers` instead' },
+			{ name: 'clearInterval', message: 'Import clearInterval from `node:timers` instead' },
+			{ name: 'clearImmediate', message: 'Import clearImmediate from `node:timers` instead' },
 		],
 		'unicorn/prefer-node-protocol': 2,
 		'unicorn/require-post-message-target-origin': 0,
