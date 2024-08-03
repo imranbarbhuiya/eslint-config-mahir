@@ -187,7 +187,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@eslint/js@npm:9.8.0":
+"@eslint/js@npm:9.8.0, @eslint/js@npm:^9.8.0":
   version: 9.8.0
   resolution: "@eslint/js@npm:9.8.0"
   checksum: 10/1c6ddbcc9f45f0165d9e218c085543536c03b4b650449a6f38f4e2b65b1d6bcd5f24f7feae72fca14d3697073cbdb413f270baef0f744cb0fb9e11ce9c84dbcc
@@ -1267,6 +1267,8 @@ __metadata:
   resolution: "eslint-config-mahir@workspace:."
   dependencies:
     "@biomejs/biome": "npm:1.8.3"
+    "@eslint/eslintrc": "npm:^3.1.0"
+    "@eslint/js": "npm:^9.8.0"
     "@next/eslint-plugin-next": "npm:^14.2.5"
     "@typescript-eslint/eslint-plugin": "npm:^8.0.0"
     "@typescript-eslint/parser": "npm:^8.0.0"

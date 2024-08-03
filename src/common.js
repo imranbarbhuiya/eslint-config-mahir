@@ -15,7 +15,7 @@ module.exports = {
 		requireConfigFile: false,
 		sourceType: 'module',
 	},
-	plugins: ['import', 'unicorn', 'promise'],
+	plugins: ['import-x', 'unicorn', 'promise'],
 	rules: {
 		'accessor-pairs': 0,
 		'array-callback-return': 2,

@@ -16,7 +16,7 @@ module.exports = {
 		// projectService: true,
 		sourceType: 'module',
 	},
-	plugins: ['@typescript-eslint', 'import', 'n', 'sonarjs', 'typescript-sort-keys'],
+	plugins: ['@typescript-eslint', 'import-x', 'n', 'sonarjs', 'typescript-sort-keys'],
 	rules: {
 		'@typescript-eslint/adjacent-overload-signatures': 2,
 		'@typescript-eslint/array-type': [

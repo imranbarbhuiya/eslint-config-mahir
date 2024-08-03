@@ -2,7 +2,6 @@
 	"name": "eslint-config-mahir",
 	"version": "0.0.45",
 	"description": "The ultimate ESLint shareable config",
-	"type": "module",
 	"scripts": {
 		"lint": "eslint --fix --cache .",
 		"format": "biome check --write ."
@@ -129,7 +128,15 @@
 			}
 		}
 	},
-	"keywords": ["eslint", "config", "typescript", "eslintconfig", "lint", "linter", "validate"],
+	"keywords": [
+		"eslint",
+		"config",
+		"typescript",
+		"eslintconfig",
+		"lint",
+		"linter",
+		"validate"
+	],
 	"repository": {
 		"type": "git",
 		"url": "https://github.com/imranbarbhuiya/eslint-config-mahir.git"
@@ -139,8 +146,12 @@
 	},
 	"author": "Parbez <imranbarbhuiya.fsd@gmail.com>",
 	"license": "MIT",
-	"files": ["src/*.js"],
+	"files": [
+		"src/*.js"
+	],
 	"dependencies": {
+		"@eslint/eslintrc": "^3.1.0",
+		"@eslint/js": "^9.8.0",
 		"@next/eslint-plugin-next": "^14.2.5",
 		"@typescript-eslint/eslint-plugin": "^8.0.0",
 		"@typescript-eslint/parser": "^8.0.0",
