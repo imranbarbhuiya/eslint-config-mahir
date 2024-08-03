@@ -191,7 +191,6 @@ module.exports = {
 				allowedNames: ['self'],
 			},
 		],
-		'@typescript-eslint/no-throw-literal': 2,
 		'@typescript-eslint/no-type-alias': 0,
 		'@typescript-eslint/no-unnecessary-boolean-literal-compare': 2,
 		'@typescript-eslint/no-unnecessary-condition': 2,
@@ -264,7 +263,6 @@ module.exports = {
 				types: 'never',
 			},
 		],
-		'@typescript-eslint/type-annotation-spacing': 2,
 		'@typescript-eslint/typedef': 0,
 		'@typescript-eslint/unbound-method': [
 			2,
