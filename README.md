@@ -37,6 +37,10 @@ Add in your ESLint config
 	]
 }
 ```
+<!-- TODO -->
+<!-- add mdx -->
+<!-- convert to ts -->
+<!-- convert to flat config -->
 
 You can remove any of the configs you don't need.
 
