@@ -346,7 +346,6 @@ module.exports = {
 		'unicorn/no-array-method-this-argument': 2,
 		'unicorn/no-array-push-push': 0,
 		'unicorn/no-array-reduce': 0,
-		'unicorn/no-await-in-promise-methods': 2,
 		'unicorn/no-await-expression-member': 0,
 		'unicorn/no-await-in-promise-methods': 2,
 		'unicorn/no-console-spaces': 0,
