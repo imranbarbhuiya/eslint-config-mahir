@@ -9,15 +9,7 @@
 		"postpack": "move-file node.js _node.js && move-file biome.js _biome.js"
 	},
 	"main": "./common.js",
-	"keywords": [
-		"eslint",
-		"config",
-		"typescript",
-		"eslintconfig",
-		"lint",
-		"linter",
-		"validate"
-	],
+	"keywords": ["eslint", "config", "typescript", "eslintconfig", "lint", "linter", "validate"],
 	"repository": {
 		"type": "git",
 		"url": "https://github.com/imranbarbhuiya/eslint-config-mahir.git"
@@ -44,10 +36,7 @@
 		"eslint-plugin-typescript-sort-keys": "^3.3.0",
 		"eslint-plugin-unicorn": "^56.0.0"
 	},
-	"files": [
-		"*.js",
-		"src/*.js"
-	],
+	"files": ["*.js", "src/*.js"],
 	"packageManager": "yarn@4.5.0",
 	"devDependencies": {
 		"@biomejs/biome": "1.9.3",
