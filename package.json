@@ -28,32 +28,32 @@
 	"author": "Parbez <imranbarbhuiya.fsd@gmail.com>",
 	"license": "MIT",
 	"dependencies": {
-		"@next/eslint-plugin-next": "^14.2.5",
+		"@next/eslint-plugin-next": "^14.2.15",
 		"@rushstack/eslint-patch": "^1.10.4",
-		"@typescript-eslint/eslint-plugin": "^8.0.1",
-		"@typescript-eslint/parser": "^8.0.1",
-		"eslint": "^8.57.0",
+		"@typescript-eslint/eslint-plugin": "^8.9.0",
+		"@typescript-eslint/parser": "^8.9.0",
+		"eslint": "^8.57.1",
 		"eslint-plugin-import": "npm:eslint-plugin-i@latest",
 		"eslint-plugin-jsdoc": "^48.11.0",
-		"eslint-plugin-n": "^17.10.2",
-		"eslint-plugin-promise": "^7.0.0",
-		"eslint-plugin-react": "^7.35.0",
+		"eslint-plugin-n": "^17.11.1",
+		"eslint-plugin-promise": "^7.1.0",
+		"eslint-plugin-react": "^7.37.1",
 		"eslint-plugin-react-hooks": "^4.6.2",
 		"eslint-plugin-sonarjs": "^1.0.4",
 		"eslint-plugin-tsdoc": "^0.3.0",
-		"eslint-plugin-typescript-sort-keys": "^3.2.0",
+		"eslint-plugin-typescript-sort-keys": "^3.3.0",
 		"eslint-plugin-unicorn": "^55.0.0"
 	},
 	"files": [
 		"*.js",
 		"src/*.js"
 	],
-	"packageManager": "yarn@4.4.0",
+	"packageManager": "yarn@4.5.0",
 	"devDependencies": {
-		"@biomejs/biome": "1.8.3",
+		"@biomejs/biome": "1.9.3",
 		"move-file-cli": "^3.0.0",
 		"prettier": "^3.3.3",
-		"typescript": "^5.5.4"
+		"typescript": "^5.6.3"
 	},
 	"resolutions": {
 		"array-buffer-byte-length": "npm:@nolyfill/array-buffer-byte-length@latest",
