@@ -1,6 +1,6 @@
 {
 	"name": "eslint-config-mahir",
-	"version": "0.0.45",
+	"version": "0.0.46",
 	"description": "The ultimate ESLint shareable config",
 	"scripts": {
 		"lint": "eslint --fix --cache .",
@@ -141,26 +141,26 @@
 	"files": ["src/*.js"],
 	"dependencies": {
 		"@eslint/eslintrc": "^3.1.0",
-		"@eslint/js": "^9.8.0",
-		"@next/eslint-plugin-next": "^14.2.5",
-		"@typescript-eslint/eslint-plugin": "^8.0.0",
-		"@typescript-eslint/parser": "^8.0.0",
-		"eslint": "^9.8.0",
-		"eslint-plugin-import-x": "^3.1.0",
-		"eslint-plugin-jsdoc": "^48.11.0",
-		"eslint-plugin-n": "^17.10.1",
-		"eslint-plugin-promise": "^7.0.0",
-		"eslint-plugin-react": "^7.35.0",
-		"eslint-plugin-react-hooks": "^4.6.2",
-		"eslint-plugin-sonarjs": "^1.0.4",
+		"@eslint/js": "^9.12.0",
+		"@next/eslint-plugin-next": "^14.2.15",
+		"@typescript-eslint/eslint-plugin": "^8.9.0",
+		"@typescript-eslint/parser": "^8.9.0",
+		"eslint": "^9.12.0",
+		"eslint-plugin-import-x": "^4.3.1",
+		"eslint-plugin-jsdoc": "^50.4.1",
+		"eslint-plugin-n": "^17.11.1",
+		"eslint-plugin-promise": "^7.1.0",
+		"eslint-plugin-react": "^7.37.1",
+		"eslint-plugin-react-hooks": "^5.0.0",
+		"eslint-plugin-sonarjs": "^2.0.3",
 		"eslint-plugin-tsdoc": "^0.3.0",
-		"eslint-plugin-typescript-sort-keys": "^3.2.0",
-		"eslint-plugin-unicorn": "^55.0.0"
+		"eslint-plugin-typescript-sort-keys": "^3.3.0",
+		"eslint-plugin-unicorn": "^56.0.0"
 	},
 	"devDependencies": {
-		"@biomejs/biome": "1.8.3",
+		"@biomejs/biome": "1.9.3",
 		"prettier": "^3.3.3",
-		"typescript": "^5.5.4"
+		"typescript": "^5.6.3"
 	},
 	"packageManager": "yarn@4.4.0"
 }
