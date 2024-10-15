@@ -42,7 +42,7 @@
 		"eslint-plugin-sonarjs": "^1.0.4",
 		"eslint-plugin-tsdoc": "^0.3.0",
 		"eslint-plugin-typescript-sort-keys": "^3.3.0",
-		"eslint-plugin-unicorn": "^55.0.0"
+		"eslint-plugin-unicorn": "^56.0.0"
 	},
 	"files": [
 		"*.js",
