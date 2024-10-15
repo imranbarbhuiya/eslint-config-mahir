@@ -10,7 +10,8 @@
 		"lineWidth": 120,
 		"lineEnding": "lf",
 		"indentWidth": 4,
-		"indentStyle": "tab"
+		"indentStyle": "tab",
+		"ignore": ["package.json"]
 	},
 	"javascript": {
 		"formatter": {
