@@ -2,130 +2,60 @@
 	"name": "eslint-config-mahir",
 	"version": "0.0.46",
 	"description": "The ultimate ESLint shareable config",
+	"type": "module",
 	"scripts": {
 		"lint": "eslint --fix --cache .",
-		"format": "biome check --write ."
+		"format": "biome check --write .",
+		"build": "tsup"
 	},
 	"exports": {
 		"./biome": {
-			"import": {
-				"types": "./dist/esm/biome.d.mts",
-				"default": "./dist/esm/biome.mjs"
-			},
-			"require": {
-				"types": "./dist/cjs/biome.d.cts",
-				"default": "./dist/cjs/biome.cjs"
-			}
+			"types": "./dist/biome.d.ts",
+			"import": "./dist/biome.js"
 		},
 		"./common": {
-			"import": {
-				"types": "./dist/esm/common.d.mts",
-				"default": "./dist/esm/common.mjs"
-			},
-			"require": {
-				"types": "./dist/cjs/common.d.cts",
-				"default": "./dist/cjs/common.cjs"
-			}
+			"types": "./dist/common.d.ts",
+			"import": "./dist/common.js"
 		},
 		"./edge": {
-			"import": {
-				"types": "./dist/esm/edge.d.mts",
-				"default": "./dist/esm/edge.mjs"
-			},
-			"require": {
-				"types": "./dist/cjs/edge.d.cts",
-				"default": "./dist/cjs/edge.cjs"
-			}
+			"types": "./dist/edge.d.ts",
+			"import": "./dist/edge.js"
 		},
 		"./jsdoc": {
-			"import": {
-				"types": "./dist/esm/jsdoc.d.mts",
-				"default": "./dist/esm/jsdoc.mjs"
-			},
-			"require": {
-				"types": "./dist/cjs/jsdoc.d.cts",
-				"default": "./dist/cjs/jsdoc.cjs"
-			}
+			"types": "./dist/jsdoc.d.ts",
+			"import": "./dist/jsdoc.js"
 		},
 		"./jsx": {
-			"import": {
-				"types": "./dist/esm/jsx.d.mts",
-				"default": "./dist/esm/jsx.mjs"
-			},
-			"require": {
-				"types": "./dist/cjs/jsx.d.cts",
-				"default": "./dist/cjs/jsx.cjs"
-			}
+			"types": "./dist/jsx.d.ts",
+			"import": "./dist/jsx.js"
 		},
 		"./mdx": {
-			"import": {
-				"types": "./dist/esm/mdx.d.mts",
-				"default": "./dist/esm/mdx.mjs"
-			},
-			"require": {
-				"types": "./dist/cjs/mdx.d.cts",
-				"default": "./dist/cjs/mdx.cjs"
-			}
+			"types": "./dist/mdx.d.ts",
+			"import": "./dist/mdx.js"
 		},
 		"./module": {
-			"import": {
-				"types": "./dist/esm/module.d.mts",
-				"default": "./dist/esm/module.mjs"
-			},
-			"require": {
-				"types": "./dist/cjs/module.d.cts",
-				"default": "./dist/cjs/module.cjs"
-			}
+			"types": "./dist/module.d.ts",
+			"import": "./dist/module.js"
 		},
 		"./next": {
-			"import": {
-				"types": "./dist/esm/next.d.mts",
-				"default": "./dist/esm/next.mjs"
-			},
-			"require": {
-				"types": "./dist/cjs/next.d.cts",
-				"default": "./dist/cjs/next.cjs"
-			}
+			"types": "./dist/next.d.ts",
+			"import": "./dist/next.js"
 		},
 		"./node": {
-			"import": {
-				"types": "./dist/esm/node.d.mts",
-				"default": "./dist/esm/node.mjs"
-			},
-			"require": {
-				"types": "./dist/cjs/node.d.cts",
-				"default": "./dist/cjs/node.cjs"
-			}
+			"types": "./dist/node.d.ts",
+			"import": "./dist/node.js"
 		},
 		"./react": {
-			"import": {
-				"types": "./dist/esm/react.d.mts",
-				"default": "./dist/esm/react.mjs"
-			},
-			"require": {
-				"types": "./dist/cjs/react.d.cts",
-				"default": "./dist/cjs/react.cjs"
-			}
+			"types": "./dist/react.d.ts",
+			"import": "./dist/react.js"
 		},
 		"./tsdoc": {
-			"import": {
-				"types": "./dist/esm/tsdoc.d.mts",
-				"default": "./dist/esm/tsdoc.mjs"
-			},
-			"require": {
-				"types": "./dist/cjs/tsdoc.d.cts",
-				"default": "./dist/cjs/tsdoc.cjs"
-			}
+			"types": "./dist/tsdoc.d.ts",
+			"import": "./dist/tsdoc.js"
 		},
 		"./typescript": {
-			"import": {
-				"types": "./dist/esm/typescript.d.mts",
-				"default": "./dist/esm/typescript.mjs"
-			},
-			"require": {
-				"types": "./dist/cjs/typescript.d.cts",
-				"default": "./dist/cjs/typescript.cjs"
-			}
+			"types": "./dist/typescript.d.ts",
+			"import": "./dist/typescript.js"
 		}
 	},
 	"keywords": [
@@ -147,30 +77,39 @@
 	"author": "Parbez <imranbarbhuiya.fsd@gmail.com>",
 	"license": "MIT",
 	"files": [
-		"src/*.js"
+		"dist/*.js"
 	],
 	"dependencies": {
+		"@eslint/compat": "^1.2.1",
 		"@eslint/eslintrc": "^3.1.0",
-		"@eslint/js": "^9.12.0",
+		"@eslint/js": "^9.13.0",
 		"@next/eslint-plugin-next": "^14.2.15",
-		"@typescript-eslint/eslint-plugin": "^8.9.0",
-		"@typescript-eslint/parser": "^8.9.0",
-		"eslint": "^9.12.0",
+		"@typescript-eslint/eslint-plugin": "^8.10.0",
+		"@typescript-eslint/parser": "^8.10.0",
+		"eslint": "^9.13.0",
+		"eslint-mdx": "^3.1.5",
 		"eslint-plugin-import-x": "^4.3.1",
-		"eslint-plugin-jsdoc": "^50.4.1",
+		"eslint-plugin-jsdoc": "^50.4.3",
+		"eslint-plugin-mdx": "^3.1.5",
 		"eslint-plugin-n": "^17.11.1",
 		"eslint-plugin-promise": "^7.1.0",
 		"eslint-plugin-react": "^7.37.1",
 		"eslint-plugin-react-hooks": "^5.0.0",
-		"eslint-plugin-sonarjs": "^2.0.3",
+		"eslint-plugin-react-refresh": "^0.4.13",
+		"eslint-plugin-sonarjs": "^2.0.4",
 		"eslint-plugin-tsdoc": "^0.3.0",
 		"eslint-plugin-typescript-sort-keys": "^3.3.0",
-		"eslint-plugin-unicorn": "^56.0.0"
+		"eslint-plugin-unicorn": "^56.0.0",
+		"typescript-eslint": "^8.10.0"
 	},
 	"devDependencies": {
-		"@biomejs/biome": "1.9.3",
+		"@biomejs/biome": "1.9.4",
+		"esbuild-plugin-file-path-extensions": "^2.1.3",
+		"eslint-import-resolver-typescript": "^3.6.3",
+		"globals": "^15.11.0",
 		"prettier": "^3.3.3",
+		"tsup": "^8.3.0",
 		"typescript": "^5.6.3"
 	},
-	"packageManager": "yarn@4.4.0"
+	"packageManager": "yarn@4.5.1"
 }
