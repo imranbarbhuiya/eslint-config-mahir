@@ -10,7 +10,7 @@ The ultimate ESLint shareable config. This config includes all of the ESLint rul
  <br />
  <p>
   <a href="https://www.npmjs.com/package/eslint-config-mahir"><img src="https://img.shields.io/npm/v/eslint-config-mahir.svg?maxAge=3600" alt="npm version" /></a>
-  <a href="https://www.npmjs.com/package/eslint-config-mahir"><img src="https://img.shields.io/npm/dt/eslint-config-mahir.svg?maxAge=3600" alt="npm downloads" /></a>
+  <a href="https://www.npmjs.com/package/eslint-config-mahir"><img src="https://img.shields.io/npm/dw/eslint-config-mahir.svg?maxAge=3600" alt="npm downloads" /></a>
  </p>
 </div>
 
@@ -22,9 +22,9 @@ npm install --save-dev eslint eslint-config-mahir
 
 ## Usage
 
-Add in your ESLint config
+Add in your eslint.config.js (for esm projects) or eslint.config.mjs
 
-```json
+```js
 {
 	"extends": [
 		"mahir/common",
@@ -36,24 +36,45 @@ Add in your ESLint config
 		"mahir/edge"
 	]
 }
+import common from 'mahir/common';
+import node from 'mahir/node';
+import module from 'mahir/module';
+import typescript from 'mahir/typescript';
+import react from 'mahir/react';
+import next from 'mahir/next';
+import mdx from 'mahir/mdx';
+import edge from 'mahir/edge';
+
+export default [
+	...common,
+	...node,
+	...module,
+	...typescript,
+	...react,
+	...next,
+	...mdx,
+	...edge,
+];
+
 ```
-<!-- TODO -->
-<!-- add mdx -->
-<!-- convert to ts -->
-<!-- convert to flat config -->
 
 You can remove any of the configs you don't need.
 
 > **Note**:
 
-For typescript users, `mahir/typescript` will try to find a tsconfig with name `tsconfig.eslint.json` in the root of your project. If you want to use a different name, you can change it in your eslint config like this:
+For typescript users, typed linting is done via `projectService`. You can learn more about it from https://typescript-eslint.io/getting-started/typed-linting/#faqs and customize it as per your need.
 
-```json
-{
-	"parserOptions": {
-		"project": "./tsconfig.json"
-	}
-}
+```js
+export default [
+	...
+	{
+		languageOptions: {
+			parserOptions: {
+				project: './tsconfig.json',
+			},
+		},
+	},
+]
 ```
 
 ## Configs
@@ -68,10 +89,10 @@ This package contains eslint config for
 - `react` rules for react projects (this config contains all the `jsx` rules too)
 - `native` rules for react native projects (this config contains all the `react` rules too)
 - `next` rules for nextjs projects
+- `mdx` rules for mdx projects
 - `edge` rules for projects running in edge
 - `jsdoc` jsdoc related config
 - `tsdoc` tsdoc related config (this config contains all the `jsdoc` rules too)
-- `no-deprecated` rules to warn about using deprecated apis
 
 ## Contributors ✨
 

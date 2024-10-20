@@ -339,13 +339,20 @@ const settings: TSESLint.FlatConfig.Settings = {
 	},
 };
 
-const config: TSESLint.FlatConfig.ConfigArray = tseslint.config(...tseslint.configs.recommended, {
+
+const config: TSESLint.FlatConfig.ConfigArray = tseslint.config(...tseslint.configs.recommendedTypeChecked, {
 	plugins: {
 		sonarjs: eslintPluginSonarjs,
 		'typescript-sort-keys': fixupPluginRules(eslintPluginTypescriptSortKeys),
 	},
 	rules,
 	settings,
+	languageOptions: {
+		parserOptions: {
+			projectService: true,
+			tsconfigRootDir: import.meta.dirname,
+		},
+	},
 });
 
 export default config;
