@@ -1,3 +1,5 @@
+import process from 'node:process';
+
 import { fixupPluginRules } from '@eslint/compat';
 import eslintPluginSonarjs from 'eslint-plugin-sonarjs';
 // @ts-expect-error eslint-plugin-typescript-sort-keys is not typed
@@ -44,8 +46,8 @@ const rules: TSESLint.FlatConfig.Rules = {
 	'@typescript-eslint/consistent-type-imports': [
 		2,
 		{
-			prefer: 'type-imports',
 			fixStyle: 'inline-type-imports',
+			prefer: 'type-imports',
 		},
 	],
 	'@typescript-eslint/default-param-last': 2,
@@ -92,6 +94,7 @@ const rules: TSESLint.FlatConfig.Rules = {
 	'@typescript-eslint/method-signature-style': [2, 'property'],
 	'@typescript-eslint/naming-convention': 0,
 	'@typescript-eslint/no-array-constructor': 2,
+	'@typescript-eslint/no-array-delete': 0,
 	'@typescript-eslint/no-base-to-string': [
 		1,
 		{
@@ -117,6 +120,7 @@ const rules: TSESLint.FlatConfig.Rules = {
 			allowSingleExtends: true,
 		},
 	],
+	'@typescript-eslint/no-empty-object-type': 0,
 	'@typescript-eslint/no-explicit-any': 0,
 	'@typescript-eslint/no-extra-non-null-assertion': 2,
 	'@typescript-eslint/no-extraneous-class': 0,
@@ -170,6 +174,7 @@ const rules: TSESLint.FlatConfig.Rules = {
 			builtinGlobals: true,
 		},
 	],
+	'@typescript-eslint/no-redundant-type-constituents': 0,
 	'@typescript-eslint/no-require-imports': 2,
 	'@typescript-eslint/no-restricted-imports': 0,
 	'@typescript-eslint/no-shadow': 0,
@@ -190,8 +195,11 @@ const rules: TSESLint.FlatConfig.Rules = {
 	'@typescript-eslint/no-unsafe-argument': 0,
 	'@typescript-eslint/no-unsafe-assignment': 0,
 	'@typescript-eslint/no-unsafe-call': 0,
+	'@typescript-eslint/no-unsafe-enum-comparison': 0,
+	'@typescript-eslint/no-unsafe-function-type': 0,
 	'@typescript-eslint/no-unsafe-member-access': 0,
 	'@typescript-eslint/no-unsafe-return': 0,
+	'@typescript-eslint/no-unsafe-unary-minus': 0,
 	'@typescript-eslint/no-unused-expressions': 2,
 	'@typescript-eslint/no-unused-vars': 0,
 	'@typescript-eslint/no-use-before-define': [
@@ -260,8 +268,6 @@ const rules: TSESLint.FlatConfig.Rules = {
 		},
 	],
 	'@typescript-eslint/unified-signatures': 2,
-	'@typescript-eslint/no-empty-object-type': 0,
-	'@typescript-eslint/no-unsafe-enum-comparison': 0,
 	'consistent-return': 0,
 	'default-case': 0,
 	'default-case-last': 0,
@@ -350,8 +356,23 @@ const config: TSESLint.FlatConfig.ConfigArray = tseslint.config(...tseslint.conf
 	settings,
 	languageOptions: {
 		parserOptions: {
-			projectService: true,
-			tsconfigRootDir: import.meta.dirname,
+			projectService: {
+				allowDefaultProject: [
+					'eslint.config.js',
+					'eslint.config.mjs',
+					'tsup.config.ts',
+					'vitest.config.ts',
+					'tailwind.config.cjs',
+					'postcss.config.cjs',
+					'tailwind.config.ts',
+					'postcss.config.ts',
+					'next.config.js',
+					'next.config.mjs',
+					'next.config.ts',
+				],
+				defaultProject: 'tsconfig.json',
+			},
+			tsconfigRootDir: process.cwd(),
 		},
 	},
 });

@@ -1,6 +1,4 @@
 import eslintPluginReact from 'eslint-plugin-react';
-// @ts-expect-error eslint-plugin-react-refresh is not typed
-import eslintPluginReactRefresh from 'eslint-plugin-react-refresh';
 
 import type { TSESLint } from '@typescript-eslint/utils';
 import type { ESLint } from 'eslint';
@@ -114,7 +112,6 @@ const rules: TSESLint.FlatConfig.Rules = {
 	'react/jsx-uses-vars': 2,
 	'react/jsx-wrap-multilines': 0,
 	'react/sort-default-props': 2,
-	'react-refresh/only-export-components': 1,
 	'unicorn/consistent-function-scoping': 0,
 };
 
@@ -148,7 +145,6 @@ const config: TSESLint.FlatConfig.ConfigArray = [
 		},
 		plugins: {
 			react: eslintPluginReact as ESLint.Plugin,
-			'react-refresh': eslintPluginReactRefresh,
 		},
 		rules,
 		settings,
