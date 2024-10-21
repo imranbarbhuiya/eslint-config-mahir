@@ -260,6 +260,8 @@ const rules: TSESLint.FlatConfig.Rules = {
 		},
 	],
 	'@typescript-eslint/unified-signatures': 2,
+	'@typescript-eslint/no-empty-object-type': 0,
+	'@typescript-eslint/no-unsafe-enum-comparison': 0,
 	'consistent-return': 0,
 	'default-case': 0,
 	'default-case-last': 0,
@@ -338,7 +340,6 @@ const settings: TSESLint.FlatConfig.Settings = {
 		},
 	},
 };
-
 
 const config: TSESLint.FlatConfig.ConfigArray = tseslint.config(...tseslint.configs.recommendedTypeChecked, {
 	plugins: {

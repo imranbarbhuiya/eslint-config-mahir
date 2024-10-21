@@ -1,4 +1,3 @@
-import { esbuildPluginFilePathExtensions } from 'esbuild-plugin-file-path-extensions';
 import { defineConfig } from 'tsup';
 
 export default defineConfig({
@@ -13,7 +12,6 @@ export default defineConfig({
 	tsconfig: './tsconfig.json',
 	keepNames: true,
 	treeshake: true,
-	esbuildPlugins: [esbuildPluginFilePathExtensions()],
 	outDir: 'dist',
 	format: 'esm',
 });

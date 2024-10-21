@@ -1,7 +1,7 @@
 import eslintPluginTsdoc from 'eslint-plugin-tsdoc';
 import globals from 'globals';
 
-import react from './react';
+import react from './react.js';
 
 import type { TSESLint } from '@typescript-eslint/utils';
 

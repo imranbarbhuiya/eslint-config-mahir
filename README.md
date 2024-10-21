@@ -25,35 +25,32 @@ npm install --save-dev eslint eslint-config-mahir
 Add in your eslint.config.js (for esm projects) or eslint.config.mjs
 
 ```js
-{
-	"extends": [
-		"mahir/common",
-		"mahir/node",
-		"mahir/module",
-		"mahir/typescript",
-		"mahir/react",
-		"mahir/next",
-		"mahir/edge"
-	]
-}
-import common from 'mahir/common';
-import node from 'mahir/node';
-import module from 'mahir/module';
-import typescript from 'mahir/typescript';
-import react from 'mahir/react';
-import next from 'mahir/next';
-import mdx from 'mahir/mdx';
-import edge from 'mahir/edge';
+import common from 'eslint-config-mahir/common';
+import node from 'eslint-config-mahir/node';
+import module from 'eslint-config-mahir/module';
+import typescript from 'eslint-config-mahir/typescript';
+import jsx from 'eslint-config-mahir/jsx';
+import react from 'eslint-config-mahir/react';
+import next from 'eslint-config-mahir/next';
+import mdx from 'eslint-config-mahir/mdx';
+import edge from 'eslint-config-mahir/edge';
+import jsdoc from 'eslint-config-mahir/jsdoc';
+import tsdoc from 'eslint-config-mahir/tsdoc';
+import native from 'eslint-config-mahir/native';
 
 export default [
 	...common,
 	...node,
 	...module,
 	...typescript,
-	...react,
+	...jsx,
+	...react, // when using react, you can omit jsx as it's already included with react
 	...next,
 	...mdx,
 	...edge,
+	...jsdoc,
+	...tsdoc, // when using tsdoc, you can omit jsdoc as it's already included with tsdoc
+	...native, // when using native, you can omit react as it's already included with native
 ];
 
 ```
