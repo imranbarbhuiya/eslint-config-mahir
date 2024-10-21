@@ -1,7 +1,7 @@
 {
 	"compilerOptions": {
 		"target": "esnext",
-		"module": "commonjs",
+		"module": "preserve",
 		"strict": true,
 		"allowJs": true,
 		"noImplicitAny": true,
@@ -12,11 +12,12 @@
 		"noUnusedParameters": true,
 		"noImplicitReturns": true,
 		"noFallthroughCasesInSwitch": true,
-		"moduleResolution": "node",
+		"moduleResolution": "bundler",
 		"lib": ["es2021"],
 		"outDir": "dist",
 		"noEmit": true,
-		"esModuleInterop": true
+		"esModuleInterop": true,
+		"verbatimModuleSyntax": true
 	},
 	"includes": ["src/**/*.ts"]
 }
