@@ -1,14 +1,64 @@
 {
 	"name": "eslint-config-mahir",
-	"version": "0.0.46",
+	"version": "1.0.0-beta-8",
 	"description": "The ultimate ESLint shareable config",
+	"type": "module",
 	"scripts": {
 		"lint": "eslint --fix --cache .",
 		"format": "biome check --write .",
-		"prepack": "move-file _node.js node.js && move-file _biome.js biome.js",
-		"postpack": "move-file node.js _node.js && move-file biome.js _biome.js"
+		"build": "tsup",
+		"prepack": "yarn build"
 	},
-	"main": "./common.js",
+	"exports": {
+		"./biome": {
+			"types": "./dist/biome.d.ts",
+			"import": "./dist/biome.js"
+		},
+		"./common": {
+			"types": "./dist/common.d.ts",
+			"import": "./dist/common.js"
+		},
+		"./edge": {
+			"types": "./dist/edge.d.ts",
+			"import": "./dist/edge.js"
+		},
+		"./jsdoc": {
+			"types": "./dist/jsdoc.d.ts",
+			"import": "./dist/jsdoc.js"
+		},
+		"./jsx": {
+			"types": "./dist/jsx.d.ts",
+			"import": "./dist/jsx.js"
+		},
+		"./mdx": {
+			"types": "./dist/mdx.d.ts",
+			"import": "./dist/mdx.js"
+		},
+		"./module": {
+			"types": "./dist/module.d.ts",
+			"import": "./dist/module.js"
+		},
+		"./next": {
+			"types": "./dist/next.d.ts",
+			"import": "./dist/next.js"
+		},
+		"./node": {
+			"types": "./dist/node.d.ts",
+			"import": "./dist/node.js"
+		},
+		"./react": {
+			"types": "./dist/react.d.ts",
+			"import": "./dist/react.js"
+		},
+		"./tsdoc": {
+			"types": "./dist/tsdoc.d.ts",
+			"import": "./dist/tsdoc.js"
+		},
+		"./typescript": {
+			"types": "./dist/typescript.d.ts",
+			"import": "./dist/typescript.js"
+		}
+	},
 	"keywords": [
 		"eslint",
 		"config",
@@ -27,93 +77,38 @@
 	},
 	"author": "Parbez <imranbarbhuiya.fsd@gmail.com>",
 	"license": "MIT",
+	"files": [
+		"dist/**"
+	],
 	"dependencies": {
-		"@next/eslint-plugin-next": "^14.2.15",
-		"@rushstack/eslint-patch": "^1.10.4",
-		"@typescript-eslint/eslint-plugin": "^8.9.0",
-		"@typescript-eslint/parser": "^8.9.0",
-		"eslint": "^8.57.1",
-		"eslint-plugin-import": "npm:eslint-plugin-i@latest",
-		"eslint-plugin-jsdoc": "^50.4.1",
+		"@eslint/compat": "^1.2.1",
+		"@eslint/eslintrc": "^3.1.0",
+		"@eslint/js": "^9.13.0",
+		"@next/eslint-plugin-next": "^15.0.0",
+		"@typescript-eslint/eslint-plugin": "^8.11.0",
+		"@typescript-eslint/parser": "^8.11.0",
+		"eslint": "^9.13.0",
+		"eslint-import-resolver-typescript": "^3.6.3",
+		"eslint-mdx": "^3.1.5",
+		"eslint-plugin-import-x": "^4.3.1",
+		"eslint-plugin-jsdoc": "^50.4.3",
+		"eslint-plugin-mdx": "^3.1.5",
 		"eslint-plugin-n": "^17.11.1",
 		"eslint-plugin-promise": "^7.1.0",
 		"eslint-plugin-react": "^7.37.1",
 		"eslint-plugin-react-hooks": "^5.0.0",
-		"eslint-plugin-sonarjs": "^2.0.3",
+		"eslint-plugin-sonarjs": "^2.0.4",
 		"eslint-plugin-tsdoc": "^0.3.0",
 		"eslint-plugin-typescript-sort-keys": "^3.3.0",
-		"eslint-plugin-unicorn": "^56.0.0"
+		"eslint-plugin-unicorn": "^56.0.0",
+		"globals": "^15.11.0",
+		"typescript-eslint": "^8.11.0"
 	},
-	"files": [
-		"*.js",
-		"src/*.js"
-	],
-	"packageManager": "yarn@4.5.0",
 	"devDependencies": {
-		"@biomejs/biome": "1.9.3",
-		"move-file-cli": "^3.0.0",
+		"@biomejs/biome": "1.9.4",
 		"prettier": "^3.3.3",
+		"tsup": "^8.3.0",
 		"typescript": "^5.6.3"
 	},
-	"resolutions": {
-		"array-buffer-byte-length": "npm:@nolyfill/array-buffer-byte-length@latest",
-		"array-includes": "npm:@nolyfill/array-includes@latest",
-		"array.prototype.flat": "npm:@nolyfill/array.prototype.flat@latest",
-		"array.prototype.flatmap": "npm:@nolyfill/array.prototype.flatmap@latest",
-		"array.prototype.reduce": "npm:@nolyfill/array.prototype.reduce@latest",
-		"array.prototype.tosorted": "npm:@nolyfill/array.prototype.tosorted@latest",
-		"arraybuffer.prototype.slice": "npm:@nolyfill/arraybuffer.prototype.slice@latest",
-		"asynciterator.prototype": "npm:@nolyfill/asynciterator.prototype@latest",
-		"available-typed-arrays": "npm:@nolyfill/available-typed-arrays@latest",
-		"define-properties": "npm:@nolyfill/define-properties@latest",
-		"es-iterator-helpers": "npm:@nolyfill/es-iterator-helpers@latest",
-		"es-set-tostringtag": "npm:@nolyfill/es-set-tostringtag@latest",
-		"function-bind": "npm:@nolyfill/function-bind@latest",
-		"function.prototype.name": "npm:@nolyfill/function.prototype.name@latest",
-		"get-symbol-description": "npm:@nolyfill/get-symbol-description@latest",
-		"globalthis": "npm:@nolyfill/globalthis@latest",
-		"gopd": "npm:@nolyfill/gopd@latest",
-		"has": "npm:@nolyfill/has@latest",
-		"has-property-descriptors": "npm:@nolyfill/has-property-descriptors@latest",
-		"has-proto": "npm:@nolyfill/has-proto@latest",
-		"has-symbols": "npm:@nolyfill/has-symbols@latest",
-		"has-tostringtag": "npm:@nolyfill/has-tostringtag@latest",
-		"hasown": "npm:@nolyfill/hasown@latest",
-		"internal-slot": "npm:@nolyfill/internal-slot@latest",
-		"is-array-buffer": "npm:@nolyfill/is-array-buffer@latest",
-		"is-date-object": "npm:@nolyfill/is-date-object@latest",
-		"is-generator-function": "npm:@nolyfill/is-generator-function@latest",
-		"is-regex": "npm:@nolyfill/is-regex@latest",
-		"is-shared-array-buffer": "npm:@nolyfill/is-shared-array-buffer@latest",
-		"is-string": "npm:@nolyfill/is-string@latest",
-		"is-symbol": "npm:@nolyfill/is-symbol@latest",
-		"is-typed-array": "npm:@nolyfill/is-typed-array@latest",
-		"is-weakref": "npm:@nolyfill/is-weakref@latest",
-		"isarray": "npm:@nolyfill/isarray@latest",
-		"iterator.prototype": "npm:@nolyfill/iterator.prototype@latest",
-		"object-keys": "npm:@nolyfill/object-keys@latest",
-		"object.assign": "npm:@nolyfill/object.assign@latest",
-		"object.entries": "npm:@nolyfill/object.entries@latest",
-		"object.fromentries": "npm:@nolyfill/object.fromentries@latest",
-		"object.getownpropertydescriptors": "npm:@nolyfill/object.getownpropertydescriptors@latest",
-		"object.hasown": "npm:@nolyfill/object.hasown@latest",
-		"object.values": "npm:@nolyfill/object.values@latest",
-		"reflect.getprototypeof": "npm:@nolyfill/reflect.getprototypeof@latest",
-		"regexp.prototype.flags": "npm:@nolyfill/regexp.prototype.flags@latest",
-		"safe-array-concat": "npm:@nolyfill/safe-array-concat@latest",
-		"safe-regex-test": "npm:@nolyfill/safe-regex-test@latest",
-		"set-function-length": "npm:@nolyfill/set-function-length@latest",
-		"side-channel": "npm:@nolyfill/side-channel@latest",
-		"string.prototype.matchall": "npm:@nolyfill/string.prototype.matchall@latest",
-		"string.prototype.trim": "npm:@nolyfill/string.prototype.trim@latest",
-		"string.prototype.trimend": "npm:@nolyfill/string.prototype.trimend@latest",
-		"string.prototype.trimstart": "npm:@nolyfill/string.prototype.trimstart@latest",
-		"typed-array-buffer": "npm:@nolyfill/typed-array-buffer@latest",
-		"typed-array-byte-length": "npm:@nolyfill/typed-array-byte-length@latest",
-		"typed-array-byte-offset": "npm:@nolyfill/typed-array-byte-offset@latest",
-		"typed-array-length": "npm:@nolyfill/typed-array-length@latest",
-		"unbox-primitive": "npm:@nolyfill/unbox-primitive@latest",
-		"which-boxed-primitive": "npm:@nolyfill/which-boxed-primitive@latest",
-		"which-typed-array": "npm:@nolyfill/which-typed-array@latest"
-	}
+	"packageManager": "yarn@4.5.1"
 }
