@@ -108,13 +108,13 @@ const rules: TSESLint.FlatConfig.Rules = {
 	'@typescript-eslint/no-duplicate-type-constituents': 2,
 	'@typescript-eslint/no-dynamic-delete': 1,
 	'@typescript-eslint/no-empty-function': 0,
-	'@typescript-eslint/no-empty-interface': [
+	'@typescript-eslint/no-empty-object-type': [
 		2,
 		{
-			allowSingleExtends: true,
+			allowInterfaces: 'with-single-extends',
+			allowObjectTypes: 'always',
 		},
 	],
-	'@typescript-eslint/no-empty-object-type': 0,
 	'@typescript-eslint/no-explicit-any': 0,
 	'@typescript-eslint/no-extra-non-null-assertion': 2,
 	'@typescript-eslint/no-extraneous-class': 0,
@@ -179,7 +179,6 @@ const rules: TSESLint.FlatConfig.Rules = {
 			allowedNames: ['self'],
 		},
 	],
-	'@typescript-eslint/no-type-alias': 0,
 	'@typescript-eslint/no-unnecessary-boolean-literal-compare': 2,
 	'@typescript-eslint/no-unnecessary-condition': 2,
 	'@typescript-eslint/no-unnecessary-qualifier': 2,
@@ -243,7 +242,6 @@ const rules: TSESLint.FlatConfig.Rules = {
 	'@typescript-eslint/restrict-plus-operands': 2,
 	'@typescript-eslint/restrict-template-expressions': 0,
 	'@typescript-eslint/return-await': [2, 'in-try-catch'],
-	'@typescript-eslint/sort-type-constituents': 2,
 	'@typescript-eslint/strict-boolean-expressions': 0,
 	'@typescript-eslint/switch-exhaustiveness-check': 2,
 	'@typescript-eslint/triple-slash-reference': [
@@ -276,7 +274,6 @@ const rules: TSESLint.FlatConfig.Rules = {
 	'no-magic-numbers': 0,
 	'no-redeclare': 0,
 	'no-restricted-imports': 0,
-	'no-return-await': 0,
 	'no-shadow': 0,
 	'no-throw-literal': 0,
 	'no-undef': 0,

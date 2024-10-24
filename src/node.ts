@@ -46,7 +46,7 @@ const rules: TSESLint.FlatConfig.Rules = {
 	'n/prefer-promises/dns': 0,
 	'n/prefer-promises/fs': 0,
 	'n/process-exit-as-throw': 2,
-	'n/shebang': [
+	'n/hashbang': [
 		2,
 		{
 			convertPath: {
