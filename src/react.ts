@@ -78,6 +78,7 @@ const settings: TSESLint.FlatConfig.Settings = {
 const config: TSESLint.FlatConfig.ConfigArray = [
 	...jsx,
 	{
+		name: 'mahir/react',
 		languageOptions: {
 			globals: {
 				...globals.serviceworker,

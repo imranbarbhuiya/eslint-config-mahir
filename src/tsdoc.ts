@@ -20,6 +20,7 @@ const settings: TSESLint.FlatConfig.Settings = {
 const config: TSESLint.FlatConfig.ConfigArray = [
 	...jsdoc,
 	{
+		name: 'mahir/tsdoc',
 		plugins: {
 			tsdoc: eslintPluginTsdoc,
 		},

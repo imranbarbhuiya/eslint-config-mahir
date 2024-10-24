@@ -12,6 +12,7 @@ const config: TSESLint.FlatConfig.ConfigArray = [
 	},
 	mdx.flatCodeBlocks,
 	{
+		name: 'mahir/mdx',
 		rules: {
 			'react/jsx-sort-props': 'off',
 			'@next/next/no-img-element': 'off',

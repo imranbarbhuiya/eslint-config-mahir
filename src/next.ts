@@ -30,6 +30,7 @@ const rules: TSESLint.FlatConfig.Rules = {
 
 const config: TSESLint.FlatConfig.ConfigArray = [
 	{
+		name: 'mahir/next',
 		plugins: {
 			'@next/next': fixupPluginRules(eslintPluginNext),
 		},

@@ -136,6 +136,7 @@ const settings: TSESLint.FlatConfig.Settings = {
 
 const config: TSESLint.FlatConfig.ConfigArray = [
 	{
+		name: 'mahir/jsx',
 		languageOptions: {
 			parserOptions: {
 				ecmaFeatures: {

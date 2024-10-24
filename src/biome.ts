@@ -4,6 +4,7 @@ const rules: TSESLint.FlatConfig.Rules = {};
 
 const config: TSESLint.FlatConfig.ConfigArray = [
 	{
+		name: 'mahir/biome',
 		rules,
 	},
 ];

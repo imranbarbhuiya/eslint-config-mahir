@@ -71,6 +71,7 @@ const rules: TSESLint.FlatConfig.Rules = {
 
 const config: TSESLint.FlatConfig.ConfigArray = [
 	{
+		name: 'mahir/node',
 		languageOptions: {
 			globals: {
 				...n.configs['recommended-module'].globals,

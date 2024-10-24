@@ -60,6 +60,7 @@ const rules: TSESLint.FlatConfig.Rules = {
 
 const config: TSESLint.FlatConfig.ConfigArray = [
 	{
+		name: 'mahir/jsdoc',
 		plugins: {
 			jsdoc: eslintPluginJsdoc,
 		},

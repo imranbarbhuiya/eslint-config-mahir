@@ -102,13 +102,7 @@ const rules: TSESLint.FlatConfig.Rules = {
 		},
 	],
 	'@typescript-eslint/no-confusing-non-null-assertion': 2,
-	'@typescript-eslint/no-confusing-void-expression': [
-		2,
-		{
-			ignoreArrowShorthand: true,
-			ignoreVoidOperator: false,
-		},
-	],
+	'@typescript-eslint/no-confusing-void-expression': 0,
 	'@typescript-eslint/no-dupe-class-members': 2,
 	'@typescript-eslint/no-duplicate-enum-values': 2,
 	'@typescript-eslint/no-duplicate-type-constituents': 2,
@@ -261,12 +255,7 @@ const rules: TSESLint.FlatConfig.Rules = {
 		},
 	],
 	'@typescript-eslint/typedef': 0,
-	'@typescript-eslint/unbound-method': [
-		2,
-		{
-			ignoreStatic: true,
-		},
-	],
+	'@typescript-eslint/unbound-method': 0,
 	'@typescript-eslint/unified-signatures': 2,
 	'consistent-return': 0,
 	'default-case': 0,
@@ -348,6 +337,7 @@ const settings: TSESLint.FlatConfig.Settings = {
 };
 
 const config: TSESLint.FlatConfig.ConfigArray = tseslint.config(...tseslint.configs.recommendedTypeChecked, {
+	name: 'mahir/typescript',
 	plugins: {
 		sonarjs: eslintPluginSonarjs,
 		'typescript-sort-keys': fixupPluginRules(eslintPluginTypescriptSortKeys),

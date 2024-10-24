@@ -16,6 +16,7 @@ const settings: TSESLint.FlatConfig.Settings = {
 const config: TSESLint.FlatConfig.ConfigArray = [
 	...react,
 	{
+		name: 'mahir/native',
 		languageOptions: {
 			globals: {
 				console: false,
@@ -52,6 +53,7 @@ const config: TSESLint.FlatConfig.ConfigArray = [
 		settings,
 	},
 	{
+		name: 'mahir/native-web',
 		files: ['*.web.*'],
 		languageOptions: {
 			globals: {
