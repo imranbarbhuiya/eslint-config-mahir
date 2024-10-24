@@ -38,6 +38,10 @@
 			"types": "./dist/module.d.ts",
 			"import": "./dist/module.js"
 		},
+		"./native": {
+			"types": "./dist/native.d.ts",
+			"import": "./dist/native.js"
+		},
 		"./next": {
 			"types": "./dist/next.d.ts",
 			"import": "./dist/next.js"
