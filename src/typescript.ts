@@ -343,22 +343,7 @@ const config: TSESLint.FlatConfig.ConfigArray = tseslint.config(...tseslint.conf
 	settings,
 	languageOptions: {
 		parserOptions: {
-			projectService: {
-				allowDefaultProject: [
-					'eslint.config.js',
-					'eslint.config.mjs',
-					'tsup.config.ts',
-					'vitest.config.ts',
-					'tailwind.config.cjs',
-					'postcss.config.cjs',
-					'tailwind.config.ts',
-					'postcss.config.ts',
-					'next.config.js',
-					'next.config.mjs',
-					'next.config.ts',
-				],
-				defaultProject: 'tsconfig.json',
-			},
+			projectService: true,
 			tsconfigRootDir: process.cwd(),
 		},
 	},

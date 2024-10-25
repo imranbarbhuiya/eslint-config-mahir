@@ -65,10 +65,15 @@ For typescript users, typed linting is done via `projectService`. You can learn 
 export default [
 	...
 	{
-		languageOptions: {
-			parserOptions: {
-				project: './tsconfig.json',
+	languageOptions: {
+		parserOptions: {
+			projectService: {
+				allowDefaultProject: [
+					'files-outside-tsconfig.json',
+				],
+				defaultProject: 'tsconfig.json',
 			},
+			tsconfigRootDir: process.cwd(),
 		},
 	},
 ]
