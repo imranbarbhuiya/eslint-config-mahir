@@ -3857,7 +3857,7 @@ __metadata:
     eslint-plugin-unicorn: "npm:^56.0.0"
     globals: "npm:^15.11.0"
     prettier: "npm:^3.3.3"
-    tsup: "npm:^8.3.4"
+    tsup: "npm:^8.3.5"
     typescript: "npm:^5.6.3"
     typescript-eslint: "npm:^8.11.0"
   languageName: unknown
@@ -7940,9 +7940,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"tsup@npm:^8.3.4":
-  version: 8.3.4
-  resolution: "tsup@npm:8.3.4"
+"tsup@npm:^8.3.5":
+  version: 8.3.5
+  resolution: "tsup@npm:8.3.5"
   dependencies:
     bundle-require: "npm:^5.0.0"
     cac: "npm:^6.7.14"
@@ -7977,7 +7977,7 @@ __metadata:
   bin:
     tsup: dist/cli-default.js
     tsup-node: dist/cli-node.js
-  checksum: 10/beb4061d0d09082f80dbd48f38ba7280e6a0bc781f15aad8c0ad429f882875f3fe4f15c92c594677221599618b341803e04ca2f56119e8c64625de3ab0d20722
+  checksum: 10/8cf694d5fe7923c47273388f7fb203fe64fe66efb65a96829d361de3360d4db4299e7f82f4e6354716b580c9a1eadb336a25759f90fdc61fe816d5d7d9a28003
   languageName: node
   linkType: hard
 
