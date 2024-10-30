@@ -62,6 +62,9 @@ You can remove any of the configs you don't need.
 For typescript users, typed linting is done via `projectService`. You can learn more about it from https://typescript-eslint.io/getting-started/typed-linting/#faqs and customize it as per your need.
 
 ```js
+/**
+ * @type {import('@typescript-eslint/utils').TSESLint.FlatConfig.ConfigArray}
+ */
 export default [
 	...
 	{
@@ -76,6 +79,27 @@ export default [
 			tsconfigRootDir: process.cwd(),
 		},
 	},
+]
+```
+
+> **Warning**:
+If you are using both `mdx` and `typescript` config, make sure add files to avoid conflicts
+```js
+
+/**
+ * @type {import('@typescript-eslint/utils').TSESLint.FlatConfig.ConfigArray}
+ */
+export default [
+	// ... other configs
+	...mdx.map((config) => ({
+		files: ['**/*.mdx'],
+		...config,
+	})),
+	...typescript.map((config) => ({
+		files: ['**/*.tsx', '**/*.ts', '**/*.cjs', '**/*.jsx', '**/*.js'],
+		...config,
+	})),
+	// ... other configs
 ]
 ```
 
