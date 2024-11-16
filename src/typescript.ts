@@ -43,13 +43,7 @@ const rules: TSESLint.FlatConfig.Rules = {
 			fixMixedExportsWithInlineTypeSpecifier: true,
 		},
 	],
-	'@typescript-eslint/consistent-type-imports': [
-		2,
-		{
-			fixStyle: 'inline-type-imports',
-			prefer: 'type-imports',
-		},
-	],
+	'@typescript-eslint/consistent-type-imports': 0,
 	'@typescript-eslint/default-param-last': 2,
 	'@typescript-eslint/dot-notation': [
 		2,
