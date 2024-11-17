@@ -1806,7 +1806,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@eslint/eslintrc@npm:^3.1.0, @eslint/eslintrc@npm:^3.2.0":
+"@eslint/eslintrc@npm:^3.2.0":
   version: 3.2.0
   resolution: "@eslint/eslintrc@npm:3.2.0"
   dependencies:
@@ -3839,7 +3839,7 @@ __metadata:
   dependencies:
     "@biomejs/biome": "npm:1.9.4"
     "@eslint/compat": "npm:^1.2.3"
-    "@eslint/eslintrc": "npm:^3.1.0"
+    "@eslint/eslintrc": "npm:^3.2.0"
     "@eslint/js": "npm:^9.15.0"
     "@next/eslint-plugin-next": "npm:^15.0.3"
     "@typescript-eslint/eslint-plugin": "npm:^8.14.0"
