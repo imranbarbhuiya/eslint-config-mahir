@@ -9,6 +9,6 @@ export default [
 	...module,
 	...typescript,
 	{
-		ignores: ['.yarn/*', 'dist/*'],
+		ignores: ['.yarn/*', 'dist/*', 'node_modules/*'],
 	},
 ];
