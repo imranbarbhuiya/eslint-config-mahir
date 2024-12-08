@@ -237,7 +237,7 @@ const rules: TSESLint.FlatConfig.Rules = {
 	'@typescript-eslint/restrict-template-expressions': 0,
 	'@typescript-eslint/return-await': [2, 'in-try-catch'],
 	'@typescript-eslint/strict-boolean-expressions': 0,
-	'@typescript-eslint/switch-exhaustiveness-check': 2,
+	'@typescript-eslint/switch-exhaustiveness-check': 0,
 	'@typescript-eslint/triple-slash-reference': [
 		2,
 		{

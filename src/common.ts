@@ -444,7 +444,7 @@ const config: TSESLint.FlatConfig.ConfigArray = [
 	{
 		name: 'mahir/common',
 		linterOptions: {
-			reportUnusedDisableDirectives: true,
+			reportUnusedDisableDirectives: 'warn',
 		},
 		languageOptions: {
 			ecmaVersion: 'latest',

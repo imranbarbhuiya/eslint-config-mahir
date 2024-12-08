@@ -64,7 +64,7 @@ const rules: TSESLint.FlatConfig.Rules = {
 	'react/require-default-props': 0,
 	'react/require-optimization': 0,
 	'react/require-render-return': 2,
-	'react/self-closing-comp': 2,
+	'react/self-closing-comp': 0,
 	'react/sort-comp': 2,
 	'react/state-in-constructor': [2, 'always'],
 	'react/static-property-placement': 2,
