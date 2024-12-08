@@ -81,6 +81,9 @@ importers:
       '@biomejs/biome':
         specifier: 1.9.4
         version: 1.9.4
+      '@types/node':
+        specifier: ^22.10.1
+        version: 22.10.1
       prettier:
         specifier: ^3.4.2
         version: 3.4.2
