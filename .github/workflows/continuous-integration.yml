@@ -17,13 +17,13 @@ jobs:
         uses: actions/setup-node@39370e3970a6d050c480ffad4ff0ed4d3fdee5af # v4
         with:
           node-version: 22
-          cache: yarn
+          cache: pnpm
           registry-url: https://registry.npmjs.org/
       - name: Install Dependencies
-        run: yarn --immutable
+        run: pnpm install --freeze-lockfile
       - name: Build
-        run: yarn build
+        run: pnpm build
       - name: Run ESLint
-        run: yarn lint --fix=false
+        run: pnpm lint --fix=false
       - name: Run Biome
-        run: yarn biome ci .
+        run: pnpm biome ci .
