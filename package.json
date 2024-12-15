@@ -87,17 +87,17 @@
 	"dependencies": {
 		"@eslint/compat": "^1.2.4",
 		"@eslint/eslintrc": "^3.2.0",
-		"@eslint/js": "^9.16.0",
-		"@next/eslint-plugin-next": "^15.0.4",
-		"@typescript-eslint/eslint-plugin": "^8.17.0",
-		"@typescript-eslint/parser": "^8.17.0",
-		"eslint": "^9.16.0",
+		"@eslint/js": "^9.17.0",
+		"@next/eslint-plugin-next": "^15.1.0",
+		"@typescript-eslint/eslint-plugin": "^8.18.0",
+		"@typescript-eslint/parser": "^8.18.0",
+		"eslint": "^9.17.0",
 		"eslint-import-resolver-typescript": "^3.7.0",
 		"eslint-mdx": "^3.1.5",
 		"eslint-plugin-import-x": "^4.5.0",
-		"eslint-plugin-jsdoc": "^50.6.0",
+		"eslint-plugin-jsdoc": "^50.6.1",
 		"eslint-plugin-mdx": "^3.1.5",
-		"eslint-plugin-n": "^17.14.0",
+		"eslint-plugin-n": "^17.15.0",
 		"eslint-plugin-promise": "^7.2.1",
 		"eslint-plugin-react": "^7.37.2",
 		"eslint-plugin-react-compiler": "^19.0.0-beta-df7b47d-20241124",
@@ -107,11 +107,11 @@
 		"eslint-plugin-typescript-sort-keys": "^3.3.0",
 		"eslint-plugin-unicorn": "^56.0.1",
 		"globals": "^15.13.0",
-		"typescript-eslint": "^8.17.0"
+		"typescript-eslint": "^8.18.0"
 	},
 	"devDependencies": {
 		"@biomejs/biome": "1.9.4",
-		"@types/node": "^22.10.1",
+		"@types/node": "^22.10.2",
 		"prettier": "^3.4.2",
 		"tsup": "^8.3.5",
 		"typescript": "^5.7.2"
