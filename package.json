@@ -88,33 +88,33 @@
 		"@eslint/compat": "^1.2.5",
 		"@eslint/eslintrc": "^3.2.0",
 		"@eslint/js": "^9.18.0",
-		"@next/eslint-plugin-next": "^15.1.4",
-		"@typescript-eslint/eslint-plugin": "^8.19.1",
-		"@typescript-eslint/parser": "^8.19.1",
+		"@next/eslint-plugin-next": "^15.1.6",
+		"@typescript-eslint/eslint-plugin": "^8.21.0",
+		"@typescript-eslint/parser": "^8.21.0",
 		"eslint": "^9.18.0",
 		"eslint-import-resolver-typescript": "^3.7.0",
 		"eslint-mdx": "^3.1.5",
 		"eslint-plugin-import-x": "^4.6.1",
-		"eslint-plugin-jsdoc": "^50.6.1",
+		"eslint-plugin-jsdoc": "^50.6.2",
 		"eslint-plugin-mdx": "^3.1.5",
 		"eslint-plugin-n": "^17.15.1",
 		"eslint-plugin-promise": "^7.2.1",
-		"eslint-plugin-react": "^7.37.3",
-		"eslint-plugin-react-compiler": "^19.0.0-beta-df7b47d-20241124",
+		"eslint-plugin-react": "^7.37.4",
+		"eslint-plugin-react-compiler": "^19.0.0-beta-e552027-20250112",
 		"eslint-plugin-react-hooks": "^5.1.0",
 		"eslint-plugin-sonarjs": "^3.0.1",
 		"eslint-plugin-tsdoc": "^0.4.0",
 		"eslint-plugin-typescript-sort-keys": "^3.3.0",
 		"eslint-plugin-unicorn": "^56.0.1",
 		"globals": "^15.14.0",
-		"typescript-eslint": "^8.19.1"
+		"typescript-eslint": "^8.21.0"
 	},
 	"devDependencies": {
 		"@biomejs/biome": "1.9.4",
-		"@types/node": "^22.10.5",
+		"@types/node": "^22.10.7",
 		"prettier": "^3.4.2",
 		"tsup": "^8.3.5",
 		"typescript": "^5.7.3"
 	},
-	"packageManager": "pnpm@9.15.3"
+	"packageManager": "pnpm@9.15.4"
 }
