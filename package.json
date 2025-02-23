@@ -85,14 +85,14 @@
 		"dist/**"
 	],
 	"dependencies": {
-		"@eslint/compat": "^1.2.6",
-		"@eslint/eslintrc": "^3.2.0",
-		"@eslint/js": "^9.20.0",
+		"@eslint/compat": "^1.2.7",
+		"@eslint/eslintrc": "^3.3.0",
+		"@eslint/js": "^9.21.0",
 		"@next/eslint-plugin-next": "^15.1.7",
-		"@typescript-eslint/eslint-plugin": "^8.24.0",
-		"@typescript-eslint/parser": "^8.24.0",
-		"eslint": "^9.20.1",
-		"eslint-import-resolver-typescript": "^3.8.0",
+		"@typescript-eslint/eslint-plugin": "^8.24.1",
+		"@typescript-eslint/parser": "^8.24.1",
+		"eslint": "^9.21.0",
+		"eslint-import-resolver-typescript": "^3.8.3",
 		"eslint-mdx": "^3.1.5",
 		"eslint-plugin-import-x": "^4.6.1",
 		"eslint-plugin-jsdoc": "^50.6.3",
@@ -107,12 +107,12 @@
 		"eslint-plugin-typescript-sort-keys": "^3.3.0",
 		"eslint-plugin-unicorn": "^56.0.1",
 		"globals": "^15.15.0",
-		"typescript-eslint": "^8.24.0"
+		"typescript-eslint": "^8.24.1"
 	},
 	"devDependencies": {
 		"@biomejs/biome": "1.9.4",
-		"@types/node": "^22.13.4",
-		"prettier": "^3.5.1",
+		"@types/node": "^22.13.5",
+		"prettier": "^3.5.2",
 		"tsup": "^8.3.6",
 		"typescript": "^5.7.3"
 	},
