@@ -1,4 +1,4 @@
-import { fixupPluginRules } from '@eslint/compat';
+
 import eslintPluginReactCompiler from 'eslint-plugin-react-compiler';
 import eslintPluginReactHooks from 'eslint-plugin-react-hooks';
 import globals from 'globals';
@@ -87,7 +87,7 @@ const config: TSESLint.FlatConfig.ConfigArray = [
 			},
 		},
 		plugins: {
-			'react-hooks': fixupPluginRules(eslintPluginReactHooks),
+			'react-hooks': (eslintPluginReactHooks),
 		},
 		rules,
 		settings,
