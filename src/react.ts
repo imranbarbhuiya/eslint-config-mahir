@@ -1,13 +1,12 @@
-import { fixupPluginRules } from '@eslint/compat';
-// @ts-expect-error eslint-plugin-react-compiler is not typed
+
 import eslintPluginReactCompiler from 'eslint-plugin-react-compiler';
-// @ts-expect-error eslint-plugin-react-hooks is not typed
 import eslintPluginReactHooks from 'eslint-plugin-react-hooks';
 import globals from 'globals';
 
 import jsx from './jsx.js';
 
 import type { TSESLint } from '@typescript-eslint/utils';
+import type eslint from 'eslint';
 
 const rules: TSESLint.FlatConfig.Rules = {
 	'react-hooks/exhaustive-deps': 2,
@@ -69,7 +68,6 @@ const rules: TSESLint.FlatConfig.Rules = {
 	'react/state-in-constructor': [2, 'always'],
 	'react/static-property-placement': 2,
 	'react/void-dom-elements-no-children': 2,
-	'react-compiler/react-compiler': 2,
 };
 
 const settings: TSESLint.FlatConfig.Settings = {
@@ -89,11 +87,22 @@ const config: TSESLint.FlatConfig.ConfigArray = [
 			},
 		},
 		plugins: {
-			'react-hooks': fixupPluginRules(eslintPluginReactHooks),
-			'react-compiler': fixupPluginRules(eslintPluginReactCompiler),
+			'react-hooks': (eslintPluginReactHooks),
 		},
 		rules,
 		settings,
+	},
+	eslintPluginReactCompiler.configs.recommended as {
+		plugins: {
+			'react-compiler': {
+				rules: {
+					'react-compiler': eslint.Rule.RuleModule;
+				};
+			};
+		};
+		rules: {
+			'react-compiler/react-compiler': 'error';
+		};
 	},
 ];
 
