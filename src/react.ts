@@ -1,4 +1,3 @@
-
 import eslintPluginReactCompiler from 'eslint-plugin-react-compiler';
 import eslintPluginReactHooks from 'eslint-plugin-react-hooks';
 import globals from 'globals';
