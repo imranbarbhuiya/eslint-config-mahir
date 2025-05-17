@@ -87,7 +87,7 @@ const config: TSESLint.FlatConfig.ConfigArray = [
 			},
 		},
 		plugins: {
-			'react-hooks': (eslintPluginReactHooks),
+			'react-hooks': eslintPluginReactHooks,
 		},
 		rules,
 		settings,
