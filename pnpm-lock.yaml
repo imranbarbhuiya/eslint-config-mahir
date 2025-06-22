@@ -18,8 +18,8 @@ importers:
         specifier: ^9.29.0
         version: 9.29.0
       '@next/eslint-plugin-next':
-        specifier: ^15.3.3
-        version: 15.3.3
+        specifier: ^15.3.4
+        version: 15.3.4
       '@typescript-eslint/eslint-plugin':
         specifier: ^8.34.1
         version: 8.34.1(@typescript-eslint/parser@8.34.1(eslint@9.29.0)(typescript@5.8.3))(eslint@9.29.0)(typescript@5.8.3)
@@ -39,8 +39,8 @@ importers:
         specifier: ^4.15.2
         version: 4.15.2(@typescript-eslint/utils@8.34.1(eslint@9.29.0)(typescript@5.8.3))(eslint-import-resolver-node@0.3.9)(eslint@9.29.0)
       eslint-plugin-jsdoc:
-        specifier: ^51.0.6
-        version: 51.0.6(eslint@9.29.0)
+        specifier: ^51.1.1
+        version: 51.1.1(eslint@9.29.0)
       eslint-plugin-mdx:
         specifier: ^3.5.0
         version: 3.5.0(eslint@9.29.0)
@@ -60,8 +60,8 @@ importers:
         specifier: ^5.2.0
         version: 5.2.0(eslint@9.29.0)
       eslint-plugin-sonarjs:
-        specifier: ^3.0.2
-        version: 3.0.2(eslint@9.29.0)
+        specifier: ^3.0.3
+        version: 3.0.3(eslint@9.29.0)
       eslint-plugin-tsdoc:
         specifier: ^0.4.0
         version: 0.4.0
@@ -542,8 +542,8 @@ packages:
   '@napi-rs/wasm-runtime@0.2.11':
     resolution: {integrity: sha512-9DPkXtvHydrcOsopiYpUgPHpmj0HWZKMUnL2dZqpvC42lsratuBG06V5ipyno0fUek5VlFsNQ+AcFATSrJXgMA==}
 
-  '@next/eslint-plugin-next@15.3.3':
-    resolution: {integrity: sha512-VKZJEiEdpKkfBmcokGjHu0vGDG+8CehGs90tBEy/IDoDDKGngeyIStt2MmE5FYNyU9BhgR7tybNWTAJY/30u+Q==}
+  '@next/eslint-plugin-next@15.3.4':
+    resolution: {integrity: sha512-lBxYdj7TI8phbJcLSAqDt57nIcobEign5NYIKCiy0hXQhrUbTqLqOaSDi568U6vFg4hJfBdZYsG4iP/uKhCqgg==}
 
   '@nodelib/fs.scandir@2.1.5':
     resolution: {integrity: sha512-vq24Bq3ym5HEQm2NKCr3yXDwjc7vTsEThRDnkp2DK9p1uqLR+DHurm/NOTo0KG7HYHU7eppKZj3MyqYuMBf62g==}
@@ -1442,8 +1442,8 @@ packages:
       eslint-import-resolver-node:
         optional: true
 
-  eslint-plugin-jsdoc@51.0.6:
-    resolution: {integrity: sha512-irPgtHKUnufQqbUzNyus9Y+oGW5SIxXdcxLGN013rCLyxq2G+wBzCfC0vkeMGYwRUY9PRD3y6fR4fPLowDzrNA==}
+  eslint-plugin-jsdoc@51.1.1:
+    resolution: {integrity: sha512-MU+7rYK2r4frl6Rb/5ebchjBN/jk6iXRMMOd/n3RyAHfaRL+jDfrvXi7b776p5qGaW7dAo8Fxc/s3pwNab9SEw==}
     engines: {node: '>=20.11.0'}
     peerDependencies:
       eslint: ^7.0.0 || ^8.0.0 || ^9.0.0
@@ -1484,8 +1484,8 @@ packages:
     peerDependencies:
       eslint: ^3 || ^4 || ^5 || ^6 || ^7 || ^8 || ^9.7
 
-  eslint-plugin-sonarjs@3.0.2:
-    resolution: {integrity: sha512-LxjbfwI7ypENeTmGyKmDyNux3COSkMi7H/6Cal5StSLQ6edf0naP45SZR43OclaNR7WfhVTZdhOn63q3/Y6puQ==}
+  eslint-plugin-sonarjs@3.0.3:
+    resolution: {integrity: sha512-/UrTz8wyTW0MQVJKUF70vSjsMMf54+0cKHWAuYObuE82vNM8zrscm0wvZprolHNN0PIdnvVQ9Dm6MQkIzOKu4A==}
     peerDependencies:
       eslint: ^8.0.0 || ^9.0.0
 
@@ -3364,7 +3364,7 @@ snapshots:
       '@tybys/wasm-util': 0.9.0
     optional: true
 
-  '@next/eslint-plugin-next@15.3.3':
+  '@next/eslint-plugin-next@15.3.4':
     dependencies:
       fast-glob: 3.3.1
 
@@ -3501,7 +3501,7 @@ snapshots:
 
   '@types/acorn@4.0.6':
     dependencies:
-      '@types/estree': 1.0.6
+      '@types/estree': 1.0.8
 
   '@types/concat-stream@2.0.3':
     dependencies:
@@ -4337,7 +4337,7 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  eslint-plugin-jsdoc@51.0.6(eslint@9.29.0):
+  eslint-plugin-jsdoc@51.1.1(eslint@9.29.0):
     dependencies:
       '@es-joy/jsdoccomment': 0.51.1
       are-docs-informative: 0.0.2
@@ -4431,7 +4431,7 @@ snapshots:
       string.prototype.matchall: 4.0.12
       string.prototype.repeat: 1.0.0
 
-  eslint-plugin-sonarjs@3.0.2(eslint@9.29.0):
+  eslint-plugin-sonarjs@3.0.3(eslint@9.29.0):
     dependencies:
       '@eslint-community/regexpp': 4.12.1
       builtin-modules: 3.3.0
@@ -4441,7 +4441,7 @@ snapshots:
       jsx-ast-utils: 3.3.5
       minimatch: 9.0.5
       scslre: 0.3.0
-      semver: 7.7.1
+      semver: 7.7.2
       typescript: 5.8.3
 
   eslint-plugin-tsdoc@0.4.0:
@@ -5208,7 +5208,7 @@ snapshots:
 
   micromark-factory-mdx-expression@2.0.2:
     dependencies:
-      '@types/estree': 1.0.6
+      '@types/estree': 1.0.8
       devlop: 1.1.0
       micromark-factory-space: 2.0.1
       micromark-util-character: 2.1.1
@@ -5273,7 +5273,7 @@ snapshots:
   micromark-util-events-to-acorn@2.0.2:
     dependencies:
       '@types/acorn': 4.0.6
-      '@types/estree': 1.0.6
+      '@types/estree': 1.0.8
       '@types/unist': 3.0.3
       devlop: 1.1.0
       estree-util-visit: 2.0.0
