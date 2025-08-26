@@ -11,4 +11,5 @@ export default defineConfig({
 	treeshake: true,
 	outDir: 'dist',
 	format: 'esm',
+	dts: true,
 });
