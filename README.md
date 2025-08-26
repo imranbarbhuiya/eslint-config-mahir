@@ -52,7 +52,6 @@ export default [
 	...tsdoc, // when using tsdoc, you can omit jsdoc as it's already included with tsdoc
 	...native, // when using native, you can omit react as it's already included with native
 ];
-
 ```
 
 You can remove any of the configs you don't need.
@@ -83,9 +82,9 @@ export default [
 ```
 
 > **Warning**:
-If you are using both `mdx` and `typescript` config, make sure add files to avoid conflicts
-```js
+> If you are using both `mdx` and `typescript` config, make sure add files to avoid conflicts
 
+```js
 /**
  * @type {import('@typescript-eslint/utils').TSESLint.FlatConfig.ConfigArray}
  */
@@ -100,7 +99,7 @@ export default [
 		...config,
 	})),
 	// ... other configs
-]
+];
 ```
 
 ## Configs

@@ -1,9 +1,6 @@
 import process from 'node:process';
 
-import { fixupPluginRules } from '@eslint/compat';
 import eslintPluginSonarjs from 'eslint-plugin-sonarjs';
-// @ts-expect-error eslint-plugin-typescript-sort-keys is not typed
-import eslintPluginTypescriptSortKeys from 'eslint-plugin-typescript-sort-keys';
 import tseslint from 'typescript-eslint';
 
 import type { TSESLint } from '@typescript-eslint/utils';
@@ -306,8 +303,6 @@ const rules: TSESLint.FlatConfig.Rules = {
 	'sonarjs/prefer-object-literal': 2,
 	'sonarjs/prefer-single-boolean-return': 2,
 	'sonarjs/prefer-while': 2,
-	'typescript-sort-keys/interface': 2,
-	'typescript-sort-keys/string-enum': 2,
 };
 const settings: TSESLint.FlatConfig.Settings = {
 	'import-x/parsers': {
@@ -330,7 +325,6 @@ const config: TSESLint.FlatConfig.ConfigArray = tseslint.config(...tseslint.conf
 	name: 'mahir/typescript',
 	plugins: {
 		sonarjs: eslintPluginSonarjs,
-		'typescript-sort-keys': fixupPluginRules(eslintPluginTypescriptSortKeys),
 	},
 	rules,
 	settings,
