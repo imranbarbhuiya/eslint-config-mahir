@@ -20,7 +20,31 @@ The ultimate ESLint shareable config. This config includes all of the ESLint rul
 npm install --save-dev eslint eslint-config-mahir
 ```
 
-## Usage
+## Quick Setup (CLI)
+
+The easiest way to set up ESLint with this config is using the CLI:
+
+```bash
+npx eslint-config-mahir
+```
+
+This will interactively guide you through selecting a preset and options. You can also use flags:
+
+```bash
+npx eslint-config-mahir --preset nextjs --tailwind
+npx eslint-config-mahir -p react -y
+```
+
+Available options:
+
+- `-p, --preset <name>` - Preset to use (nextjs, react, node, native, library)
+- `-t, --tailwind` - Include Tailwind CSS support
+- `--no-tailwind` - Exclude Tailwind CSS support
+- `-y, --yes` - Skip prompts and use defaults
+- `--cwd <path>` - Working directory
+- `-h, --help` - Show help
+
+## Manual Usage
 
 Add in your eslint.config.js (for esm projects) or eslint.config.mjs
 
@@ -37,6 +61,7 @@ import edge from 'eslint-config-mahir/edge';
 import jsdoc from 'eslint-config-mahir/jsdoc';
 import tsdoc from 'eslint-config-mahir/tsdoc';
 import native from 'eslint-config-mahir/native';
+import tailwind from 'eslint-config-mahir/tailwind';
 
 export default [
 	...common,
@@ -51,6 +76,7 @@ export default [
 	...jsdoc,
 	...tsdoc, // when using tsdoc, you can omit jsdoc as it's already included with tsdoc
 	...native, // when using native, you can omit react as it's already included with native
+	...tailwind, // for projects using Tailwind CSS (requires eslint-plugin-better-tailwindcss)
 ];
 ```
 
@@ -118,6 +144,7 @@ This package contains eslint config for
 - `edge` rules for projects running in edge
 - `jsdoc` jsdoc related config
 - `tsdoc` tsdoc related config (this config contains all the `jsdoc` rules too)
+- `tailwind` rules for Tailwind CSS projects (requires `eslint-plugin-better-tailwindcss`)
 
 ## Contributors ✨
 
