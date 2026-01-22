@@ -11,4 +11,9 @@ export default [
 	{
 		ignores: ['dist/*', 'node_modules/*'],
 	},
+	{
+		rules: {
+			'n/hashbang': 'off',
+		},
+	},
 ];
