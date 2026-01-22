@@ -2,8 +2,10 @@
 import fs from 'node:fs/promises';
 import path from 'node:path';
 import process from 'node:process';
-import readline from 'node:readline';
 import { parseArgs } from 'node:util';
+
+import * as p from '@clack/prompts';
+import { addDevDependency, detectPackageManager } from 'nypm';
 
 interface PresetConfig {
 	imports: string[];
@@ -73,6 +75,15 @@ const PRESETS: Record<string, PresetConfig> = {
 
 const TAILWIND_IMPORT = "import tailwind from 'eslint-config-mahir/tailwind';";
 
+const PRETTIER_CONFIG = {
+	printWidth: 120,
+	useTabs: true,
+	singleQuote: true,
+	quoteProps: 'as-needed',
+	trailingComma: 'all',
+	endOfLine: 'lf',
+};
+
 const DEFAULT_IGNORES: Record<string, string[]> = {
 	nextjs: ['.github', '.yarn', '.next', 'node_modules', 'next-env.d.ts'],
 	react: ['.github', '.yarn', 'node_modules', 'dist', 'build'],
@@ -86,6 +97,8 @@ const { values: options } = parseArgs({
 		preset: { type: 'string', short: 'p' },
 		tailwind: { type: 'boolean', short: 't', default: false },
 		'no-tailwind': { type: 'boolean', default: false },
+		prettier: { type: 'boolean', default: false },
+		'no-prettier': { type: 'boolean', default: false },
 		yes: { type: 'boolean', short: 'y', default: false },
 		cwd: { type: 'string' },
 		help: { type: 'boolean', short: 'h', default: false },
@@ -105,52 +118,17 @@ Options:
   -p, --preset <name>  Preset to use (nextjs, react, node, native, library)
   -t, --tailwind       Include Tailwind CSS support
   --no-tailwind        Exclude Tailwind CSS support
+  --prettier           Include Prettier with recommended config
+  --no-prettier        Exclude Prettier
   -y, --yes            Skip prompts and use defaults
   --cwd <path>         Working directory (defaults to current directory)
   -h, --help           Show this help message
 
 Examples:
   npx eslint-config-mahir
-  npx eslint-config-mahir --preset nextjs --tailwind
+  npx eslint-config-mahir --preset nextjs --tailwind --prettier
   npx eslint-config-mahir -p react -y
 `);
-}
-
-async function prompt(question: string): Promise<string> {
-	const rl = readline.createInterface({
-		input: process.stdin,
-		output: process.stdout,
-	});
-
-	return new Promise((resolve) => {
-		rl.question(question, (answer) => {
-			rl.close();
-			resolve(answer.trim());
-		});
-	});
-}
-
-async function selectPreset(): Promise<string> {
-	console.log('\nAvailable presets:\n');
-	const presetNames = Object.keys(PRESETS);
-
-	for (const [index, name] of presetNames.entries())
-		console.log(`  ${index + 1}. ${name} - ${PRESETS[name].description}`);
-
-	const answer = await prompt('\nSelect a preset (1-5): ');
-	const index = Number.parseInt(answer, 10) - 1;
-
-	if (index >= 0 && index < presetNames.length) return presetNames[index];
-
-	console.log('Invalid selection, defaulting to "node"');
-	return 'node';
-}
-
-async function confirmTailwind(preset: string): Promise<boolean> {
-	if (preset === 'node' || preset === 'library') return false;
-
-	const answer = await prompt('Include Tailwind CSS support? (y/N): ');
-	return answer.toLowerCase() === 'y' || answer.toLowerCase() === 'yes';
 }
 
 function generateEslintConfig(preset: string, includeTailwind: boolean): string {
@@ -190,49 +168,42 @@ async function fileExists(filePath: string): Promise<boolean> {
 	}
 }
 
-async function readPackageJson(packageJsonPath: string): Promise<Record<string, unknown>> {
-	if (await fileExists(packageJsonPath)) {
-		const content = await fs.readFile(packageJsonPath, 'utf8');
-		return JSON.parse(content) as Record<string, unknown>;
+async function addLintScript(packageJsonPath: string, includePrettier: boolean): Promise<void> {
+	if (!(await fileExists(packageJsonPath))) {
+		p.log.error('No package.json found. Please run this command in a project with package.json.');
+		process.exit(1);
 	}
 
-	console.log('No package.json found, creating one...');
-	return {
-		name: path.basename(path.dirname(packageJsonPath)),
-		version: '1.0.0',
-		type: 'module',
-	};
-}
-
-async function updatePackageJson(packageJsonPath: string): Promise<void> {
-	const packageJson = await readPackageJson(packageJsonPath);
-
-	const scripts = (packageJson.scripts as Record<string, string> | undefined) ?? {};
-	scripts.lint = 'TIMING=1 eslint --cache .';
-	scripts.format = 'prettier --write --cache --experimental-cli .';
-	packageJson.scripts = scripts;
-
-	const devDeps = (packageJson.devDependencies as Record<string, string> | undefined) ?? {};
-	if (!devDeps['eslint-config-mahir']) devDeps['eslint-config-mahir'] = 'latest';
-
-	if (!devDeps.eslint) devDeps.eslint = '^9.0.0';
-
-	if (!devDeps.prettier) devDeps.prettier = '^3.0.0';
-
-	packageJson.devDependencies = devDeps;
-
-	await fs.writeFile(packageJsonPath, JSON.stringify(packageJson, null, '\t') + '\n');
-}
-
-async function addTailwindDependency(packageJsonPath: string): Promise<void> {
 	const content = await fs.readFile(packageJsonPath, 'utf8');
 	const packageJson = JSON.parse(content) as Record<string, unknown>;
 
-	const devDeps = (packageJson.devDependencies as Record<string, string> | undefined) ?? {};
-	devDeps['eslint-plugin-better-tailwindcss'] = 'latest';
-	packageJson.devDependencies = devDeps;
+	const scripts = (packageJson.scripts as Record<string, string> | undefined) ?? {};
+	scripts.lint = 'TIMING=1 eslint --cache .';
+	if (includePrettier) scripts.format = 'prettier --write --cache --experimental-cli .';
+	packageJson.scripts = scripts;
 
 	await fs.writeFile(packageJsonPath, JSON.stringify(packageJson, null, '\t') + '\n');
+}
+
+async function installDependencies(cwd: string, includeTailwind: boolean, includePrettier: boolean): Promise<void> {
+	const pm = await detectPackageManager(cwd);
+	const pmName = pm?.name ?? 'npm';
+
+	p.log.info(`Detected package manager: ${pmName}`);
+
+	const deps = ['eslint-config-mahir', 'eslint'];
+	if (includeTailwind) deps.push('eslint-plugin-better-tailwindcss');
+	if (includePrettier) deps.push('prettier');
+
+	const spinner = p.spinner();
+	spinner.start('Installing dependencies');
+
+	for (const dep of deps) {
+		spinner.message(`Installing ${dep}`);
+		await addDevDependency(dep, { cwd, silent: true });
+	}
+
+	spinner.stop('Dependencies installed');
 }
 
 if (options.help) {
@@ -240,59 +211,123 @@ if (options.help) {
 	process.exit(0);
 }
 
-console.log('\n🔧 eslint-config-mahir setup\n');
+p.intro('eslint-config-mahir setup');
 
 const cwd = options.cwd ? path.resolve(options.cwd) : process.cwd();
 const skipPrompts = options.yes;
 
 let preset = options.preset;
 let includeTailwind = options['no-tailwind'] ? false : options.tailwind ? true : undefined;
+let includePrettier = options['no-prettier'] ? false : options.prettier ? true : undefined;
 
 if (!preset) {
 	if (skipPrompts) preset = 'node';
-	else preset = await selectPreset();
+	else {
+		const presetOptions = Object.entries(PRESETS).map(([value, config]) => ({
+			value,
+			label: value,
+			hint: config.description,
+		}));
+
+		const selected = await p.select({
+			message: 'Select a preset',
+			options: presetOptions,
+		});
+
+		if (p.isCancel(selected)) {
+			p.cancel('Operation cancelled.');
+			process.exit(0);
+		}
+
+		preset = selected;
+	}
 }
 
 if (!(preset in PRESETS)) {
-	console.error(`Unknown preset: ${preset}`);
-	console.log(`Available presets: ${Object.keys(PRESETS).join(', ')}`);
+	p.log.error(`Unknown preset: ${preset}`);
+	p.log.info(`Available presets: ${Object.keys(PRESETS).join(', ')}`);
 	process.exit(1);
 }
 
 if (includeTailwind === undefined) {
-	if (skipPrompts) includeTailwind = false;
-	else includeTailwind = await confirmTailwind(preset);
+	if (skipPrompts || preset === 'node' || preset === 'library') includeTailwind = false;
+	else {
+		const result = await p.confirm({
+			message: 'Include Tailwind CSS support?',
+			initialValue: false,
+		});
+
+		if (p.isCancel(result)) {
+			p.cancel('Operation cancelled.');
+			process.exit(0);
+		}
+
+		includeTailwind = result;
+	}
 }
 
-console.log(`\nSetting up ESLint with preset: ${preset}`);
-if (includeTailwind) console.log('Including Tailwind CSS support');
+if (includePrettier === undefined) {
+	if (skipPrompts) includePrettier = false;
+	else {
+		const result = await p.confirm({
+			message: 'Include Prettier with recommended config?',
+			initialValue: false,
+		});
+
+		if (p.isCancel(result)) {
+			p.cancel('Operation cancelled.');
+			process.exit(0);
+		}
+
+		includePrettier = result;
+	}
+}
+
+p.log.step(`Setting up ESLint with preset: ${preset}`);
+if (includeTailwind) p.log.info('Including Tailwind CSS support');
+if (includePrettier) p.log.info('Including Prettier with recommended config');
 
 const eslintConfigPath = path.join(cwd, 'eslint.config.js');
 const packageJsonPath = path.join(cwd, 'package.json');
+const prettierConfigPath = path.join(cwd, '.prettierrc');
 
 if (await fileExists(eslintConfigPath)) {
-	const answer = skipPrompts ? 'y' : await prompt('eslint.config.js already exists. Overwrite? (y/N): ');
-	if (answer.toLowerCase() !== 'y' && answer.toLowerCase() !== 'yes') {
-		console.log('Aborted.');
+	let shouldOverwrite = skipPrompts;
+
+	if (!skipPrompts) {
+		const result = await p.confirm({
+			message: 'eslint.config.js already exists. Overwrite?',
+			initialValue: false,
+		});
+
+		if (p.isCancel(result)) {
+			p.cancel('Operation cancelled.');
+			process.exit(0);
+		}
+
+		shouldOverwrite = result;
+	}
+
+	if (!shouldOverwrite) {
+		p.cancel('Aborted.');
 		process.exit(0);
 	}
 }
 
 const eslintConfig = generateEslintConfig(preset, includeTailwind);
 await fs.writeFile(eslintConfigPath, eslintConfig);
-console.log('✓ Created eslint.config.js');
+p.log.success('Created eslint.config.js');
 
-await updatePackageJson(packageJsonPath);
-console.log('✓ Updated package.json with lint and format scripts');
-
-if (includeTailwind) {
-	await addTailwindDependency(packageJsonPath);
-	console.log('✓ Added eslint-plugin-better-tailwindcss dependency');
+if (includePrettier) {
+	await fs.writeFile(prettierConfigPath, JSON.stringify(PRETTIER_CONFIG, null, '\t') + '\n');
+	p.log.success('Created .prettierrc');
 }
 
-console.log('\n✅ Setup complete!\n');
-console.log('Next steps:');
-console.log('  1. Run your package manager to install dependencies');
-console.log('  2. Run `npm run lint` to lint your code\n');
+await addLintScript(packageJsonPath, includePrettier);
+p.log.success('Updated package.json with lint script');
+
+await installDependencies(cwd, includeTailwind, includePrettier);
+
+p.outro('Setup complete! Run `npm run lint` to lint your code');
 
 process.exit(0);
