@@ -1,31 +1,32 @@
-name: Continuous Integration
+name: Continuous Delivery
 
 on:
   push:
     branches:
       - main
-  pull_request:
+    tags:
+      - '*'
 
 jobs:
-  Linting:
-    name: Linting
+  Publish:
+    name: Publish
+    if: startsWith(github.ref, 'refs/tags/')
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Project
         uses: actions/checkout@v6
       - name: Setup Bun
-        if: steps.config.outputs.skip-platform != 'true'
         uses: oven-sh/setup-bun@v2
       - name: Setup Node.js
-        if: steps.config.outputs.skip-platform != 'true'
         uses: actions/setup-node@v6
         with:
           node-version: 24
+          registry-url: https://registry.npmjs.org/
       - name: Install Dependencies
         run: bun install --frozen-lockfile
       - name: Build
         run: bun run build
-      - name: Run ESLint
-        run: bun lint --fix=false
-      - name: Run Prettier
-        run: bun prettier --check .
+      - name: Publish
+        run: npm publish --provenance --tag latest
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
