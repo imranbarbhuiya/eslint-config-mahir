@@ -1,6 +1,6 @@
 {
 	"name": "eslint-config-mahir",
-	"version": "1.1.4",
+	"version": "1.1.5",
 	"description": "The ultimate ESLint shareable config",
 	"type": "module",
 	"bin": {
