@@ -71,6 +71,17 @@ const PRESETS: Record<string, PresetConfig> = {
 		configs: ['common', 'node', 'typescript', 'module', 'tsdoc'],
 		description: 'TypeScript library with TSDoc support',
 	},
+	nest: {
+		imports: [
+			"import common from 'eslint-config-mahir/common';",
+			"import module from 'eslint-config-mahir/module';",
+			"import nest from 'eslint-config-mahir/nest';",
+			"import node from 'eslint-config-mahir/node';",
+			"import typescript from 'eslint-config-mahir/typescript';",
+		],
+		configs: ['common', 'node', 'typescript', 'module', 'nest'],
+		description: 'NestJS application with TypeScript',
+	},
 };
 
 const TAILWIND_IMPORT = "import tailwind from 'eslint-config-mahir/tailwind';";
@@ -90,7 +101,17 @@ const DEFAULT_IGNORES: Record<string, string[]> = {
 	node: ['.github', '.yarn', 'node_modules', 'dist'],
 	native: ['.github', '.yarn', 'node_modules', '.expo', 'android', 'ios'],
 	library: ['.github', '.yarn', 'node_modules', 'dist'],
+	nest: ['.github', '.yarn', 'node_modules', 'dist'],
 };
+
+const PACKAGE_PRESET_MAP: Record<string, string> = {
+	next: 'nextjs',
+	'react-native': 'native',
+	react: 'react',
+	'@nestjs/core': 'nest',
+};
+
+const DETECTION_PRIORITY = ['next', 'react-native', 'react', '@nestjs/core'];
 
 const { values: options } = parseArgs({
 	options: {
@@ -115,7 +136,7 @@ Usage:
   npx eslint-config-mahir [options]
 
 Options:
-  -p, --preset <name>  Preset to use (nextjs, react, node, native, library)
+	-p, --preset <name>  Preset to use (nextjs, react, node, native, library, nest)
   -t, --tailwind       Include Tailwind CSS support
   --no-tailwind        Exclude Tailwind CSS support
   --prettier           Include Prettier with recommended config
@@ -166,6 +187,23 @@ async function fileExists(filePath: string): Promise<boolean> {
 	} catch {
 		return false;
 	}
+}
+
+async function detectPresetFromPackageJson(cwd: string): Promise<string | undefined> {
+	const packageJsonPath = path.join(cwd, 'package.json');
+	if (!(await fileExists(packageJsonPath))) return undefined;
+
+	const content = await fs.readFile(packageJsonPath, 'utf8');
+	const packageJson = JSON.parse(content) as Record<string, unknown>;
+
+	const dependencies = {
+		...(packageJson.dependencies as Record<string, string> | undefined),
+		...(packageJson.devDependencies as Record<string, string> | undefined),
+	};
+
+	for (const name of DETECTION_PRIORITY) if (dependencies[name]) return PACKAGE_PRESET_MAP[name];
+
+	return undefined;
 }
 
 async function addLintScript(packageJsonPath: string, includePrettier: boolean): Promise<void> {
@@ -221,13 +259,23 @@ let includeTailwind = options['no-tailwind'] ? false : options.tailwind ? true :
 let includePrettier = options['no-prettier'] ? false : options.prettier ? true : undefined;
 
 if (!preset) {
-	if (skipPrompts) preset = 'node';
+	const detectedPreset = await detectPresetFromPackageJson(cwd);
+	if (skipPrompts) preset = detectedPreset ?? 'node';
 	else {
 		const presetOptions = Object.entries(PRESETS).map(([value, config]) => ({
 			value,
 			label: value,
 			hint: config.description,
 		}));
+
+		if (detectedPreset) {
+			const detected = presetOptions.find((option) => option.value === detectedPreset);
+			if (detected) {
+				detected.hint = `Detected: ${detected.hint}`;
+				const remaining = presetOptions.filter((option) => option.value !== detectedPreset);
+				presetOptions.splice(0, presetOptions.length, detected, ...remaining);
+			}
+		}
 
 		const selected = await p.select({
 			message: 'Select a preset',
@@ -250,7 +298,7 @@ if (!(preset in PRESETS)) {
 }
 
 if (includeTailwind === undefined) {
-	if (skipPrompts || preset === 'node' || preset === 'library') includeTailwind = false;
+	if (skipPrompts || preset === 'node' || preset === 'library' || preset === 'nest') includeTailwind = false;
 	else {
 		const result = await p.confirm({
 			message: 'Include Tailwind CSS support?',

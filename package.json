@@ -41,6 +41,10 @@
 			"types": "./dist/native.d.ts",
 			"import": "./dist/native.js"
 		},
+		"./nest": {
+			"types": "./dist/nest.d.ts",
+			"import": "./dist/nest.js"
+		},
 		"./next": {
 			"types": "./dist/next.d.ts",
 			"import": "./dist/next.js"
@@ -89,6 +93,7 @@
 	],
 	"dependencies": {
 		"@clack/prompts": "^0.11.0",
+		"@darraghor/eslint-plugin-nestjs-typed": "^7.1.17",
 		"@eslint/eslintrc": "^3.3.3",
 		"@eslint/js": "^9.39.2",
 		"@next/eslint-plugin-next": "^16.1.4",
