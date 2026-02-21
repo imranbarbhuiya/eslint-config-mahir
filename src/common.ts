@@ -37,13 +37,7 @@ const rules: TSESLint.FlatConfig.Rules = {
 	'grouped-accessor-pairs': [2, 'getBeforeSet'],
 	'guard-for-in': 2,
 	'id-denylist': 0,
-	'id-length': [
-		2,
-		{
-			exceptions: ['_', '$', 'a', 'b', 'p', 'q', 'i', 't', 'x', 'y'],
-			min: 2,
-		},
-	],
+	'id-length': 0,
 	'id-match': 0,
 	'import-x/default': 0,
 	'import-x/dynamic-import-chunkname': 0,
