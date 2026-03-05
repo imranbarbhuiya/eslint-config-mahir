@@ -1,4 +1,3 @@
-/* eslint-disable id-length */
 import n from 'eslint-plugin-n';
 import globals from 'globals';
 
