@@ -1,7 +1,6 @@
 import eslintPluginReact from 'eslint-plugin-react';
 
 import type { TSESLint } from '@typescript-eslint/utils';
-import type { ESLint } from 'eslint';
 
 const rules: TSESLint.FlatConfig.Rules = {
 	'react/jsx-boolean-value': [2, 'never'],
@@ -127,7 +126,7 @@ const config: TSESLint.FlatConfig.ConfigArray = [
 			},
 		},
 		plugins: {
-			react: eslintPluginReact as ESLint.Plugin,
+			react: eslintPluginReact,
 		},
 		rules,
 		settings,

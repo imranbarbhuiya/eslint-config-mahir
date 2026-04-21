@@ -5,7 +5,6 @@ import globals from 'globals';
 import jsx from './jsx.js';
 
 import type { TSESLint } from '@typescript-eslint/utils';
-import type eslint from 'eslint';
 
 const rules: TSESLint.FlatConfig.Rules = {
 	'react-hooks/exhaustive-deps': 2,
@@ -91,18 +90,7 @@ const config: TSESLint.FlatConfig.ConfigArray = [
 		rules,
 		settings,
 	},
-	eslintPluginReactCompiler.configs.recommended as {
-		plugins: {
-			'react-compiler': {
-				rules: {
-					'react-compiler': eslint.Rule.RuleModule;
-				};
-			};
-		};
-		rules: {
-			'react-compiler/react-compiler': 'error';
-		};
-	},
+	eslintPluginReactCompiler.configs.recommended,
 ];
 
 export default config;
