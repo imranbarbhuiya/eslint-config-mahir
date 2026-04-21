@@ -177,12 +177,7 @@ const rules: TSESLint.FlatConfig.Rules = {
 	'@typescript-eslint/prefer-includes': 2,
 	'@typescript-eslint/prefer-literal-enum-member': 2,
 	'@typescript-eslint/prefer-namespace-keyword': 2,
-	'@typescript-eslint/prefer-nullish-coalescing': [
-		2,
-		{
-			ignoreMixedLogicalExpressions: true,
-		},
-	],
+	'@typescript-eslint/prefer-nullish-coalescing': 0,
 	'@typescript-eslint/prefer-optional-chain': 2,
 	'@typescript-eslint/prefer-readonly': [
 		2,

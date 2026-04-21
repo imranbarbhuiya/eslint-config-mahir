@@ -277,7 +277,7 @@ const rules: TSESLint.FlatConfig.Rules = {
 	'promise/prefer-await-to-then': 2,
 	'promise/valid-params': 2,
 	radix: 2,
-	'require-atomic-updates': 2,
+	'require-atomic-updates': 0,
 	'require-await': 0,
 	'require-unicode-regexp': 0,
 	'require-yield': 2,
