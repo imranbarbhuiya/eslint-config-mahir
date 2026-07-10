@@ -18,17 +18,6 @@ const rules: TSESLint.FlatConfig.Rules = {
 	'react/jsx-filename-extension': 0,
 	'react/jsx-first-prop-new-line': [2, 'multiline-multiprop'],
 	'react/jsx-fragments': [2, 'syntax'],
-	'react/jsx-handler-names': [
-		2,
-		{
-			checkInlineFunction: false,
-			checkLocalVariables: false,
-			eventHandlerPrefix: 'handle',
-			eventHandlerPropPrefix: 'on',
-		},
-	],
-	'react/jsx-indent': [2, 'tab'],
-	'react/jsx-indent-props': [2, 'tab'],
 	'react/jsx-key': [
 		2,
 		{
