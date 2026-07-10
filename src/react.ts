@@ -1,4 +1,3 @@
-import eslintPluginReactCompiler from 'eslint-plugin-react-compiler';
 import eslintPluginReactHooks from 'eslint-plugin-react-hooks';
 import globals from 'globals';
 
@@ -9,6 +8,11 @@ import type { TSESLint } from '@typescript-eslint/utils';
 const rules: TSESLint.FlatConfig.Rules = {
 	'react-hooks/exhaustive-deps': 2,
 	'react-hooks/rules-of-hooks': 2,
+	'react-hooks/immutability': 2,
+	'react-hooks/purity': 2,
+	'react-hooks/refs': 2,
+	'react-hooks/set-state-in-effect': 2,
+	'react-hooks/set-state-in-render': 2,
 	'react/boolean-prop-naming': 2,
 	'react/button-has-type': 2,
 	'react/destructuring-assignment': 0,
@@ -90,7 +94,6 @@ const config: TSESLint.FlatConfig.ConfigArray = [
 		rules,
 		settings,
 	},
-	eslintPluginReactCompiler.configs.recommended,
 ];
 
 export default config;

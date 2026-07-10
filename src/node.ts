@@ -27,6 +27,7 @@ const rules: TSESLint.FlatConfig.Rules = {
 		2,
 		{
 			allowAtRootLevel: true,
+			ignores: ['existsSync'],
 		},
 	],
 	'n/no-unpublished-bin': 2,
