@@ -11,7 +11,7 @@ const rules: TSESLint.FlatConfig.Rules = {
 	'react-hooks/immutability': 2,
 	'react-hooks/purity': 2,
 	'react-hooks/refs': 2,
-	'react-hooks/set-state-in-effect': 2,
+	// 'react-hooks/set-state-in-effect': 2,
 	'react-hooks/set-state-in-render': 2,
 	'react/boolean-prop-naming': 2,
 	'react/button-has-type': 2,
