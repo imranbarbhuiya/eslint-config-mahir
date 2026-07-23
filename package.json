@@ -11,6 +11,10 @@
 		"prepack": "bun run build"
 	},
 	"exports": {
+		"./api-error": {
+			"types": "./dist/api-error.d.ts",
+			"import": "./dist/api-error.js"
+		},
 		"./central-icons": {
 			"types": "./dist/central-icons.d.ts",
 			"import": "./dist/central-icons.js"

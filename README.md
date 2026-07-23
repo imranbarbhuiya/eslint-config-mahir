@@ -43,11 +43,13 @@ Available options:
 - `--i18n` / `--no-i18n` - Include/exclude next-intl i18n rules (Next.js)
 - `--native-tailwind` / `--no-native-tailwind` - Include/exclude React Native Tailwind className rules
 - `--central-icons` / `--no-central-icons` - Include/exclude central-icons barrel-import rules
+- `--api-error` / `--no-api-error` - Include/exclude ApiError rules for queryFn/mutationFn
+- `--query` / `--no-query` - Include/exclude TanStack Query ESLint rules (`@tanstack/eslint-plugin-query`)
 - `-y, --yes` - Skip prompts and use defaults
 - `--cwd <path>` - Working directory
 - `-h, --help` - Show help
 
-The CLI offers the `i18n`, `native-tailwind`, and `central-icons` configs only when they are relevant to your project (for example, `i18n` for Next.js, and `central-icons` when a `@central-icons-react*` dependency is detected).
+The CLI offers the `i18n`, `native-tailwind`, `central-icons`, `query`, and `api-error` options only when they are relevant to your project (for example, `i18n` for Next.js, and `query` when `@tanstack/react-query` is detected).
 
 ## Manual Usage
 
@@ -70,6 +72,7 @@ import tailwind from 'eslint-config-mahir/tailwind';
 import i18n from 'eslint-config-mahir/i18n';
 import nativeTailwind from 'eslint-config-mahir/native-tailwind';
 import centralIcons from 'eslint-config-mahir/central-icons';
+import apiError from 'eslint-config-mahir/api-error';
 
 export default [
 	...common,
@@ -88,6 +91,7 @@ export default [
 	...i18n, // for Next.js projects using next-intl
 	...nativeTailwind, // for React Native projects using Tailwind (use with native + tailwind)
 	...centralIcons, // for React/React Native projects using @central-icons-react* packages
+	...apiError, // for projects using TanStack Query — require ApiError in queryFn/mutationFn
 ];
 ```
 
@@ -162,6 +166,7 @@ The following configs are opt-in and are offered by the CLI only when relevant t
 - `i18n` rules for Next.js projects using [`next-intl`](https://next-intl.dev) (enforces static `t()` keys and disallows passing `t` around). Use alongside `next`.
 - `native-tailwind` rules for React Native projects using Tailwind (forbids `flex`/`flex-col`, `font-[Inter]`, and maps `font-*` weights to `inter-*`). Use alongside `native` and `tailwind`.
 - `central-icons` rules for React or React Native projects using `@central-icons-react*` packages (forbids barrel imports and autofixes to direct subpath imports). Use alongside `react`, `native`, or `next`.
+- `api-error` rules for TanStack Query projects (requires `ApiError` instead of `Error` inside `queryFn`/`mutationFn`, including extracted handlers). Use alongside `react`, `native`, or `next`.
 
 ## Contributors ✨
 

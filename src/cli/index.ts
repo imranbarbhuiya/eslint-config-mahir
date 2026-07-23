@@ -88,11 +88,15 @@ const TAILWIND_IMPORT = "import tailwind from 'eslint-config-mahir/tailwind';";
 const I18N_IMPORT = "import i18n from 'eslint-config-mahir/i18n';";
 const NATIVE_TAILWIND_IMPORT = "import nativeTailwind from 'eslint-config-mahir/native-tailwind';";
 const CENTRAL_ICONS_IMPORT = "import centralIcons from 'eslint-config-mahir/central-icons';";
+const API_ERROR_IMPORT = "import apiError from 'eslint-config-mahir/api-error';";
+const QUERY_IMPORT = "import query from '@tanstack/eslint-plugin-query';";
 
 interface ExtraConfigs {
+	apiError: boolean;
 	centralIcons: boolean;
 	i18n: boolean;
 	nativeTailwind: boolean;
+	query: boolean;
 }
 
 const PRETTIER_CONFIG = {
@@ -133,6 +137,10 @@ const { values: options } = parseArgs({
 		'no-native-tailwind': { type: 'boolean', default: false },
 		'central-icons': { type: 'boolean', default: false },
 		'no-central-icons': { type: 'boolean', default: false },
+		'api-error': { type: 'boolean', default: false },
+		'no-api-error': { type: 'boolean', default: false },
+		query: { type: 'boolean', default: false },
+		'no-query': { type: 'boolean', default: false },
 		prettier: { type: 'boolean', default: false },
 		'no-prettier': { type: 'boolean', default: false },
 		yes: { type: 'boolean', short: 'y', default: false },
@@ -160,6 +168,10 @@ Options:
   --no-native-tailwind Exclude React Native Tailwind className rules
   --central-icons      Include central-icons barrel-import rules
   --no-central-icons   Exclude central-icons barrel-import rules
+  --api-error          Include ApiError rules for queryFn/mutationFn
+  --no-api-error       Exclude ApiError rules
+  --query              Include TanStack Query ESLint rules
+  --no-query           Exclude TanStack Query ESLint rules
   --prettier           Include Prettier with recommended config
   --no-prettier        Exclude Prettier
   -y, --yes            Skip prompts and use defaults
@@ -184,6 +196,11 @@ function generateEslintConfig(preset: string, includeTailwind: boolean, extras: 
 		configs.push('tailwind');
 	}
 
+	if (extras.query) {
+		imports.unshift(QUERY_IMPORT);
+		configs.push("query.configs['flat/recommended']");
+	}
+
 	if (extras.i18n) {
 		imports.push(I18N_IMPORT);
 		configs.push('i18n');
@@ -197,6 +214,11 @@ function generateEslintConfig(preset: string, includeTailwind: boolean, extras: 
 	if (extras.centralIcons) {
 		imports.push(CENTRAL_ICONS_IMPORT);
 		configs.push('centralIcons');
+	}
+
+	if (extras.apiError) {
+		imports.push(API_ERROR_IMPORT);
+		configs.push('apiError');
 	}
 
 	let config = imports.join('\n');
@@ -254,6 +276,10 @@ function hasCentralIcons(dependencies: Record<string, string>): boolean {
 	);
 }
 
+function hasTanstackQuery(dependencies: Record<string, string>): boolean {
+	return Boolean(dependencies['@tanstack/react-query']);
+}
+
 async function addLintScript(packageJsonPath: string, includePrettier: boolean): Promise<void> {
 	if (!(await fileExists(packageJsonPath))) {
 		p.log.error('No package.json found. Please run this command in a project with package.json.');
@@ -271,7 +297,12 @@ async function addLintScript(packageJsonPath: string, includePrettier: boolean):
 	await fs.writeFile(packageJsonPath, JSON.stringify(packageJson, null, '\t') + '\n');
 }
 
-async function installDependencies(cwd: string, includeTailwind: boolean, includePrettier: boolean): Promise<void> {
+async function installDependencies(
+	cwd: string,
+	includeTailwind: boolean,
+	includePrettier: boolean,
+	includeQuery: boolean,
+): Promise<void> {
 	const pm = await detectPackageManager(cwd);
 	const pmName = pm?.name ?? 'npm';
 
@@ -279,6 +310,7 @@ async function installDependencies(cwd: string, includeTailwind: boolean, includ
 
 	const deps = ['eslint-config-mahir', 'eslint'];
 	if (includeTailwind) deps.push('eslint-plugin-better-tailwindcss');
+	if (includeQuery) deps.push('@tanstack/eslint-plugin-query');
 	if (includePrettier) deps.push('prettier');
 
 	const spinner = p.spinner();
@@ -310,6 +342,8 @@ let includePrettier = options['no-prettier'] ? false : options.prettier ? true :
 let includeI18n = options['no-i18n'] ? false : options.i18n ? true : undefined;
 let includeNativeTailwind = options['no-native-tailwind'] ? false : options['native-tailwind'] ? true : undefined;
 let includeCentralIcons = options['no-central-icons'] ? false : options['central-icons'] ? true : undefined;
+let includeApiError = options['no-api-error'] ? false : options['api-error'] ? true : undefined;
+let includeQuery = options['no-query'] ? false : options.query ? true : undefined;
 
 if (!preset) {
 	const detectedPreset = detectPresetFromDependencies(dependencies);
@@ -421,6 +455,42 @@ if (includeCentralIcons === undefined) {
 	}
 }
 
+if (includeQuery === undefined) {
+	if (preset !== 'native' && preset !== 'react' && preset !== 'nextjs') includeQuery = false;
+	else if (skipPrompts) includeQuery = hasTanstackQuery(dependencies);
+	else {
+		const result = await p.confirm({
+			message: 'Include TanStack Query ESLint rules?',
+			initialValue: hasTanstackQuery(dependencies),
+		});
+
+		if (p.isCancel(result)) {
+			p.cancel('Operation cancelled.');
+			process.exit(0);
+		}
+
+		includeQuery = result;
+	}
+}
+
+if (includeApiError === undefined) {
+	if (preset !== 'native' && preset !== 'react' && preset !== 'nextjs') includeApiError = false;
+	else if (skipPrompts) includeApiError = hasTanstackQuery(dependencies);
+	else {
+		const result = await p.confirm({
+			message: 'Include ApiError rules for queryFn/mutationFn?',
+			initialValue: hasTanstackQuery(dependencies),
+		});
+
+		if (p.isCancel(result)) {
+			p.cancel('Operation cancelled.');
+			process.exit(0);
+		}
+
+		includeApiError = result;
+	}
+}
+
 if (includePrettier === undefined) {
 	if (skipPrompts) includePrettier = false;
 	else {
@@ -443,6 +513,8 @@ if (includeTailwind) p.log.info('Including Tailwind CSS support');
 if (includeI18n) p.log.info('Including next-intl i18n rules');
 if (includeNativeTailwind) p.log.info('Including React Native Tailwind className rules');
 if (includeCentralIcons) p.log.info('Including central-icons barrel-import rules');
+if (includeQuery) p.log.info('Including TanStack Query ESLint rules');
+if (includeApiError) p.log.info('Including ApiError rules for queryFn/mutationFn');
 if (includePrettier) p.log.info('Including Prettier with recommended config');
 
 const eslintConfigPath = path.join(cwd, 'eslint.config.js');
@@ -476,6 +548,8 @@ const eslintConfig = generateEslintConfig(preset, includeTailwind, {
 	i18n: includeI18n,
 	nativeTailwind: includeNativeTailwind,
 	centralIcons: includeCentralIcons,
+	query: includeQuery,
+	apiError: includeApiError,
 });
 await fs.writeFile(eslintConfigPath, eslintConfig);
 p.log.success('Created eslint.config.js');
@@ -488,7 +562,7 @@ if (includePrettier) {
 await addLintScript(packageJsonPath, includePrettier);
 p.log.success('Updated package.json with lint script');
 
-await installDependencies(cwd, includeTailwind, includePrettier);
+await installDependencies(cwd, includeTailwind, includePrettier, includeQuery);
 
 p.outro('Setup complete! Run `npm run lint` to lint your code');
 
