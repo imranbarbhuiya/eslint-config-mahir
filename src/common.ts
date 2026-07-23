@@ -159,7 +159,6 @@ const rules: TSESLint.FlatConfig.Rules = {
 	'no-labels': 2,
 	'no-lone-blocks': 2,
 	'no-lonely-if': 2,
-	'no-loop-func': 2,
 	'no-loss-of-precision': 2,
 	'no-magic-numbers': 0,
 	'no-misleading-character-class': 2,
