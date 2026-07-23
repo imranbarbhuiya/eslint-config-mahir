@@ -280,6 +280,10 @@ function hasTanstackQuery(dependencies: Record<string, string>): boolean {
 	return Boolean(dependencies['@tanstack/react-query']);
 }
 
+function hasTailwind(dependencies: Record<string, string>): boolean {
+	return Boolean(dependencies.tailwindcss || dependencies.nativewind);
+}
+
 async function addLintScript(packageJsonPath: string, includePrettier: boolean): Promise<void> {
 	if (!(await fileExists(packageJsonPath))) {
 		p.log.error('No package.json found. Please run this command in a project with package.json.');
@@ -302,7 +306,7 @@ async function installDependencies(
 	includeTailwind: boolean,
 	includePrettier: boolean,
 	includeQuery: boolean,
-): Promise<void> {
+): Promise<string> {
 	const pm = await detectPackageManager(cwd);
 	const pmName = pm?.name ?? 'npm';
 
@@ -322,6 +326,8 @@ async function installDependencies(
 	}
 
 	spinner.stop('Dependencies installed');
+
+	return pmName;
 }
 
 if (options.help) {
@@ -385,11 +391,12 @@ if (!(preset in PRESETS)) {
 }
 
 if (includeTailwind === undefined) {
-	if (skipPrompts || preset === 'node' || preset === 'library' || preset === 'nest') includeTailwind = false;
+	if (preset === 'node' || preset === 'library' || preset === 'nest') includeTailwind = false;
+	else if (skipPrompts) includeTailwind = hasTailwind(dependencies);
 	else {
 		const result = await p.confirm({
 			message: 'Include Tailwind CSS support?',
-			initialValue: false,
+			initialValue: hasTailwind(dependencies),
 		});
 
 		if (p.isCancel(result)) {
@@ -492,11 +499,11 @@ if (includeApiError === undefined) {
 }
 
 if (includePrettier === undefined) {
-	if (skipPrompts) includePrettier = false;
+	if (skipPrompts) includePrettier = true;
 	else {
 		const result = await p.confirm({
 			message: 'Include Prettier with recommended config?',
-			initialValue: false,
+			initialValue: true,
 		});
 
 		if (p.isCancel(result)) {
@@ -562,8 +569,12 @@ if (includePrettier) {
 await addLintScript(packageJsonPath, includePrettier);
 p.log.success('Updated package.json with lint script');
 
-await installDependencies(cwd, includeTailwind, includePrettier, includeQuery);
+const pmName = await installDependencies(cwd, includeTailwind, includePrettier, includeQuery);
 
-p.outro('Setup complete! Run `npm run lint` to lint your code');
+const runPrefix = pmName === 'npm' ? `${pmName} run` : pmName;
+const commands = [`${runPrefix} lint`];
+if (includePrettier) commands.push(`${runPrefix} format`);
+
+p.outro(`Setup complete! Run \`${commands.join(' && ')}\` to lint your code`);
 
 process.exit(0);
