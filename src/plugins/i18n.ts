@@ -18,7 +18,7 @@ const staticTArguments: TSESLint.RuleModule<'staticArgument', []> = {
 			CallExpression(node) {
 				if (node.callee.type !== 'Identifier' || node.callee.name !== 't') return;
 				if (node.arguments.length === 0) return;
-				const firstArg = node.arguments[0]!;
+				const firstArg = node.arguments[0];
 				if (firstArg.type !== 'Literal' || typeof firstArg.value !== 'string')
 					context.report({ node: firstArg, messageId: 'staticArgument' });
 			},

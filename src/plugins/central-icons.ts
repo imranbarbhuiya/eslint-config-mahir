@@ -45,7 +45,7 @@ const noCentralIconsBarrelImport: TSESLint.RuleModule<'barrelImport' | 'unsuppor
 					messageId: 'barrelImport',
 					data: { source },
 					fix(fixer) {
-						const quote = node.source.raw?.startsWith("'") ? "'" : '"';
+						const quote = node.source.raw.startsWith("'") ? "'" : '"';
 						const fixedImports = namedSpecifiers.map((specifier) => {
 							const imported = specifier.imported;
 							const importedName = imported.type === 'Identifier' ? imported.name : imported.value;

@@ -148,7 +148,7 @@ const classNameRules: TSESLint.RuleModule<'flexOnly' | 'forbidden' | 'inter', []
 				if (attr.name.type !== 'JSXIdentifier' || attr.name.name !== 'className') return;
 
 				if (attr.value?.type === 'Literal' && typeof attr.value.value === 'string') {
-					reportAndFix(attr.value, attr.value.value, attr.value.raw ?? '');
+					reportAndFix(attr.value, attr.value.value, attr.value.raw);
 					return;
 				}
 
@@ -157,7 +157,7 @@ const classNameRules: TSESLint.RuleModule<'flexOnly' | 'forbidden' | 'inter', []
 					attr.value.expression.type === 'Literal' &&
 					typeof attr.value.expression.value === 'string'
 				)
-					reportAndFix(attr.value.expression, attr.value.expression.value, attr.value.expression.raw ?? '');
+					reportAndFix(attr.value.expression, attr.value.expression.value, attr.value.expression.raw);
 			},
 		};
 	},
