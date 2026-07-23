@@ -1,7 +1,7 @@
 import { defineConfig } from 'tsdown';
 
 export default defineConfig({
-	entry: ['src/*.ts', 'src/cli/*.ts'],
+	entry: ['src/*.ts', 'src/plugins/*.ts', 'src/cli/*.ts'],
 	minify: false,
 	sourcemap: true,
 	unbundle: true,

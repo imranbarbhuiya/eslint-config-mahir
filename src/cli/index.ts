@@ -85,6 +85,15 @@ const PRESETS: Record<string, PresetConfig> = {
 };
 
 const TAILWIND_IMPORT = "import tailwind from 'eslint-config-mahir/tailwind';";
+const I18N_IMPORT = "import i18n from 'eslint-config-mahir/i18n';";
+const NATIVE_TAILWIND_IMPORT = "import nativeTailwind from 'eslint-config-mahir/native-tailwind';";
+const CENTRAL_ICONS_IMPORT = "import centralIcons from 'eslint-config-mahir/central-icons';";
+
+interface ExtraConfigs {
+	centralIcons: boolean;
+	i18n: boolean;
+	nativeTailwind: boolean;
+}
 
 const PRETTIER_CONFIG = {
 	printWidth: 120,
@@ -118,6 +127,12 @@ const { values: options } = parseArgs({
 		preset: { type: 'string', short: 'p' },
 		tailwind: { type: 'boolean', short: 't', default: false },
 		'no-tailwind': { type: 'boolean', default: false },
+		i18n: { type: 'boolean', default: false },
+		'no-i18n': { type: 'boolean', default: false },
+		'native-tailwind': { type: 'boolean', default: false },
+		'no-native-tailwind': { type: 'boolean', default: false },
+		'central-icons': { type: 'boolean', default: false },
+		'no-central-icons': { type: 'boolean', default: false },
 		prettier: { type: 'boolean', default: false },
 		'no-prettier': { type: 'boolean', default: false },
 		yes: { type: 'boolean', short: 'y', default: false },
@@ -139,6 +154,12 @@ Options:
 	-p, --preset <name>  Preset to use (nextjs, react, node, native, library, nest)
   -t, --tailwind       Include Tailwind CSS support
   --no-tailwind        Exclude Tailwind CSS support
+  --i18n               Include next-intl i18n rules (Next.js)
+  --no-i18n            Exclude next-intl i18n rules
+  --native-tailwind    Include React Native Tailwind className rules
+  --no-native-tailwind Exclude React Native Tailwind className rules
+  --central-icons      Include central-icons barrel-import rules
+  --no-central-icons   Exclude central-icons barrel-import rules
   --prettier           Include Prettier with recommended config
   --no-prettier        Exclude Prettier
   -y, --yes            Skip prompts and use defaults
@@ -152,7 +173,7 @@ Examples:
 `);
 }
 
-function generateEslintConfig(preset: string, includeTailwind: boolean): string {
+function generateEslintConfig(preset: string, includeTailwind: boolean, extras: ExtraConfigs): string {
 	const presetConfig = PRESETS[preset];
 	const imports = [...presetConfig.imports];
 	const configs = [...presetConfig.configs];
@@ -161,6 +182,21 @@ function generateEslintConfig(preset: string, includeTailwind: boolean): string 
 	if (includeTailwind) {
 		imports.push(TAILWIND_IMPORT);
 		configs.push('tailwind');
+	}
+
+	if (extras.i18n) {
+		imports.push(I18N_IMPORT);
+		configs.push('i18n');
+	}
+
+	if (extras.nativeTailwind) {
+		imports.push(NATIVE_TAILWIND_IMPORT);
+		configs.push('nativeTailwind');
+	}
+
+	if (extras.centralIcons) {
+		imports.push(CENTRAL_ICONS_IMPORT);
+		configs.push('centralIcons');
 	}
 
 	let config = imports.join('\n');
@@ -189,21 +225,33 @@ async function fileExists(filePath: string): Promise<boolean> {
 	}
 }
 
-async function detectPresetFromPackageJson(cwd: string): Promise<string | undefined> {
+async function getDependencies(cwd: string): Promise<Record<string, string>> {
 	const packageJsonPath = path.join(cwd, 'package.json');
-	if (!(await fileExists(packageJsonPath))) return undefined;
+	if (!(await fileExists(packageJsonPath))) return {};
 
 	const content = await fs.readFile(packageJsonPath, 'utf8');
 	const packageJson = JSON.parse(content) as Record<string, unknown>;
 
-	const dependencies = {
+	return {
 		...(packageJson.dependencies as Record<string, string> | undefined),
 		...(packageJson.devDependencies as Record<string, string> | undefined),
 	};
+}
 
+function detectPresetFromDependencies(dependencies: Record<string, string>): string | undefined {
 	for (const name of DETECTION_PRIORITY) if (dependencies[name]) return PACKAGE_PRESET_MAP[name];
 
 	return undefined;
+}
+
+function hasNextIntl(dependencies: Record<string, string>): boolean {
+	return Boolean(dependencies['next-intl']);
+}
+
+function hasCentralIcons(dependencies: Record<string, string>): boolean {
+	return Object.keys(dependencies).some(
+		(name) => name.startsWith('@central-icons-react/') || name.startsWith('@central-icons-react-native/'),
+	);
 }
 
 async function addLintScript(packageJsonPath: string, includePrettier: boolean): Promise<void> {
@@ -254,12 +302,17 @@ p.intro('eslint-config-mahir setup');
 const cwd = options.cwd ? path.resolve(options.cwd) : process.cwd();
 const skipPrompts = options.yes;
 
+const dependencies = await getDependencies(cwd);
+
 let preset = options.preset;
 let includeTailwind = options['no-tailwind'] ? false : options.tailwind ? true : undefined;
 let includePrettier = options['no-prettier'] ? false : options.prettier ? true : undefined;
+let includeI18n = options['no-i18n'] ? false : options.i18n ? true : undefined;
+let includeNativeTailwind = options['no-native-tailwind'] ? false : options['native-tailwind'] ? true : undefined;
+let includeCentralIcons = options['no-central-icons'] ? false : options['central-icons'] ? true : undefined;
 
 if (!preset) {
-	const detectedPreset = await detectPresetFromPackageJson(cwd);
+	const detectedPreset = detectPresetFromDependencies(dependencies);
 	if (skipPrompts) preset = detectedPreset ?? 'node';
 	else {
 		const presetOptions = Object.entries(PRESETS).map(([value, config]) => ({
@@ -314,6 +367,60 @@ if (includeTailwind === undefined) {
 	}
 }
 
+if (includeI18n === undefined) {
+	if (preset !== 'nextjs') includeI18n = false;
+	else if (skipPrompts) includeI18n = hasNextIntl(dependencies);
+	else {
+		const result = await p.confirm({
+			message: 'Include next-intl i18n rules?',
+			initialValue: hasNextIntl(dependencies),
+		});
+
+		if (p.isCancel(result)) {
+			p.cancel('Operation cancelled.');
+			process.exit(0);
+		}
+
+		includeI18n = result;
+	}
+}
+
+if (includeNativeTailwind === undefined) {
+	if (preset !== 'native' || !includeTailwind) includeNativeTailwind = false;
+	else if (skipPrompts) includeNativeTailwind = true;
+	else {
+		const result = await p.confirm({
+			message: 'Include React Native Tailwind className rules (flex / Inter fonts)?',
+			initialValue: true,
+		});
+
+		if (p.isCancel(result)) {
+			p.cancel('Operation cancelled.');
+			process.exit(0);
+		}
+
+		includeNativeTailwind = result;
+	}
+}
+
+if (includeCentralIcons === undefined) {
+	if (preset !== 'native' && preset !== 'react' && preset !== 'nextjs') includeCentralIcons = false;
+	else if (skipPrompts) includeCentralIcons = hasCentralIcons(dependencies);
+	else {
+		const result = await p.confirm({
+			message: 'Include central-icons barrel-import rules?',
+			initialValue: hasCentralIcons(dependencies),
+		});
+
+		if (p.isCancel(result)) {
+			p.cancel('Operation cancelled.');
+			process.exit(0);
+		}
+
+		includeCentralIcons = result;
+	}
+}
+
 if (includePrettier === undefined) {
 	if (skipPrompts) includePrettier = false;
 	else {
@@ -333,6 +440,9 @@ if (includePrettier === undefined) {
 
 p.log.step(`Setting up ESLint with preset: ${preset}`);
 if (includeTailwind) p.log.info('Including Tailwind CSS support');
+if (includeI18n) p.log.info('Including next-intl i18n rules');
+if (includeNativeTailwind) p.log.info('Including React Native Tailwind className rules');
+if (includeCentralIcons) p.log.info('Including central-icons barrel-import rules');
 if (includePrettier) p.log.info('Including Prettier with recommended config');
 
 const eslintConfigPath = path.join(cwd, 'eslint.config.js');
@@ -362,7 +472,11 @@ if (await fileExists(eslintConfigPath)) {
 	}
 }
 
-const eslintConfig = generateEslintConfig(preset, includeTailwind);
+const eslintConfig = generateEslintConfig(preset, includeTailwind, {
+	i18n: includeI18n,
+	nativeTailwind: includeNativeTailwind,
+	centralIcons: includeCentralIcons,
+});
 await fs.writeFile(eslintConfigPath, eslintConfig);
 p.log.success('Created eslint.config.js');
 

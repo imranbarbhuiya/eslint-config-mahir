@@ -40,9 +40,14 @@ Available options:
 - `-p, --preset <name>` - Preset to use (nextjs, react, node, native, library)
 - `-t, --tailwind` - Include Tailwind CSS support
 - `--no-tailwind` - Exclude Tailwind CSS support
+- `--i18n` / `--no-i18n` - Include/exclude next-intl i18n rules (Next.js)
+- `--native-tailwind` / `--no-native-tailwind` - Include/exclude React Native Tailwind className rules
+- `--central-icons` / `--no-central-icons` - Include/exclude central-icons barrel-import rules
 - `-y, --yes` - Skip prompts and use defaults
 - `--cwd <path>` - Working directory
 - `-h, --help` - Show help
+
+The CLI offers the `i18n`, `native-tailwind`, and `central-icons` configs only when they are relevant to your project (for example, `i18n` for Next.js, and `central-icons` when a `@central-icons-react*` dependency is detected).
 
 ## Manual Usage
 
@@ -62,6 +67,9 @@ import jsdoc from 'eslint-config-mahir/jsdoc';
 import tsdoc from 'eslint-config-mahir/tsdoc';
 import native from 'eslint-config-mahir/native';
 import tailwind from 'eslint-config-mahir/tailwind';
+import i18n from 'eslint-config-mahir/i18n';
+import nativeTailwind from 'eslint-config-mahir/native-tailwind';
+import centralIcons from 'eslint-config-mahir/central-icons';
 
 export default [
 	...common,
@@ -77,6 +85,9 @@ export default [
 	...tsdoc, // when using tsdoc, you can omit jsdoc as it's already included with tsdoc
 	...native, // when using native, you can omit react as it's already included with native
 	...tailwind, // for projects using Tailwind CSS (requires eslint-plugin-better-tailwindcss)
+	...i18n, // for Next.js projects using next-intl
+	...nativeTailwind, // for React Native projects using Tailwind (use with native + tailwind)
+	...centralIcons, // for React/React Native projects using @central-icons-react* packages
 ];
 ```
 
@@ -145,6 +156,12 @@ This package contains eslint config for
 - `jsdoc` jsdoc related config
 - `tsdoc` tsdoc related config (this config contains all the `jsdoc` rules too)
 - `tailwind` rules for Tailwind CSS projects (requires `eslint-plugin-better-tailwindcss`)
+
+The following configs are opt-in and are offered by the CLI only when relevant to your project. They are intentionally not bundled into `next` or `native`:
+
+- `i18n` rules for Next.js projects using [`next-intl`](https://next-intl.dev) (enforces static `t()` keys and disallows passing `t` around). Use alongside `next`.
+- `native-tailwind` rules for React Native projects using Tailwind (forbids `flex`/`flex-col`, `font-[Inter]`, and maps `font-*` weights to `inter-*`). Use alongside `native` and `tailwind`.
+- `central-icons` rules for React or React Native projects using `@central-icons-react*` packages (forbids barrel imports and autofixes to direct subpath imports). Use alongside `react`, `native`, or `next`.
 
 ## Contributors ✨
 
